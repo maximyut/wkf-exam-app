@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Volume2, VolumeX, History, Award, Play } from 'lucide-react';
+import { User, Volume2, VolumeX, History, Play } from 'lucide-react';
 import type { UserProfile } from '../types';
 
 interface HeaderProps {
@@ -27,8 +27,12 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onNavigate('setup')}
           className="flex items-center gap-2 sm:gap-2.5 cursor-pointer group select-none min-w-0"
         >
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-rose-600 to-amber-500 flex items-center justify-center text-white shadow-lg shadow-rose-900/20 group-hover:scale-105 transition-transform shrink-0">
-            <Award className="w-4 h-4 sm:w-5 sm:h-5" />
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white p-1 flex items-center justify-center shadow-md shadow-black/20 group-hover:scale-105 transition-transform shrink-0">
+            <img
+              src="/wkf-logo.png"
+              alt="WKF Logo"
+              className="w-full h-full object-contain"
+            />
           </div>
           <div className="min-w-0">
             <div className="font-bold text-sm sm:text-base md:text-lg text-slate-100 flex items-center gap-1.5 leading-tight truncate">
