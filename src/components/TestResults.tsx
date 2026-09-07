@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import type { TestResult } from '../types';
-import { playCompleteSound } from '../utils/sound';
+import { playCompleteSound, playWrongSound } from '../utils/sound';
 
 interface TestResultsProps {
   result: TestResult;
@@ -43,7 +43,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
   const failedRecords = records.filter((r) => !r.isCorrect);
   const hasMistakes = failedRecords.length > 0;
 
-  // Trigger celebration confetti & sound if test is passed (>= 90%)
+  // Trigger celebration confetti & sound if test is passed (>= 90%), or fail sound
   useEffect(() => {
     if (passed) {
       if (soundEnabled) {
@@ -57,6 +57,10 @@ export const TestResults: React.FC<TestResultsProps> = ({
         });
       } catch (e) {
         console.warn('Confetti error:', e);
+      }
+    } else {
+      if (soundEnabled) {
+        playWrongSound();
       }
     }
   }, [passed, soundEnabled]);
