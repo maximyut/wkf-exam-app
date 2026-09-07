@@ -51,7 +51,7 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
       const now = Date.now();
       const timeSpent = Math.max(1, Math.round((now - questionStartTimeRef.current) / 1000));
 
-      const isCorrect = choice !== 'timeout' && (choice === 'true') === currentQuestion.correctAnswer;
+      const isCorrect = choice !== 'timeout' && (choice === 'true') === currentQuestion.answer;
 
       if (soundEnabled) {
         if (choice === 'timeout') {
@@ -67,10 +67,9 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
         questionId: currentQuestion.id,
         questionText: currentQuestion.question,
         userAnswer: choice,
-        correctAnswer: currentQuestion.correctAnswer,
+        correctAnswer: currentQuestion.answer,
         isCorrect,
         timeSpentSeconds: timeSpent,
-        votes: currentQuestion.votes,
       };
 
       const updatedRecords = [...records, record];

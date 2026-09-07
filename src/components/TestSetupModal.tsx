@@ -6,21 +6,26 @@ import {
   Shuffle,
   Flame,
   Sparkles,
+  FileCode,
+  Upload,
 } from 'lucide-react';
 import type { TestConfig, UserProfile } from '../types';
-import { TOTAL_AVAILABLE_QUESTIONS } from '../data/questions';
 import { getUserMistakeQuestionIds } from '../utils/storage';
 
 interface TestSetupProps {
   activeUser: UserProfile;
+  totalAvailableQuestions: number;
   onStartTest: (config: TestConfig) => void;
   onOpenUserModal: () => void;
+  onCustomDataLoaded?: (data: unknown[]) => void;
 }
 
 export const TestSetupModal: React.FC<TestSetupProps> = ({
   activeUser,
+  totalAvailableQuestions,
   onStartTest,
   onOpenUserModal,
+  onCustomDataLoaded,
 }) => {
   const userMistakes = getUserMistakeQuestionIds(activeUser.id);
   const hasMistakes = userMistakes.length > 0;
@@ -40,7 +45,7 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
   const [shuffleQuestions, setShuffleQuestions] = useState<boolean>(true);
 
   // Preset buttons
-  const countPresets = [20, 50, 70, 100, TOTAL_AVAILABLE_QUESTIONS];
+  const countPresets = [20, 50, 70, 100, totalAvailableQuestions];
   const timePresets = [
     { label: '10 сек', val: 10 },
     { label: '15 сек', val: 15 },
@@ -50,7 +55,7 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
     { label: 'Без таймера', val: 0 },
   ];
 
-  const maxQuestions = onlyMistakes ? userMistakes.length : TOTAL_AVAILABLE_QUESTIONS;
+  const maxQuestions = onlyMistakes ? userMistakes.length : totalAvailableQuestions;
 
   const handlePresetCount = (cnt: number) => {
     setIsCustomCount(false);
@@ -79,6 +84,25 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
     });
   };
 
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file || !onCustomDataLoaded) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      try {
+        const json = JSON.parse(event.target?.result as string);
+        if (Array.isArray(json)) {
+          onCustomDataLoaded(json);
+        } else {
+          alert('Файл должен содержать массив объектов с полями question и answer');
+        }
+      } catch (err) {
+        alert('Ошибка при чтении JSON файла: ' + (err as Error).message);
+      }
+    };
+    reader.readAsText(file);
+  };
+
   return (
     <div className="max-w-2xl mx-auto py-4 px-4 sm:px-6">
       <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-8 relative overflow-hidden">
@@ -97,7 +121,7 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
               Тестирование судей WKF
             </h1>
             <p className="text-xs sm:text-sm text-slate-400 mt-1">
-              База 246 официальных экзаменационных вопросов с мгновенной проверкой
+              База {totalAvailableQuestions} официальных вопросов из data.json
             </p>
           </div>
 
@@ -150,7 +174,7 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
                       : 'bg-slate-800/70 hover:bg-slate-800 text-slate-300 hover:text-white border-slate-700/60'
                   }`}
                 >
-                  {cnt === TOTAL_AVAILABLE_QUESTIONS ? `Все (${cnt})` : cnt}
+                  {cnt === totalAvailableQuestions ? `Все (${cnt})` : cnt}
                 </button>
               );
             })}
@@ -329,6 +353,27 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
               className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 focus:ring-offset-slate-900"
             />
           </div>
+        </div>
+
+        {/* Section 4: Data.json Information & Custom File Upload */}
+        <div className="p-3.5 rounded-2xl bg-slate-950/60 border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2 text-slate-400">
+            <FileCode className="w-4 h-4 text-emerald-400 shrink-0" />
+            <span>Источник данных: <code className="text-emerald-300 font-mono">public/data.json</code> ({totalAvailableQuestions} вопр.)</span>
+          </div>
+
+          {onCustomDataLoaded && (
+            <label className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white cursor-pointer border border-slate-700 transition-colors self-start sm:self-auto font-medium">
+              <Upload className="w-3.5 h-3.5 text-amber-400" />
+              <span>Загрузить свой data.json</span>
+              <input
+                type="file"
+                accept=".json"
+                onChange={handleFileUpload}
+                className="hidden"
+              />
+            </label>
+          )}
         </div>
 
         {/* Start Button */}

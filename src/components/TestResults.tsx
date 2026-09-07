@@ -5,12 +5,9 @@ import {
   Clock,
   RotateCcw,
   Flame,
-  ChevronDown,
-  ChevronUp,
   History,
   Check,
   X,
-  Bot,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import type { TestResult } from '../types';
@@ -32,7 +29,6 @@ export const TestResults: React.FC<TestResultsProps> = ({
   onNavigateToHistory,
 }) => {
   const [filter, setFilter] = useState<'all' | 'mistakes' | 'correct'>('all');
-  const [expandedQuestions, setExpandedQuestions] = useState<Set<number>>(new Set());
 
   const {
     correctAnswersCount,
@@ -64,18 +60,6 @@ export const TestResults: React.FC<TestResultsProps> = ({
       }
     }
   }, [passed, soundEnabled]);
-
-  const toggleExpand = (questionId: number) => {
-    setExpandedQuestions((prev) => {
-      const next = new Set(prev);
-      if (next.has(questionId)) {
-        next.delete(questionId);
-      } else {
-        next.add(questionId);
-      }
-      return next;
-    });
-  };
 
   const filteredRecords = records.filter((r) => {
     if (filter === 'mistakes') return !r.isCorrect;
@@ -217,7 +201,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
               </span>
             </h2>
             <p className="text-xs text-slate-400 mt-0.5">
-              Нажмите на вопрос для просмотра мнений нейросетей (ChatGPT, Claude, DeepSeek, Gemini, Instagram)
+              Сравнение ваших ответов с правильными ответами по базе WKF
             </p>
           </div>
 
@@ -267,7 +251,6 @@ export const TestResults: React.FC<TestResultsProps> = ({
             </div>
           ) : (
             filteredRecords.map((record) => {
-              const isExpanded = expandedQuestions.has(record.questionId);
               const isTimeout = record.userAnswer === 'timeout';
               const userAnsText = isTimeout
                 ? 'Время вышло'
@@ -279,191 +262,77 @@ export const TestResults: React.FC<TestResultsProps> = ({
               return (
                 <div
                   key={record.questionId}
-                  className={`rounded-2xl border transition-all overflow-hidden ${
+                  className={`p-4 sm:p-5 rounded-2xl border transition-all ${
                     record.isCorrect
                       ? 'bg-slate-900/90 border-slate-800 hover:border-slate-700'
-                      : 'bg-rose-950/10 border-rose-900/40 hover:border-rose-700/60'
+                      : 'bg-rose-950/15 border-rose-900/40 hover:border-rose-700/60'
                   }`}
                 >
-                  {/* Question row */}
-                  <div
-                    onClick={() => toggleExpand(record.questionId)}
-                    className="p-4 sm:p-5 flex items-start justify-between gap-4 cursor-pointer select-none"
-                  >
-                    <div className="flex items-start gap-3.5 min-w-0">
-                      {/* Icon badge */}
-                      <div
-                        className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 mt-0.5 ${
-                          record.isCorrect
-                            ? 'bg-emerald-500/20 text-emerald-400'
-                            : 'bg-rose-500/20 text-rose-400'
-                        }`}
-                      >
-                        {record.isCorrect ? (
-                          <Check className="w-4 h-4 stroke-[3]" />
-                        ) : (
-                          <X className="w-4 h-4 stroke-[3]" />
-                        )}
-                      </div>
-
-                      <div className="min-w-0 space-y-2">
-                        <div className="flex items-center gap-2">
-                          <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
-                            ID #{record.questionId}
-                          </span>
-                          <span
-                            className={`text-xs font-bold ${
-                              record.isCorrect ? 'text-emerald-400' : 'text-rose-400'
-                            }`}
-                          >
-                            {record.isCorrect ? 'Правильный ответ' : isTimeout ? 'Таймаут (Неверно)' : 'Ошибка'}
-                          </span>
-                        </div>
-
-                        {/* English question text */}
-                        <p className="text-sm sm:text-base font-semibold text-slate-100 leading-snug">
-                          {record.questionText}
-                        </p>
-
-                        {/* Answer badges */}
-                        <div className="flex flex-wrap items-center gap-2 pt-1">
-                          <div
-                            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold border ${
-                              record.isCorrect
-                                ? 'bg-emerald-950/40 border-emerald-500/40 text-emerald-300'
-                                : 'bg-rose-950/40 border-rose-500/40 text-rose-300'
-                            }`}
-                          >
-                            <span className="text-[10px] text-slate-400 font-normal uppercase">
-                              Ваш ответ:
-                            </span>
-                            <span>{userAnsText}</span>
-                          </div>
-
-                          {!record.isCorrect && (
-                            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-950/40 border border-emerald-500/50 text-emerald-300">
-                              <span className="text-[10px] text-slate-400 font-normal uppercase">
-                                Правильный ответ:
-                              </span>
-                              <span>{correctAnsText}</span>
-                            </div>
-                          )}
-
-                          <span className="text-[11px] text-slate-500 ml-auto">
-                            Время: {record.timeSpentSeconds}с
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Expand icon */}
-                    <button
-                      type="button"
-                      className="p-1 text-slate-500 hover:text-slate-300 shrink-0"
+                  <div className="flex items-start gap-3.5">
+                    {/* Icon badge */}
+                    <div
+                      className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 mt-0.5 ${
+                        record.isCorrect
+                          ? 'bg-emerald-500/20 text-emerald-400'
+                          : 'bg-rose-500/20 text-rose-400'
+                      }`}
                     >
-                      {isExpanded ? (
-                        <ChevronUp className="w-5 h-5" />
+                      {record.isCorrect ? (
+                        <Check className="w-4 h-4 stroke-[3]" />
                       ) : (
-                        <ChevronDown className="w-5 h-5" />
+                        <X className="w-4 h-4 stroke-[3]" />
                       )}
-                    </button>
-                  </div>
-
-                  {/* Expanded Source Votes Breakdown */}
-                  {isExpanded && (
-                    <div className="px-5 pb-5 pt-2 border-t border-slate-800 bg-slate-950/50 space-y-3 animate-in fade-in duration-150">
-                      <div className="flex items-center gap-2 text-xs font-bold text-slate-300">
-                        <Bot className="w-4 h-4 text-indigo-400" />
-                        <span>Голоса источников (по большинству):</span>
-                      </div>
-
-                      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
-                        {/* ChatGPT */}
-                        <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-center">
-                          <p className="text-[10px] uppercase font-bold text-slate-500">ChatGPT</p>
-                          <p
-                            className={`text-xs font-bold mt-0.5 ${
-                              record.votes.chatgpt === 'Верно'
-                                ? 'text-emerald-400'
-                                : record.votes.chatgpt === 'Ложно'
-                                ? 'text-rose-400'
-                                : 'text-slate-400'
-                            }`}
-                          >
-                            {record.votes.chatgpt}
-                          </p>
-                        </div>
-
-                        {/* Claude */}
-                        <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-center">
-                          <p className="text-[10px] uppercase font-bold text-slate-500">Claude</p>
-                          <p
-                            className={`text-xs font-bold mt-0.5 ${
-                              record.votes.claude === 'Верно'
-                                ? 'text-emerald-400'
-                                : record.votes.claude === 'Ложно'
-                                ? 'text-rose-400'
-                                : 'text-slate-400'
-                            }`}
-                          >
-                            {record.votes.claude}
-                          </p>
-                        </div>
-
-                        {/* DeepSeek */}
-                        <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-center">
-                          <p className="text-[10px] uppercase font-bold text-slate-500">DeepSeek</p>
-                          <p
-                            className={`text-xs font-bold mt-0.5 ${
-                              record.votes.deepseek === 'Верно'
-                                ? 'text-emerald-400'
-                                : record.votes.deepseek === 'Ложно'
-                                ? 'text-rose-400'
-                                : 'text-slate-400'
-                            }`}
-                          >
-                            {record.votes.deepseek}
-                          </p>
-                        </div>
-
-                        {/* Gemini */}
-                        <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-center">
-                          <p className="text-[10px] uppercase font-bold text-slate-500">Gemini</p>
-                          <p
-                            className={`text-xs font-bold mt-0.5 ${
-                              record.votes.gemini === 'Верно'
-                                ? 'text-emerald-400'
-                                : record.votes.gemini === 'Ложно'
-                                ? 'text-rose-400'
-                                : 'text-slate-400'
-                            }`}
-                          >
-                            {record.votes.gemini}
-                          </p>
-                        </div>
-
-                        {/* Instagram key */}
-                        <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-center col-span-2 sm:col-span-1">
-                          <p className="text-[10px] uppercase font-bold text-amber-400">Instagram</p>
-                          <p
-                            className={`text-xs font-bold mt-0.5 ${
-                              record.votes.instagram === 'Верно'
-                                ? 'text-emerald-400'
-                                : record.votes.instagram === 'Ложно'
-                                ? 'text-rose-400'
-                                : 'text-slate-400'
-                            }`}
-                          >
-                            {record.votes.instagram}
-                          </p>
-                        </div>
-                      </div>
-
-                      <p className="text-[11px] text-slate-400">
-                        Голосов «Верно»: <span className="text-emerald-400 font-bold">{record.votes.trueCount}</span> | Голосов «Ложно»: <span className="text-rose-400 font-bold">{record.votes.falseCount}</span>
-                      </p>
                     </div>
-                  )}
+
+                    <div className="min-w-0 flex-1 space-y-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
+                          ID #{record.questionId}
+                        </span>
+                        <span
+                          className={`text-xs font-bold ${
+                            record.isCorrect ? 'text-emerald-400' : 'text-rose-400'
+                          }`}
+                        >
+                          {record.isCorrect ? 'Правильный ответ' : isTimeout ? 'Таймаут (Неверно)' : 'Ошибка'}
+                        </span>
+                      </div>
+
+                      {/* English question text */}
+                      <p className="text-sm sm:text-base font-semibold text-slate-100 leading-snug">
+                        {record.questionText}
+                      </p>
+
+                      {/* Answer badges */}
+                      <div className="flex flex-wrap items-center gap-2 pt-1">
+                        <div
+                          className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold border ${
+                            record.isCorrect
+                              ? 'bg-emerald-950/40 border-emerald-500/40 text-emerald-300'
+                              : 'bg-rose-950/40 border-rose-500/40 text-rose-300'
+                          }`}
+                        >
+                          <span className="text-[10px] text-slate-400 font-normal uppercase">
+                            Ваш ответ:
+                          </span>
+                          <span>{userAnsText}</span>
+                        </div>
+
+                        {!record.isCorrect && (
+                          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-950/40 border border-emerald-500/50 text-emerald-300">
+                            <span className="text-[10px] text-slate-400 font-normal uppercase">
+                              Правильный ответ:
+                            </span>
+                            <span>{correctAnsText}</span>
+                          </div>
+                        )}
+
+                        <span className="text-[11px] text-slate-500 ml-auto">
+                          Время: {record.timeSpentSeconds}с
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               );
             })

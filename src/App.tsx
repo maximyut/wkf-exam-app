@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { UserProfile, TestConfig, Question, TestResult, QuestionAnswerRecord } from './types';
-import { QUESTIONS_DATA } from './data/questions';
+import { INITIAL_QUESTIONS, loadQuestions, parseQuestionsList } from './data/questions';
 import {
   getActiveUser,
   saveTestResult,
@@ -22,12 +22,24 @@ export const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewMode>('setup');
   const [isUserModalOpen, setIsUserModalOpen] = useState<boolean>(false);
 
+  // Dynamic questions list loaded from public/data.json with fallback to bundled data
+  const [allQuestions, setAllQuestions] = useState<Question[]>(INITIAL_QUESTIONS);
+
   const [settings, setSettingsState] = useState(getSettings());
   const soundEnabled = settings.soundEnabled;
 
   const [activeConfig, setActiveConfig] = useState<TestConfig | null>(null);
   const [testQuestions, setTestQuestions] = useState<Question[]>([]);
   const [latestResult, setLatestResult] = useState<TestResult | null>(null);
+
+  // Load latest data.json from server on mount
+  useEffect(() => {
+    loadQuestions().then((loaded) => {
+      if (loaded && loaded.length > 0) {
+        setAllQuestions(loaded);
+      }
+    });
+  }, []);
 
   const handleToggleSound = () => {
     const updated = saveSettings({ soundEnabled: !soundEnabled });
@@ -38,9 +50,18 @@ export const App: React.FC = () => {
     setActiveUser(newUser);
   };
 
+  // Optional: load data from custom json file selected by user
+  const handleCustomJsonLoaded = (customQuestions: unknown[]) => {
+    const parsed = parseQuestionsList(customQuestions);
+    if (parsed.length > 0) {
+      setAllQuestions(parsed);
+      alert(`Успешно загружено ${parsed.length} вопросов из data.json!`);
+    }
+  };
+
   // Prepare questions and start test
   const handleStartTest = (config: TestConfig) => {
-    let pool: Question[] = [...QUESTIONS_DATA];
+    let pool: Question[] = [...allQuestions];
 
     // If "only mistakes" mode
     if (config.onlyMistakesMode) {
@@ -48,7 +69,7 @@ export const App: React.FC = () => {
       const mistakeSet = new Set(mistakeIds);
       pool = pool.filter((q) => mistakeSet.has(q.id));
       if (pool.length === 0) {
-        pool = [...QUESTIONS_DATA]; // fallback
+        pool = [...allQuestions]; // fallback
       }
     }
 
@@ -103,7 +124,7 @@ export const App: React.FC = () => {
   // Retake failed questions from current test
   const handleRetakeMistakes = (questionIds: number[]) => {
     const idSet = new Set(questionIds);
-    const pool = QUESTIONS_DATA.filter((q) => idSet.has(q.id));
+    const pool = allQuestions.filter((q) => idSet.has(q.id));
 
     // Shuffle
     for (let i = pool.length - 1; i > 0; i--) {
@@ -141,8 +162,10 @@ export const App: React.FC = () => {
         {currentView === 'setup' && (
           <TestSetupModal
             activeUser={activeUser}
+            totalAvailableQuestions={allQuestions.length}
             onStartTest={handleStartTest}
             onOpenUserModal={() => setIsUserModalOpen(true)}
+            onCustomDataLoaded={handleCustomJsonLoaded}
           />
         )}
 
