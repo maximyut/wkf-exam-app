@@ -15,6 +15,29 @@ function getAudioContext(): AudioContext | null {
   return audioCtx;
 }
 
+export function playClickSound(): void {
+  try {
+    const ctx = getAudioContext();
+    if (!ctx) return;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(500, ctx.currentTime);
+
+    gain.gain.setValueAtTime(0.04, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.04);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start();
+    osc.stop(ctx.currentTime + 0.04);
+  } catch (e) {
+    console.warn('Audio play error:', e);
+  }
+}
+
 export function playTickSound(pitch = 800): void {
   try {
     const ctx = getAudioContext();

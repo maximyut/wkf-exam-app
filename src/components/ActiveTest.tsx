@@ -10,7 +10,7 @@ import {
   HelpCircle,
 } from 'lucide-react';
 import type { Question, TestConfig, QuestionAnswerRecord, AnswerChoice } from '../types';
-import { playTickSound, playCorrectSound, playWrongSound, playTimeoutSound } from '../utils/sound';
+import { playTickSound, playClickSound, playTimeoutSound } from '../utils/sound';
 
 interface ActiveTestProps {
   questions: Question[];
@@ -56,10 +56,8 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
       if (soundEnabled) {
         if (choice === 'timeout') {
           playTimeoutSound();
-        } else if (isCorrect) {
-          playCorrectSound();
         } else {
-          playWrongSound();
+          playClickSound();
         }
       }
 
