@@ -78,19 +78,19 @@ export const UserHistoryView: React.FC<UserHistoryViewProps> = ({
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-6 px-4 sm:px-6 space-y-8">
+    <div className="max-w-4xl mx-auto py-3 sm:py-6 px-3 sm:px-6 space-y-6 sm:space-y-8">
       {/* Top Header & Back Button */}
-      <div className="flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
+      <div className="flex items-center justify-between gap-3 sm:gap-4">
+        <div className="flex items-center gap-2.5 sm:gap-3">
           <button
             type="button"
             onClick={onBackToSetup}
-            className="p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700/60 transition-colors"
+            className="p-2 sm:p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700/60 transition-colors"
           >
-            <ArrowLeft className="w-5 h-5" />
+            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
           <div>
-            <h1 className="text-2xl font-extrabold text-white flex items-center gap-2">
+            <h1 className="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
               <span>История и статистика</span>
             </h1>
             <p className="text-xs text-slate-400">
@@ -103,7 +103,7 @@ export const UserHistoryView: React.FC<UserHistoryViewProps> = ({
           <button
             type="button"
             onClick={handleClearAll}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/30 text-xs font-semibold transition-colors"
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/30 text-xs font-semibold transition-colors"
           >
             <Trash2 className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">Очистить историю</span>
@@ -112,41 +112,41 @@ export const UserHistoryView: React.FC<UserHistoryViewProps> = ({
       </div>
 
       {/* User Statistics Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-        <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
-          <div className="flex items-center justify-between text-slate-400 mb-2">
-            <span className="text-xs font-semibold uppercase tracking-wider">Всего тестов</span>
-            <BarChart3 className="w-4 h-4 text-indigo-400" />
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4">
+        <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
+          <div className="flex items-center justify-between text-slate-400 mb-1 sm:mb-2">
+            <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider">Всего тестов</span>
+            <BarChart3 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-indigo-400" />
           </div>
-          <div className="text-2xl sm:text-3xl font-black text-white">{stats.totalTests}</div>
-          <p className="text-[11px] text-slate-400 mt-1">Ответов: {stats.totalQuestionsAnswered}</p>
+          <div className="text-xl sm:text-3xl font-black text-white">{stats.totalTests}</div>
+          <p className="text-[10px] sm:text-[11px] text-slate-400 mt-0.5 sm:mt-1">Ответов: {stats.totalQuestionsAnswered}</p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
-          <div className="flex items-center justify-between text-slate-400 mb-2">
-            <span className="text-xs font-semibold uppercase tracking-wider">Общая точность</span>
-            <Trophy className="w-4 h-4 text-amber-400" />
+        <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
+          <div className="flex items-center justify-between text-slate-400 mb-1 sm:mb-2">
+            <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider">Общая точность</span>
+            <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400" />
           </div>
-          <div className="text-2xl sm:text-3xl font-black text-white">{stats.overallAccuracy}%</div>
-          <p className="text-[11px] text-slate-400 mt-1">Верных: {stats.totalCorrect}</p>
+          <div className="text-xl sm:text-3xl font-black text-white">{stats.overallAccuracy}%</div>
+          <p className="text-[10px] sm:text-[11px] text-slate-400 mt-0.5 sm:mt-1">Верных: {stats.totalCorrect}</p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
-          <div className="flex items-center justify-between text-slate-400 mb-2">
-            <span className="text-xs font-semibold uppercase tracking-wider">Лучший балл</span>
-            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+        <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
+          <div className="flex items-center justify-between text-slate-400 mb-1 sm:mb-2">
+            <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider">Лучший балл</span>
+            <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
           </div>
-          <div className="text-2xl sm:text-3xl font-black text-white">{stats.bestScore}%</div>
-          <p className="text-[11px] text-slate-400 mt-1">Средний: {stats.averageScore}%</p>
+          <div className="text-xl sm:text-3xl font-black text-white">{stats.bestScore}%</div>
+          <p className="text-[10px] sm:text-[11px] text-slate-400 mt-0.5 sm:mt-1">Средний: {stats.averageScore}%</p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
-          <div className="flex items-center justify-between text-slate-400 mb-2">
-            <span className="text-xs font-semibold uppercase tracking-wider">Сдано тестов</span>
-            <Award className="w-4 h-4 text-rose-500" />
+        <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
+          <div className="flex items-center justify-between text-slate-400 mb-1 sm:mb-2">
+            <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider">Сдано тестов</span>
+            <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-rose-500" />
           </div>
-          <div className="text-2xl sm:text-3xl font-black text-white">{stats.testsPassed}</div>
-          <p className="text-[11px] text-slate-400 mt-1">Успешность: {stats.passRate}%</p>
+          <div className="text-xl sm:text-3xl font-black text-white">{stats.testsPassed}</div>
+          <p className="text-[10px] sm:text-[11px] text-slate-400 mt-0.5 sm:mt-1">Успешность: {stats.passRate}%</p>
         </div>
       </div>
 
