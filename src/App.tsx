@@ -1,122 +1,190 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import type { UserProfile, TestConfig, Question, TestResult, QuestionAnswerRecord } from './types';
+import { QUESTIONS_DATA } from './data/questions';
+import {
+  getActiveUser,
+  saveTestResult,
+  getSettings,
+  saveSettings,
+  getUserMistakeQuestionIds,
+} from './utils/storage';
+import { Header } from './components/Header';
+import { UserModal } from './components/UserModal';
+import { TestSetupModal } from './components/TestSetupModal';
+import { ActiveTest } from './components/ActiveTest';
+import { TestResults } from './components/TestResults';
+import { UserHistoryView } from './components/UserHistoryView';
 
-function App() {
-  const [count, setCount] = useState(0)
+type ViewMode = 'setup' | 'test' | 'results' | 'history';
+
+export const App: React.FC = () => {
+  const [activeUser, setActiveUser] = useState<UserProfile>(getActiveUser());
+  const [currentView, setCurrentView] = useState<ViewMode>('setup');
+  const [isUserModalOpen, setIsUserModalOpen] = useState<boolean>(false);
+
+  const [settings, setSettingsState] = useState(getSettings());
+  const soundEnabled = settings.soundEnabled;
+
+  const [activeConfig, setActiveConfig] = useState<TestConfig | null>(null);
+  const [testQuestions, setTestQuestions] = useState<Question[]>([]);
+  const [latestResult, setLatestResult] = useState<TestResult | null>(null);
+
+  const handleToggleSound = () => {
+    const updated = saveSettings({ soundEnabled: !soundEnabled });
+    setSettingsState(updated);
+  };
+
+  const handleUserChanged = (newUser: UserProfile) => {
+    setActiveUser(newUser);
+  };
+
+  // Prepare questions and start test
+  const handleStartTest = (config: TestConfig) => {
+    let pool: Question[] = [...QUESTIONS_DATA];
+
+    // If "only mistakes" mode
+    if (config.onlyMistakesMode) {
+      const mistakeIds = getUserMistakeQuestionIds(activeUser.id);
+      const mistakeSet = new Set(mistakeIds);
+      pool = pool.filter((q) => mistakeSet.has(q.id));
+      if (pool.length === 0) {
+        pool = [...QUESTIONS_DATA]; // fallback
+      }
+    }
+
+    // Shuffle if enabled
+    if (config.shuffleQuestions) {
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [pool[i], pool[j]] = [pool[j], pool[i]];
+      }
+    }
+
+    // Take requested count (default 70)
+    const selected = pool.slice(0, Math.min(config.questionCount, pool.length));
+
+    setActiveConfig(config);
+    setTestQuestions(selected);
+    setCurrentView('test');
+  };
+
+  // Test finished
+  const handleFinishTest = (records: QuestionAnswerRecord[], durationSeconds: number) => {
+    if (!activeConfig) return;
+
+    const total = records.length;
+    const correctCount = records.filter((r) => r.isCorrect).length;
+    const incorrectCount = records.filter((r) => !r.isCorrect && r.userAnswer !== 'timeout').length;
+    const timeoutCount = records.filter((r) => r.userAnswer === 'timeout').length;
+    const scorePct = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+    const passed = scorePct >= 90; // WKF referee official passing standard
+
+    const result: TestResult = {
+      id: 'test_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
+      userId: activeUser.id,
+      userName: activeUser.name,
+      timestamp: Date.now(),
+      config: activeConfig,
+      totalQuestions: total,
+      correctAnswersCount: correctCount,
+      incorrectAnswersCount: incorrectCount,
+      timeoutAnswersCount: timeoutCount,
+      scorePercentage: scorePct,
+      passed,
+      records,
+      totalDurationSeconds: durationSeconds,
+    };
+
+    saveTestResult(result);
+    setLatestResult(result);
+    setCurrentView('results');
+  };
+
+  // Retake failed questions from current test
+  const handleRetakeMistakes = (questionIds: number[]) => {
+    const idSet = new Set(questionIds);
+    const pool = QUESTIONS_DATA.filter((q) => idSet.has(q.id));
+
+    // Shuffle
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pool[i], pool[j]] = [pool[j], pool[i]];
+    }
+
+    const config: TestConfig = {
+      questionCount: pool.length,
+      timeLimitPerQuestion: activeConfig ? activeConfig.timeLimitPerQuestion : 20,
+      onlyMistakesMode: true,
+      shuffleQuestions: true,
+      soundEnabled,
+    };
+
+    setActiveConfig(config);
+    setTestQuestions(pool);
+    setCurrentView('test');
+  };
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-rose-500 selection:text-white">
+      {/* Header */}
+      <Header
+        activeUser={activeUser}
+        soundEnabled={soundEnabled}
+        onToggleSound={handleToggleSound}
+        onOpenUserModal={() => setIsUserModalOpen(true)}
+        onNavigate={(view) => setCurrentView(view)}
+        currentView={currentView}
+      />
 
-      <div className="ticks"></div>
+      {/* Main Content Area */}
+      <main className="flex-1 pb-16">
+        {currentView === 'setup' && (
+          <TestSetupModal
+            activeUser={activeUser}
+            onStartTest={handleStartTest}
+            onOpenUserModal={() => setIsUserModalOpen(true)}
+          />
+        )}
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        {currentView === 'test' && (
+          <ActiveTest
+            questions={testQuestions}
+            config={activeConfig!}
+            soundEnabled={soundEnabled}
+            onFinishTest={handleFinishTest}
+            onCancelTest={() => setCurrentView('setup')}
+          />
+        )}
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
-}
+        {currentView === 'results' && latestResult && (
+          <TestResults
+            result={latestResult}
+            soundEnabled={soundEnabled}
+            onRetakeTest={() => setCurrentView('setup')}
+            onRetakeMistakes={handleRetakeMistakes}
+            onNavigateToHistory={() => setCurrentView('history')}
+          />
+        )}
 
-export default App
+        {currentView === 'history' && (
+          <UserHistoryView
+            activeUser={activeUser}
+            onRetakeTest={() => setCurrentView('setup')}
+            onRetakeMistakes={handleRetakeMistakes}
+            onBackToSetup={() => setCurrentView('setup')}
+          />
+        )}
+      </main>
+
+      {/* User Management Modal */}
+      <UserModal
+        isOpen={isUserModalOpen}
+        onClose={() => setIsUserModalOpen(false)}
+        activeUser={activeUser}
+        onUserChanged={handleUserChanged}
+      />
+    </div>
+  );
+};
+
+export default App;
