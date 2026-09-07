@@ -3,6 +3,12 @@
 @layer base {
   body {
     @apply antialiased min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-rose-500 selection:text-white;
+    -webkit-tap-highlight-color: transparent;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  button {
+    touch-action: manipulation;
   }
 }
 

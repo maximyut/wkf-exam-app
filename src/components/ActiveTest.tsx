@@ -154,17 +154,17 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
   const isWarning = hasTimeLimit && timeLeft <= 10 && !isUrgent;
 
   return (
-    <div className="max-w-3xl mx-auto py-4 px-4 sm:px-6">
+    <div className="max-w-3xl mx-auto py-2 sm:py-4 px-3 sm:px-6">
       {/* Top Test Navigation Bar */}
-      <div className="bg-slate-900/80 backdrop-blur-md border border-slate-800 rounded-2xl p-4 mb-6 shadow-xl flex items-center justify-between gap-4">
+      <div className="bg-slate-900/80 backdrop-blur-md border border-slate-800 rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6 shadow-xl flex items-center justify-between gap-3 sm:gap-4">
         {/* Progress & Counter */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <div className="flex flex-col">
-            <span className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">
+            <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-slate-400 font-semibold">
               Вопрос
             </span>
             <div className="flex items-baseline gap-1">
-              <span className="text-xl font-black text-white">{currentIndex + 1}</span>
+              <span className="text-lg sm:text-xl font-black text-white">{currentIndex + 1}</span>
               <span className="text-xs text-slate-500 font-semibold">/ {totalQuestions}</span>
             </div>
           </div>
@@ -255,20 +255,20 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
       </div>
 
       {/* Main Question Card */}
-      <div className="relative bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl min-h-[300px] flex flex-col justify-between overflow-hidden">
+      <div className="relative bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-10 shadow-2xl min-h-[220px] sm:min-h-[300px] flex flex-col justify-between overflow-hidden">
         {/* Paused Overlay */}
         {isPaused && (
           <div className="absolute inset-0 z-20 bg-slate-950/90 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center animate-in fade-in duration-150">
-            <div className="w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center mb-4">
-              <Pause className="w-7 h-7" />
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center mb-3 sm:mb-4">
+              <Pause className="w-6 h-6 sm:w-7 sm:h-7" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Тест приостановлен</h3>
-            <p className="text-xs text-slate-400 max-w-sm mb-6">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Тест приостановлен</h3>
+            <p className="text-xs text-slate-400 max-w-sm mb-5 sm:mb-6">
               Таймер заморожен. Нажмите кнопку продолжения или клавишу Пробел, чтобы возобновить тест.
             </p>
             <button
               onClick={() => setIsPaused(false)}
-              className="px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 flex items-center gap-2 transition-all"
+              className="px-5 sm:px-6 py-2 sm:py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm shadow-lg shadow-amber-500/20 flex items-center gap-2 transition-all"
             >
               <Play className="w-4 h-4 fill-current" />
               <span>Продолжить тест</span>
@@ -277,42 +277,42 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
         )}
 
         {/* Question Header & ID */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           <div className="flex items-center justify-between text-xs text-slate-500">
-            <span className="font-semibold uppercase tracking-wider text-rose-400/90">
+            <span className="font-semibold uppercase tracking-wider text-rose-400/90 text-[11px] sm:text-xs">
               Вопрос {currentIndex + 1} из {totalQuestions}
             </span>
-            <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700/60 font-mono">
-              WKF Official #{currentQuestion.id}
+            <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700/60 font-mono text-[10px] sm:text-xs">
+              WKF #{currentQuestion.id}
             </span>
           </div>
 
           {/* Question Text in English */}
-          <div className="py-2">
-            <h2 className="text-lg sm:text-2xl font-bold text-slate-100 leading-relaxed sm:leading-snug select-none">
+          <div className="py-1 sm:py-2">
+            <h2 className="text-base sm:text-2xl font-bold text-slate-100 leading-relaxed sm:leading-snug select-none">
               {currentQuestion.question}
             </h2>
           </div>
         </div>
 
         {/* Answer Buttons (TRUE & FALSE) */}
-        <div className="pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="pt-4 sm:pt-8 grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-4">
           {/* TRUE BUTTON */}
           <button
             type="button"
             disabled={isPaused}
             onClick={() => handleAnswer('true')}
-            className="group relative p-5 sm:p-6 rounded-2xl border-2 border-emerald-500/40 bg-gradient-to-b from-emerald-950/40 to-slate-900 hover:from-emerald-900/50 hover:to-emerald-950/40 hover:border-emerald-500 active:scale-[0.98] transition-all duration-150 flex items-center justify-between shadow-lg shadow-emerald-950/30"
+            className="group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl border-2 border-emerald-500/40 bg-gradient-to-b from-emerald-950/40 to-slate-900 hover:from-emerald-900/50 hover:to-emerald-950/40 hover:border-emerald-500 active:scale-[0.98] transition-all duration-150 flex items-center justify-between shadow-lg shadow-emerald-950/30 touch-manipulation"
           >
-            <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/50 text-emerald-400 flex items-center justify-center group-hover:bg-emerald-500 group-hover:text-white transition-all shadow-md">
-                <Check className="w-6 h-6 stroke-[3]" />
+            <div className="flex items-center gap-3 sm:gap-3.5">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/50 text-emerald-400 flex items-center justify-center group-hover:bg-emerald-500 group-hover:text-white transition-all shadow-md shrink-0">
+                <Check className="w-5 h-5 sm:w-6 sm:h-6 stroke-[3]" />
               </div>
               <div className="text-left">
-                <div className="text-xl sm:text-2xl font-black text-white tracking-wide">
+                <div className="text-lg sm:text-2xl font-black text-white tracking-wide">
                   TRUE
                 </div>
-                <div className="text-xs font-semibold text-emerald-400/90">ВЕРНО</div>
+                <div className="text-[11px] sm:text-xs font-semibold text-emerald-400/90">ВЕРНО</div>
               </div>
             </div>
 
@@ -326,17 +326,17 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
             type="button"
             disabled={isPaused}
             onClick={() => handleAnswer('false')}
-            className="group relative p-5 sm:p-6 rounded-2xl border-2 border-rose-500/40 bg-gradient-to-b from-rose-950/40 to-slate-900 hover:from-rose-900/50 hover:to-rose-950/40 hover:border-rose-500 active:scale-[0.98] transition-all duration-150 flex items-center justify-between shadow-lg shadow-rose-950/30"
+            className="group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl border-2 border-rose-500/40 bg-gradient-to-b from-rose-950/40 to-slate-900 hover:from-rose-900/50 hover:to-rose-950/40 hover:border-rose-500 active:scale-[0.98] transition-all duration-150 flex items-center justify-between shadow-lg shadow-rose-950/30 touch-manipulation"
           >
-            <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-xl bg-rose-500/20 border border-rose-500/50 text-rose-400 flex items-center justify-center group-hover:bg-rose-500 group-hover:text-white transition-all shadow-md">
-                <X className="w-6 h-6 stroke-[3]" />
+            <div className="flex items-center gap-3 sm:gap-3.5">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-rose-500/20 border border-rose-500/50 text-rose-400 flex items-center justify-center group-hover:bg-rose-500 group-hover:text-white transition-all shadow-md shrink-0">
+                <X className="w-5 h-5 sm:w-6 sm:h-6 stroke-[3]" />
               </div>
               <div className="text-left">
-                <div className="text-xl sm:text-2xl font-black text-white tracking-wide">
+                <div className="text-lg sm:text-2xl font-black text-white tracking-wide">
                   FALSE
                 </div>
-                <div className="text-xs font-semibold text-rose-400/90">ЛОЖНО</div>
+                <div className="text-[11px] sm:text-xs font-semibold text-rose-400/90">ЛОЖНО</div>
               </div>
             </div>
 
@@ -347,8 +347,8 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
         </div>
       </div>
 
-      {/* Keyboard hints footer */}
-      <div className="mt-4 flex items-center justify-center gap-4 text-xs text-slate-500 select-none">
+      {/* Keyboard hints footer (hidden on mobile) */}
+      <div className="mt-4 hidden sm:flex items-center justify-center gap-4 text-xs text-slate-500 select-none">
         <span>Горячие клавиши:</span>
         <span className="inline-flex items-center gap-1 font-mono">
           <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">T</kbd> / <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">1</kbd> Верно

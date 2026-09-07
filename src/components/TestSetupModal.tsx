@@ -104,23 +104,23 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
   };
 
   return (
-    <div className="max-w-2xl mx-auto py-4 px-4 sm:px-6">
-      <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-8 relative overflow-hidden">
+    <div className="max-w-2xl mx-auto py-2 sm:py-4 px-3 sm:px-6">
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-2xl space-y-6 sm:space-y-8 relative overflow-hidden">
         {/* Subtle decorative glow */}
         <div className="absolute -top-24 -right-24 w-72 h-72 bg-rose-600/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* Welcome & User banner */}
-        <div className="relative flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+        <div className="relative flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-slate-800">
           <div>
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs font-medium mb-2">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 text-[11px] font-medium mb-1.5 sm:mb-2">
               <Sparkles className="w-3.5 h-3.5" />
               <span>WKF Kumite Referees & Judges</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            <h1 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight">
               Тестирование судей WKF
             </h1>
-            <p className="text-xs sm:text-sm text-slate-400 mt-1">
+            <p className="text-xs sm:text-sm text-slate-400 mt-0.5 sm:mt-1">
               База {totalAvailableQuestions} официальных вопросов из data.json
             </p>
           </div>
