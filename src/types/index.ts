@@ -1,18 +1,7 @@
-export interface QuestionVotes {
-  chatgpt: string;
-  claude: string;
-  deepseek: string;
-  gemini: string;
-  instagram: string;
-  trueCount: number;
-  falseCount: number;
-}
-
 export interface Question {
   id: number;
   question: string;
-  correctAnswer: boolean; // true = True (Верно), false = False (Ложно)
-  votes: QuestionVotes;
+  answer: boolean; // true = True (Верно), false = False (Ложно)
 }
 
 export interface TestConfig {
@@ -32,7 +21,6 @@ export interface QuestionAnswerRecord {
   correctAnswer: boolean;
   isCorrect: boolean;
   timeSpentSeconds: number;
-  votes: QuestionVotes;
 }
 
 export interface TestResult {

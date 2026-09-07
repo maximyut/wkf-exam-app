@@ -22,7 +22,7 @@ import {
 
 interface UserHistoryViewProps {
   activeUser: UserProfile;
-  onRetakeTest: () => void;
+  onRetakeTest?: () => void;
   onRetakeMistakes: (questionIds: number[]) => void;
   onBackToSetup: () => void;
 }
