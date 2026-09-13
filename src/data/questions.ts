@@ -15,6 +15,18 @@ interface RawQuestionItem {
   question: string;
   answer?: unknown;
   correctAnswer?: unknown;
+  ruleArticle?: string;
+  ruleQuote?: string;
+  explanation?: string;
+  votes?: {
+    chatgpt?: string;
+    claude?: string;
+    deepseek?: string;
+    gemini?: string;
+    instagram?: string;
+    trueCount?: number;
+    falseCount?: number;
+  };
 }
 
 export function parseQuestionsList(data: unknown[]): Question[] {
@@ -22,6 +34,10 @@ export function parseQuestionsList(data: unknown[]): Question[] {
     id: typeof item.id === 'number' ? item.id : index + 1,
     question: item.question || '',
     answer: normalizeAnswer(item.answer !== undefined ? item.answer : item.correctAnswer),
+    ruleArticle: item.ruleArticle,
+    ruleQuote: item.ruleQuote,
+    explanation: item.explanation,
+    votes: item.votes,
   }));
 }
 

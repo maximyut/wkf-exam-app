@@ -8,10 +8,14 @@ import {
   History,
   Check,
   X,
+  BookOpen,
+  ChevronRight,
+  HelpCircle,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import type { TestResult } from '../types';
+import type { TestResult, QuestionAnswerRecord } from '../types';
 import { playCompleteSound, playWrongSound } from '../utils/sound';
+import { ExplanationModal } from './ExplanationModal';
 
 interface TestResultsProps {
   result: TestResult;
@@ -29,6 +33,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
   onNavigateToHistory,
 }) => {
   const [filter, setFilter] = useState<'all' | 'mistakes' | 'correct'>('all');
+  const [selectedRecordForModal, setSelectedRecordForModal] = useState<QuestionAnswerRecord | null>(null);
 
   const {
     correctAnswersCount,
@@ -247,6 +252,14 @@ export const TestResults: React.FC<TestResultsProps> = ({
           </div>
         </div>
 
+        {/* Informative Hint Banner */}
+        <div className="flex items-center gap-2.5 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-slate-850/80 border border-slate-700/60 text-xs text-slate-300">
+          <HelpCircle className="w-4 h-4 text-rose-400 shrink-0" />
+          <span>
+            Нажмите на любой вопрос или кнопку разбора, чтобы открыть <strong>официальную статью правил WKF 2026</strong>, судейское пояснение и голоса 5 нейросетей.
+          </span>
+        </div>
+
         {/* List of Questions */}
         <div className="space-y-3">
           {filteredRecords.length === 0 ? (
@@ -266,16 +279,17 @@ export const TestResults: React.FC<TestResultsProps> = ({
               return (
                 <div
                   key={record.questionId}
-                  className={`p-4 sm:p-5 rounded-2xl border transition-all ${
+                  onClick={() => setSelectedRecordForModal(record)}
+                  className={`p-4 sm:p-5 rounded-2xl border transition-all cursor-pointer group hover:shadow-xl ${
                     record.isCorrect
-                      ? 'bg-slate-900/90 border-slate-800 hover:border-slate-700'
-                      : 'bg-rose-950/15 border-rose-900/40 hover:border-rose-700/60'
+                      ? 'bg-slate-900/90 border-slate-800 hover:border-slate-700 hover:bg-slate-850'
+                      : 'bg-rose-950/15 border-rose-900/40 hover:border-rose-600/70 hover:bg-rose-950/25'
                   }`}
                 >
                   <div className="flex items-start gap-3.5">
                     {/* Icon badge */}
                     <div
-                      className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 mt-0.5 ${
+                      className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 mt-0.5 transition-transform group-hover:scale-105 ${
                         record.isCorrect
                           ? 'bg-emerald-500/20 text-emerald-400'
                           : 'bg-rose-500/20 text-rose-400'
@@ -288,17 +302,25 @@ export const TestResults: React.FC<TestResultsProps> = ({
                       )}
                     </div>
 
-                    <div className="min-w-0 flex-1 space-y-2">
-                      <div className="flex items-center gap-2">
-                        <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
-                          ID #{record.questionId}
-                        </span>
-                        <span
-                          className={`text-xs font-bold ${
-                            record.isCorrect ? 'text-emerald-400' : 'text-rose-400'
-                          }`}
-                        >
-                          {record.isCorrect ? 'Правильный ответ' : isTimeout ? 'Таймаут (Неверно)' : 'Ошибка'}
+                    <div className="min-w-0 flex-1 space-y-2.5">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-2">
+                          <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
+                            ID #{record.questionId}
+                          </span>
+                          <span
+                            className={`text-xs font-bold ${
+                              record.isCorrect ? 'text-emerald-400' : 'text-rose-400'
+                            }`}
+                          >
+                            {record.isCorrect ? 'Правильный ответ' : isTimeout ? 'Таймаут (Неверно)' : 'Ошибка'}
+                          </span>
+                        </div>
+
+                        {/* Open explanation badge on right */}
+                        <span className="text-[11px] text-slate-400 group-hover:text-white flex items-center gap-1 font-medium transition-colors">
+                          <span className="hidden sm:inline">Правило WKF</span>
+                          <ChevronRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-300 transition-transform group-hover:translate-x-0.5" />
                         </span>
                       </div>
 
@@ -307,7 +329,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
                         {record.questionText}
                       </p>
 
-                      {/* Answer badges */}
+                      {/* Answer badges & action button */}
                       <div className="flex flex-wrap items-center gap-2 pt-1">
                         <div
                           className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold border ${
@@ -331,6 +353,23 @@ export const TestResults: React.FC<TestResultsProps> = ({
                           </div>
                         )}
 
+                        {/* Interactive Explanation Pill */}
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedRecordForModal(record);
+                          }}
+                          className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold transition-all ${
+                            record.isCorrect
+                              ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700'
+                              : 'bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/40 shadow-sm'
+                          }`}
+                        >
+                          <BookOpen className="w-3.5 h-3.5 text-rose-400" />
+                          <span>{record.isCorrect ? 'Правило и разбор' : 'Разбор ошибки и статья правил'}</span>
+                        </button>
+
                         <span className="text-[11px] text-slate-500 ml-auto">
                           Время: {record.timeSpentSeconds}с
                         </span>
@@ -343,6 +382,13 @@ export const TestResults: React.FC<TestResultsProps> = ({
           )}
         </div>
       </div>
+
+      {/* Explanation & Rule Modal */}
+      <ExplanationModal
+        record={selectedRecordForModal}
+        isOpen={!!selectedRecordForModal}
+        onClose={() => setSelectedRecordForModal(null)}
+      />
     </div>
   );
 };

@@ -38,8 +38,17 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
   const [timeLeft, setTimeLeft] = useState<number>(hasTimeLimit ? timeLimit : 0);
 
   // Overall test start timestamp
-  const testStartTimeRef = useRef<number>(Date.now());
-  const questionStartTimeRef = useRef<number>(Date.now());
+  const testStartTimeRef = useRef<number | null>(null);
+  const questionStartTimeRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (testStartTimeRef.current === null) {
+      testStartTimeRef.current = Date.now();
+    }
+    if (questionStartTimeRef.current === null) {
+      questionStartTimeRef.current = Date.now();
+    }
+  }, []);
 
   const currentQuestion = questions[currentIndex];
   const totalQuestions = questions.length;
@@ -49,7 +58,8 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
   const handleAnswer = useCallback(
     (choice: AnswerChoice) => {
       const now = Date.now();
-      const timeSpent = Math.max(1, Math.round((now - questionStartTimeRef.current) / 1000));
+      const qStart = questionStartTimeRef.current ?? now;
+      const timeSpent = Math.max(1, Math.round((now - qStart) / 1000));
 
       const isCorrect = choice !== 'timeout' && (choice === 'true') === currentQuestion.answer;
 
@@ -68,6 +78,10 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
         correctAnswer: currentQuestion.answer,
         isCorrect,
         timeSpentSeconds: timeSpent,
+        ruleArticle: currentQuestion.ruleArticle,
+        ruleQuote: currentQuestion.ruleQuote,
+        explanation: currentQuestion.explanation,
+        votes: currentQuestion.votes,
       };
 
       const updatedRecords = [...records, record];
@@ -79,7 +93,8 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
         questionStartTimeRef.current = Date.now();
       } else {
         // Test complete!
-        const totalDuration = Math.round((Date.now() - testStartTimeRef.current) / 1000);
+        const tStart = testStartTimeRef.current ?? Date.now();
+        const totalDuration = Math.round((Date.now() - tStart) / 1000);
         onFinishTest(updatedRecords, totalDuration);
       }
     },
@@ -361,7 +376,7 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
 
       {/* Exit Confirmation Dialog */}
       {showExitConfirm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150 safe-modal-overlay">
           <div className="bg-slate-900 border border-slate-800 w-full max-w-sm rounded-2xl p-6 shadow-2xl space-y-4">
             <div className="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center">
               <AlertCircle className="w-6 h-6" />

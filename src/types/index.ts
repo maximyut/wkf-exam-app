@@ -1,7 +1,21 @@
+export interface AIVotes {
+  chatgpt?: string;
+  claude?: string;
+  deepseek?: string;
+  gemini?: string;
+  instagram?: string;
+  trueCount?: number;
+  falseCount?: number;
+}
+
 export interface Question {
   id: number;
   question: string;
   answer: boolean; // true = True (Верно), false = False (Ложно)
+  ruleArticle?: string;
+  ruleQuote?: string;
+  explanation?: string;
+  votes?: AIVotes;
 }
 
 export interface TestConfig {
@@ -21,6 +35,10 @@ export interface QuestionAnswerRecord {
   correctAnswer: boolean;
   isCorrect: boolean;
   timeSpentSeconds: number;
+  ruleArticle?: string;
+  ruleQuote?: string;
+  explanation?: string;
+  votes?: AIVotes;
 }
 
 export interface TestResult {

@@ -11,14 +11,18 @@ import {
   ArrowLeft,
   X,
   Check,
+  BookOpen,
+  ChevronRight,
 } from 'lucide-react';
-import type { UserProfile, TestResult } from '../types';
+import type { UserProfile, TestResult, QuestionAnswerRecord } from '../types';
 import {
   getUserHistory,
   getUserStats,
   deleteTestResult,
   clearUserHistory,
 } from '../utils/storage';
+import { INITIAL_QUESTIONS } from '../data/questions';
+import { ExplanationModal } from './ExplanationModal';
 
 interface UserHistoryViewProps {
   activeUser: UserProfile;
@@ -35,8 +39,28 @@ export const UserHistoryView: React.FC<UserHistoryViewProps> = ({
   const [history, setHistory] = useState<TestResult[]>(getUserHistory(activeUser.id));
   const [selectedTest, setSelectedTest] = useState<TestResult | null>(null);
   const [detailFilter, setDetailFilter] = useState<'all' | 'mistakes' | 'correct'>('all');
+  const [selectedRecordForModal, setSelectedRecordForModal] = useState<QuestionAnswerRecord | null>(null);
 
   const stats = getUserStats(activeUser.id);
+
+  const handleOpenExplanation = (record: QuestionAnswerRecord) => {
+    if (record.explanation && record.ruleArticle) {
+      setSelectedRecordForModal(record);
+    } else {
+      const found = INITIAL_QUESTIONS.find((q) => q.id === record.questionId);
+      if (found) {
+        setSelectedRecordForModal({
+          ...record,
+          ruleArticle: found.ruleArticle,
+          ruleQuote: found.ruleQuote,
+          explanation: found.explanation,
+          votes: found.votes,
+        });
+      } else {
+        setSelectedRecordForModal(record);
+      }
+    }
+  };
 
   const refreshHistory = () => {
     setHistory(getUserHistory(activeUser.id));
@@ -262,7 +286,7 @@ export const UserHistoryView: React.FC<UserHistoryViewProps> = ({
 
       {/* Modal: Detailed Review of a past test */}
       {selectedTest && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200 safe-modal-overlay">
           <div className="bg-slate-900 border border-slate-800 w-full max-w-3xl rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
             {/* Modal Header */}
             <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between gap-4">
@@ -371,15 +395,16 @@ export const UserHistoryView: React.FC<UserHistoryViewProps> = ({
                   return (
                     <div
                       key={record.questionId}
-                      className={`p-4 rounded-2xl border ${
+                      onClick={() => handleOpenExplanation(record)}
+                      className={`p-4 rounded-2xl border transition-all cursor-pointer group hover:shadow-lg ${
                         record.isCorrect
-                          ? 'bg-slate-900 border-slate-800'
-                          : 'bg-rose-950/15 border-rose-900/40'
+                          ? 'bg-slate-900 border-slate-800 hover:border-slate-700 hover:bg-slate-850'
+                          : 'bg-rose-950/15 border-rose-900/40 hover:border-rose-600/60 hover:bg-rose-950/25'
                       }`}
                     >
                       <div className="flex items-start gap-3">
                         <div
-                          className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 ${
+                          className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 transition-transform group-hover:scale-105 ${
                             record.isCorrect
                               ? 'bg-emerald-500/20 text-emerald-400'
                               : 'bg-rose-500/20 text-rose-400'
@@ -393,16 +418,23 @@ export const UserHistoryView: React.FC<UserHistoryViewProps> = ({
                         </div>
 
                         <div className="space-y-2 min-w-0 flex-1">
-                          <div className="flex items-center gap-2">
-                            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
-                              ID #{record.questionId}
-                            </span>
-                            <span
-                              className={`text-xs font-bold ${
-                                record.isCorrect ? 'text-emerald-400' : 'text-rose-400'
-                              }`}
-                            >
-                              {record.isCorrect ? 'Верно' : isTimeout ? 'Таймаут' : 'Неверно'}
+                          <div className="flex items-center justify-between gap-2">
+                            <div className="flex items-center gap-2">
+                              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
+                                ID #{record.questionId}
+                              </span>
+                              <span
+                                className={`text-xs font-bold ${
+                                  record.isCorrect ? 'text-emerald-400' : 'text-rose-400'
+                                }`}
+                              >
+                                {record.isCorrect ? 'Верно' : isTimeout ? 'Таймаут' : 'Неверно'}
+                              </span>
+                            </div>
+
+                            <span className="text-[11px] text-slate-500 group-hover:text-slate-300 flex items-center gap-0.5 transition-colors">
+                              <span>Разбор</span>
+                              <ChevronRight className="w-3 h-3" />
                             </span>
                           </div>
 
@@ -426,6 +458,22 @@ export const UserHistoryView: React.FC<UserHistoryViewProps> = ({
                                 Правильный: {correctAnsText}
                               </span>
                             )}
+
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleOpenExplanation(record);
+                              }}
+                              className={`ml-auto inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-bold border transition-colors ${
+                                record.isCorrect
+                                  ? 'bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700'
+                                  : 'bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border-rose-500/40'
+                              }`}
+                            >
+                              <BookOpen className="w-3 h-3" />
+                              <span>{record.isCorrect ? 'Правило WKF' : 'Статья и пояснение'}</span>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -447,6 +495,13 @@ export const UserHistoryView: React.FC<UserHistoryViewProps> = ({
           </div>
         </div>
       )}
+
+      {/* Detail Explanation Modal */}
+      <ExplanationModal
+        record={selectedRecordForModal}
+        isOpen={!!selectedRecordForModal}
+        onClose={() => setSelectedRecordForModal(null)}
+      />
     </div>
   );
 };
