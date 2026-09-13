@@ -1,15 +1,61 @@
 @import "tailwindcss";
 
+html {
+  background-color: #0f172a;
+}
+
 @layer base {
   body {
     @apply antialiased min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-rose-500 selection:text-white;
     -webkit-tap-highlight-color: transparent;
-    padding-bottom: env(safe-area-inset-bottom);
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
   button {
     touch-action: manipulation;
   }
+}
+
+/* Safe area utilities for iOS PWA and notch / Dynamic Island */
+.safe-header {
+  padding-top: calc(constant(safe-area-inset-top) + 0.625rem);
+  padding-top: calc(env(safe-area-inset-top, 0px) + 0.625rem);
+  padding-bottom: 0.625rem;
+  padding-left: calc(constant(safe-area-inset-left) + 0.75rem);
+  padding-left: calc(env(safe-area-inset-left, 0px) + 0.75rem);
+  padding-right: calc(constant(safe-area-inset-right) + 0.75rem);
+  padding-right: calc(env(safe-area-inset-right, 0px) + 0.75rem);
+}
+
+@media (min-width: 640px) {
+  .safe-header {
+    padding-top: calc(constant(safe-area-inset-top) + 0.75rem);
+    padding-top: calc(env(safe-area-inset-top, 0px) + 0.75rem);
+    padding-bottom: 0.75rem;
+    padding-left: calc(constant(safe-area-inset-left) + 1rem);
+    padding-left: calc(env(safe-area-inset-left, 0px) + 1rem);
+    padding-right: calc(constant(safe-area-inset-right) + 1rem);
+    padding-right: calc(env(safe-area-inset-right, 0px) + 1rem);
+  }
+}
+
+.safe-content {
+  padding-left: constant(safe-area-inset-left);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: constant(safe-area-inset-right);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+.safe-modal-overlay {
+  padding-top: max(1rem, calc(constant(safe-area-inset-top) + 1rem));
+  padding-top: max(1rem, calc(env(safe-area-inset-top, 0px) + 1rem));
+  padding-bottom: max(1rem, calc(constant(safe-area-inset-bottom) + 1rem));
+  padding-bottom: max(1rem, calc(env(safe-area-inset-bottom, 0px) + 1rem));
+  padding-left: max(1rem, calc(constant(safe-area-inset-left) + 1rem));
+  padding-left: max(1rem, calc(env(safe-area-inset-left, 0px) + 1rem));
+  padding-right: max(1rem, calc(constant(safe-area-inset-right) + 1rem));
+  padding-right: max(1rem, calc(env(safe-area-inset-right, 0px) + 1rem));
 }
 
 /* Custom scrollbar */

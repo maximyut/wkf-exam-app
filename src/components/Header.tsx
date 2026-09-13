@@ -20,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({
   currentView,
 }) => {
   return (
-    <header className="sticky top-0 z-30 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 px-3 sm:px-4 py-2.5 sm:py-3 shadow-sm">
+    <header className="sticky top-0 z-30 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-sm safe-header">
       <div className="max-w-5xl mx-auto flex items-center justify-between gap-2 sm:gap-3">
         {/* Brand / Title */}
         <div
