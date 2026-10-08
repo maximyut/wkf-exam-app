@@ -237,7 +237,7 @@ export const App: React.FC = () => {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 pb-16 safe-content">
+      <main className={`flex-1 ${currentView !== 'test' ? 'pb-24 md:pb-8' : 'pb-8'} safe-content`}>
         {currentView === 'setup' && (
           <TestSetupModal
             activeUser={activeUser}

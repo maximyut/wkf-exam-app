@@ -31,156 +31,220 @@ export const Header: React.FC<HeaderProps> = ({
   const isKata = discipline === 'kata';
 
   return (
-    <header className="sticky top-0 z-30 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-sm safe-header">
-      <div className="max-w-6xl mx-auto flex items-center justify-between gap-2 sm:gap-4 px-2 sm:px-4 py-2">
-        {/* Brand / Title & Discipline Switcher */}
-        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-          <div
-            onClick={() => onNavigate('setup')}
-            className="flex items-center gap-2 cursor-pointer group select-none shrink-0"
-          >
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white p-1 flex items-center justify-center shadow-md shadow-black/20 group-hover:scale-105 transition-transform shrink-0">
-              <img
-                src="/wkf-logo.png"
-                alt="WKF Logo"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="min-w-0 hidden md:block">
-              <div className="font-bold text-sm sm:text-base text-slate-100 flex items-center gap-1.5 leading-tight">
-                <span>{isKata ? 'WKF Kata' : 'WKF Kumite'}</span>
-                <span className="text-[10px] uppercase tracking-wider font-semibold px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">
-                  {isKata ? '2026.0' : '2026.01'}
-                </span>
+    <>
+      <header className="sticky top-0 z-30 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-sm safe-header">
+        <div className="max-w-6xl mx-auto flex items-center justify-between gap-2 sm:gap-4 px-2 sm:px-4 py-2">
+          {/* Brand / Title & Discipline Switcher */}
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0">
+            <div
+              onClick={() => onNavigate('setup')}
+              className="flex items-center gap-2 cursor-pointer group select-none shrink-0"
+            >
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white p-1 flex items-center justify-center shadow-md shadow-black/20 group-hover:scale-105 transition-transform shrink-0">
+                <img
+                  src="/wkf-logo.png"
+                  alt="WKF Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <p className="text-[10px] text-slate-400 truncate">
-                {t('refereeSubtitle', language)}
-              </p>
+              <div className="min-w-0 hidden lg:block">
+                <div className="font-bold text-sm sm:text-base text-slate-100 flex items-center gap-1.5 leading-tight">
+                  <span>{isKata ? 'WKF Kata' : 'WKF Kumite'}</span>
+                  <span className="text-[10px] uppercase tracking-wider font-semibold px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                    {isKata ? '2026.0' : '2026.01'}
+                  </span>
+                </div>
+                <p className="text-[10px] text-slate-400 truncate">
+                  {t('refereeSubtitle', language)}
+                </p>
+              </div>
             </div>
+
+            {/* Discipline Selector Pills (Кумитэ / Ката) */}
+            {currentView !== 'test' && (
+              <div className="flex items-center bg-slate-800/90 p-0.5 rounded-xl border border-slate-700/80 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => onSelectDiscipline('kumite')}
+                  className={`px-2 sm:px-3 py-1 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
+                    discipline === 'kumite'
+                      ? 'bg-rose-600 text-white shadow-sm'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  {t('kumite', language)}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onSelectDiscipline('kata')}
+                  className={`px-2 sm:px-3 py-1 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
+                    discipline === 'kata'
+                      ? 'bg-rose-600 text-white shadow-sm'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  {t('kata', language)}
+                </button>
+              </div>
+            )}
           </div>
 
-          {/* Discipline Selector Pills (Кумитэ / Ката) */}
+          {/* Desktop Navigation buttons (hidden on mobile, visible on md+) */}
           {currentView !== 'test' && (
-            <div className="flex items-center bg-slate-800/90 p-0.5 rounded-xl border border-slate-700/80">
+            <nav className="hidden md:flex items-center bg-slate-800/90 p-0.5 sm:p-1 rounded-xl border border-slate-700/60">
               <button
-                type="button"
-                onClick={() => onSelectDiscipline('kumite')}
-                className={`px-2 sm:px-3 py-1 rounded-lg text-xs font-bold transition-all ${
-                  discipline === 'kumite'
+                onClick={() => onNavigate('setup')}
+                className={`flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-xs font-semibold transition-all shrink-0 ${
+                  currentView === 'setup'
                     ? 'bg-rose-600 text-white shadow-sm'
-                    : 'text-slate-400 hover:text-white'
+                    : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
                 }`}
               >
-                {t('kumite', language)}
+                <Play className="w-3.5 h-3.5" />
+                <span>{t('testTab', language)}</span>
               </button>
+
               <button
-                type="button"
-                onClick={() => onSelectDiscipline('kata')}
-                className={`px-2 sm:px-3 py-1 rounded-lg text-xs font-bold transition-all ${
-                  discipline === 'kata'
+                onClick={() => onNavigate('answers')}
+                className={`flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-xs font-semibold transition-all shrink-0 ${
+                  currentView === 'answers'
                     ? 'bg-rose-600 text-white shadow-sm'
-                    : 'text-slate-400 hover:text-white'
+                    : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
                 }`}
               >
-                {t('kata', language)}
+                <HelpCircle className="w-3.5 h-3.5" />
+                <span>{t('answersTab', language)}</span>
               </button>
-            </div>
+
+              <button
+                onClick={() => onNavigate('rules')}
+                className={`flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-xs font-semibold transition-all shrink-0 ${
+                  currentView === 'rules'
+                    ? 'bg-rose-600 text-white shadow-sm'
+                    : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                }`}
+              >
+                <BookOpen className="w-3.5 h-3.5" />
+                <span>{t('rulesTab', language)}</span>
+              </button>
+
+              <button
+                onClick={() => onNavigate('history')}
+                className={`flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-xs font-semibold transition-all shrink-0 ${
+                  currentView === 'history'
+                    ? 'bg-rose-600 text-white shadow-sm'
+                    : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                }`}
+              >
+                <History className="w-3.5 h-3.5" />
+                <span>{t('historyTab', language)}</span>
+              </button>
+            </nav>
           )}
-        </div>
 
-        {/* Center / Right: Navigation buttons */}
-        {currentView !== 'test' && (
-          <nav className="flex items-center bg-slate-800/90 p-0.5 sm:p-1 rounded-xl border border-slate-700/60 overflow-x-auto">
+          {/* Right Actions: Language Toggle, Sound, User */}
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            {/* Language Toggle (RU / EN) */}
             <button
+              onClick={onToggleLanguage}
+              title={language === 'ru' ? 'Switch to English' : 'Переключить на русский'}
+              className="flex items-center gap-1 px-2 py-1 sm:px-2.5 sm:py-1 rounded-xl bg-slate-800/90 hover:bg-slate-700 border border-slate-700 text-xs font-black text-rose-300 hover:text-white transition-all shadow-sm"
+            >
+              <Languages className="w-3.5 h-3.5 text-rose-400" />
+              <span>{language.toUpperCase()}</span>
+            </button>
+
+            {/* Sound Toggle */}
+            <button
+              onClick={onToggleSound}
+              title={soundEnabled ? t('soundOn', language) : t('soundOff', language)}
+              className="p-1.5 sm:p-2 rounded-xl text-slate-400 hover:text-slate-100 hover:bg-slate-800 border border-transparent hover:border-slate-700 transition-colors"
+            >
+              {soundEnabled ? (
+                <Volume2 className="w-4 h-4 text-emerald-400" />
+              ) : (
+                <VolumeX className="w-4 h-4 text-slate-500" />
+              )}
+            </button>
+
+            {/* User Profile Switcher */}
+            <button
+              onClick={onOpenUserModal}
+              className="flex items-center gap-1.5 p-1 sm:pl-2 sm:pr-3 sm:py-1 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700/80 text-slate-200 hover:text-white transition-all shadow-sm"
+            >
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-xs font-semibold shrink-0">
+                <User className="w-3.5 h-3.5" />
+              </div>
+              <span className="text-xs font-medium max-w-[70px] sm:max-w-[100px] truncate hidden min-[540px]:inline">
+                {activeUser.name}
+              </span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Bottom Navigation Bar (md:hidden) */}
+      {currentView !== 'test' && (
+        <nav
+          aria-label="Mobile Bottom Navigation"
+          className="fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 shadow-2xl safe-bottom-nav md:hidden"
+        >
+          <div className="grid grid-cols-4 px-2 py-1 max-w-md mx-auto">
+            <button
+              type="button"
               onClick={() => onNavigate('setup')}
-              className={`flex items-center gap-1 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-xs font-semibold transition-all shrink-0 ${
+              className={`flex flex-col items-center justify-center py-1.5 px-1 rounded-xl transition-all ${
                 currentView === 'setup'
-                  ? 'bg-rose-600 text-white shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                  ? 'text-rose-400 font-bold bg-rose-500/10'
+                  : 'text-slate-400 hover:text-slate-200 font-medium'
               }`}
             >
-              <Play className="w-3.5 h-3.5" />
-              <span>{t('testTab', language)}</span>
+              <Play className={`w-5 h-5 mb-0.5 ${currentView === 'setup' ? 'fill-rose-400 text-rose-400' : ''}`} />
+              <span className="text-[11px] leading-tight">{t('testTab', language)}</span>
             </button>
 
             <button
+              type="button"
               onClick={() => onNavigate('answers')}
-              className={`flex items-center gap-1 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-xs font-semibold transition-all shrink-0 ${
+              className={`flex flex-col items-center justify-center py-1.5 px-1 rounded-xl transition-all ${
                 currentView === 'answers'
-                  ? 'bg-rose-600 text-white shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                  ? 'text-rose-400 font-bold bg-rose-500/10'
+                  : 'text-slate-400 hover:text-slate-200 font-medium'
               }`}
             >
-              <HelpCircle className="w-3.5 h-3.5" />
-              <span>{t('answersTab', language)}</span>
+              <HelpCircle className="w-5 h-5 mb-0.5" />
+              <span className="text-[11px] leading-tight">{t('answersTab', language)}</span>
             </button>
 
             <button
+              type="button"
               onClick={() => onNavigate('rules')}
-              className={`flex items-center gap-1 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-xs font-semibold transition-all shrink-0 ${
+              className={`flex flex-col items-center justify-center py-1.5 px-1 rounded-xl transition-all ${
                 currentView === 'rules'
-                  ? 'bg-rose-600 text-white shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                  ? 'text-rose-400 font-bold bg-rose-500/10'
+                  : 'text-slate-400 hover:text-slate-200 font-medium'
               }`}
             >
-              <BookOpen className="w-3.5 h-3.5" />
-              <span>{t('rulesTab', language)}</span>
+              <BookOpen className="w-5 h-5 mb-0.5" />
+              <span className="text-[11px] leading-tight">{t('rulesTab', language)}</span>
             </button>
 
             <button
+              type="button"
               onClick={() => onNavigate('history')}
-              className={`flex items-center gap-1 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-xs font-semibold transition-all shrink-0 ${
+              className={`flex flex-col items-center justify-center py-1.5 px-1 rounded-xl transition-all ${
                 currentView === 'history'
-                  ? 'bg-rose-600 text-white shadow-sm'
-                  : 'text-slate-300 hover:text-white hover:bg-slate-700/50'
+                  ? 'text-rose-400 font-bold bg-rose-500/10'
+                  : 'text-slate-400 hover:text-slate-200 font-medium'
               }`}
             >
-              <History className="w-3.5 h-3.5" />
-              <span>{t('historyTab', language)}</span>
+              <History className="w-5 h-5 mb-0.5" />
+              <span className="text-[11px] leading-tight">{t('historyTab', language)}</span>
             </button>
-          </nav>
-        )}
-
-        {/* Right Actions: Language Toggle, Sound, User */}
-        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-          {/* Language Toggle (RU / EN) */}
-          <button
-            onClick={onToggleLanguage}
-            title={language === 'ru' ? 'Switch to English' : 'Переключить на русский'}
-            className="flex items-center gap-1 px-2 py-1 rounded-xl bg-slate-800/90 hover:bg-slate-700 border border-slate-700 text-xs font-black text-rose-300 hover:text-white transition-all shadow-sm"
-          >
-            <Languages className="w-3.5 h-3.5 text-rose-400" />
-            <span>{language.toUpperCase()}</span>
-          </button>
-
-          {/* Sound Toggle */}
-          <button
-            onClick={onToggleSound}
-            title={soundEnabled ? t('soundOn', language) : t('soundOff', language)}
-            className="p-1.5 sm:p-2 rounded-xl text-slate-400 hover:text-slate-100 hover:bg-slate-800 border border-transparent hover:border-slate-700 transition-colors"
-          >
-            {soundEnabled ? (
-              <Volume2 className="w-4 h-4 text-emerald-400" />
-            ) : (
-              <VolumeX className="w-4 h-4 text-slate-500" />
-            )}
-          </button>
-
-          {/* User Profile Switcher */}
-          <button
-            onClick={onOpenUserModal}
-            className="flex items-center gap-1.5 p-1 sm:pl-2 sm:pr-3 sm:py-1 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700/80 text-slate-200 hover:text-white transition-all shadow-sm"
-          >
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-xs font-semibold shrink-0">
-              <User className="w-3.5 h-3.5" />
-            </div>
-            <span className="text-xs font-medium max-w-[70px] sm:max-w-[100px] truncate hidden min-[480px]:inline">
-              {activeUser.name}
-            </span>
-          </button>
-        </div>
-      </div>
-    </header>
+          </div>
+        </nav>
+      )}
+    </>
   );
 };
 
