@@ -1,4 +1,4 @@
-const CACHE_NAME = 'wkf-exam-v5';
+const CACHE_NAME = 'wkf-exam-v6';
 
 const STATIC_ASSETS = [
   '/',
@@ -11,7 +11,28 @@ const STATIC_ASSETS = [
   '/apple-touch-icon.png',
   '/data/kumite.json',
   '/data/kata.json',
-  '/data.json'
+  '/data.json',
+  '/images/rules/kumite-tatami-area.png',
+  '/images/rules/kumite-competition-setups.png',
+  '/images/rules/kumite-uniform-layout.png',
+  '/images/rules/kumite-video-review-cards.png',
+  '/images/rules/kumite-signals-start-stop.png',
+  '/images/rules/kumite-signals-scores-cancellations.png',
+  '/images/rules/kumite-signals-penalties-warnings.png',
+  '/images/rules/kumite-signals-decisions.png',
+  '/images/rules/kumite-signals-video-review-flags.png',
+  '/images/rules/kumite-protest-form.png',
+  '/images/rules/kumite-two-judge-system.png',
+  '/images/rules/kata-tatami-area.png',
+  '/images/rules/kata-uniform-layout.png',
+  '/images/rules/kata-belts-layout.png',
+  '/images/rules/kata-scoreboard.png',
+  '/images/rules/kata-official-list.png',
+  '/images/rules/kata-protest-form.png',
+  '/images/rules/para-tatami-area.png',
+  '/images/rules/para-uniform-layout.png',
+  '/images/rules/para-wheelchair-strapping.png',
+  '/images/rules/para-wheelchair-specs.png'
 ];
 
 // Install: pre-cache static assets resiliently

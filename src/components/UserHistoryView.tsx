@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   History,
   Trophy,
@@ -88,6 +88,28 @@ export const UserHistoryView: React.FC<UserHistoryViewProps> = ({
   const refreshHistory = () => {
     setHistoryVersion((v) => v + 1);
   };
+
+  useEffect(() => {
+    if (selectedTest || selectedRecordForModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedTest, selectedRecordForModal]);
+
+  useEffect(() => {
+    if (!selectedTest) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && !selectedRecordForModal) {
+        setSelectedTest(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedTest, selectedRecordForModal]);
 
   const handleDeleteOne = (testId: string, e: React.MouseEvent) => {
     e.stopPropagation();

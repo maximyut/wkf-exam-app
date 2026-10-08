@@ -13,8 +13,14 @@ import {
   X,
   Layers,
   FileText,
+  Image as ImageIcon,
+  ZoomIn,
+  ZoomOut,
+  RotateCcw,
+  Info,
+  Maximize2,
 } from 'lucide-react';
-import type { Discipline, Language, RuleBook, RuleArticle, RuleSection } from '../types';
+import type { Discipline, Language, RuleBook, RuleArticle, RuleSection, RuleImage } from '../types';
 import kataRulesData from '../data/rules/kata-rules.json';
 import paraRulesData from '../data/rules/para-rules.json';
 import kumiteRulesData from '../data/rules/kumite-rules.json';
@@ -52,6 +58,10 @@ export const RulesView: React.FC<RulesViewProps> = ({
   const [selectedArticleId, setSelectedArticleId] = useState<string>('');
   const [copiedSectionId, setCopiedSectionId] = useState<string | null>(null);
 
+  // Lightbox active image state
+  const [activeImage, setActiveImage] = useState<RuleImage | null>(null);
+  const [zoomLevel, setZoomLevel] = useState<number>(1);
+
   // Mobile Bottom Sheet state for Table of Contents
   const [isMobileTocOpen, setIsMobileTocOpen] = useState(false);
   const [tocSearchQuery, setTocSearchQuery] = useState('');
@@ -72,9 +82,9 @@ export const RulesView: React.FC<RulesViewProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile TOC bottom sheet is open
+  // Lock body scroll when mobile TOC bottom sheet or lightbox is open
   useEffect(() => {
-    if (isMobileTocOpen) {
+    if (isMobileTocOpen || activeImage) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -82,7 +92,19 @@ export const RulesView: React.FC<RulesViewProps> = ({
     return () => {
       document.body.style.overflow = '';
     };
-  }, [isMobileTocOpen]);
+  }, [isMobileTocOpen, activeImage]);
+
+  // Close lightbox on Escape key
+  useEffect(() => {
+    if (!activeImage) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setActiveImage(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeImage]);
 
   // Handle deep-linking from targetRuleQuery (e.g. "KR 2.2.1a" or "PR 4.6.11" or "Статья 8.5")
   const [prevTargetQuery, setPrevTargetQuery] = useState(targetRuleQuery);
@@ -456,11 +478,21 @@ export const RulesView: React.FC<RulesViewProps> = ({
                   }`}
                 >
                   <span className="truncate pr-2">{title}</span>
-                  <ChevronRight
-                    className={`w-3 h-3 shrink-0 transition-transform ${
-                      isActive ? 'text-rose-400 translate-x-0.5' : 'text-slate-600 group-hover:text-slate-400'
-                    }`}
-                  />
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    {art.images && art.images.length > 0 && (
+                      <span
+                        title={`${t('hasDiagramsBadge', language)} (${art.images.length})`}
+                        className="p-1 rounded-md bg-amber-500/15 text-amber-400 border border-amber-500/30 flex items-center"
+                      >
+                        <ImageIcon className="w-3 h-3" />
+                      </span>
+                    )}
+                    <ChevronRight
+                      className={`w-3 h-3 shrink-0 transition-transform ${
+                        isActive ? 'text-rose-400 translate-x-0.5' : 'text-slate-600 group-hover:text-slate-400'
+                      }`}
+                    />
+                  </div>
                 </button>
               );
             })}
@@ -468,7 +500,7 @@ export const RulesView: React.FC<RulesViewProps> = ({
         </aside>
 
         {/* Rules Articles Content */}
-        <main className="lg:col-span-8 space-y-5">
+        <main className="lg:col-span-8 space-y-5 min-w-0 max-w-full">
           {/* In Single Article Mode (when not searching), show Top Article Switcher */}
           {displayMode === 'single' && !searchQuery.trim() && (
             <div className="flex items-center justify-between gap-2 p-2.5 sm:p-3 rounded-2xl bg-slate-900/90 border border-slate-800 text-xs shadow-md">
@@ -525,17 +557,74 @@ export const RulesView: React.FC<RulesViewProps> = ({
                 <article
                   key={art.id}
                   id={art.id}
-                  className="bg-slate-900/80 border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 space-y-4 shadow-lg scroll-mt-20"
+                  className="bg-slate-900/80 border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 space-y-4 shadow-lg scroll-mt-20 min-w-0 max-w-full break-words overflow-hidden"
                 >
                   {/* Article Title */}
                   <div className="border-b border-slate-800 pb-3 flex items-start justify-between gap-3">
                     <h2 className="text-sm sm:text-lg font-black text-rose-400 tracking-wide uppercase">
                       {highlightText(artTitle, searchQuery)}
                     </h2>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700/60 shrink-0">
-                      {art.sections.length} п.
-                    </span>
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      {art.images && art.images.length > 0 && (
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center gap-1">
+                          <ImageIcon className="w-3 h-3" />
+                          <span className="hidden sm:inline">{art.images.length} {t('hasDiagramsBadge', language)}</span>
+                          <span className="sm:hidden">{art.images.length}</span>
+                        </span>
+                      )}
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700/60">
+                        {art.sections.length} п.
+                      </span>
+                    </div>
                   </div>
+
+                  {/* Article Images Gallery if present */}
+                  {art.images && art.images.length > 0 && (
+                    <div className="p-3.5 sm:p-4 rounded-xl bg-slate-950/70 border border-slate-800 space-y-3">
+                      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-400">
+                        <ImageIcon className="w-4 h-4" />
+                        <span>{t('illustrationsTitle', language)}</span>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {art.images.map((img) => {
+                          const title = ruleLanguage === 'ru' ? img.titleRu : img.titleEn;
+                          const caption = ruleLanguage === 'ru' ? (img.captionRu || img.captionEn) : (img.captionEn || img.captionRu);
+                          return (
+                            <div
+                              key={img.id}
+                              onClick={() => { setActiveImage(img); setZoomLevel(1); }}
+                              className="group cursor-pointer bg-slate-900 border border-slate-800 hover:border-amber-500/60 rounded-xl p-3 flex flex-col justify-between transition-all hover:shadow-lg hover:shadow-amber-950/20"
+                            >
+                              <div className="relative aspect-[16/10] bg-slate-950 rounded-lg overflow-hidden border border-slate-800/80 flex items-center justify-center mb-2.5">
+                                <img
+                                  src={img.src}
+                                  alt={title}
+                                  loading="lazy"
+                                  className="max-h-full max-w-full object-contain p-1 transition-transform duration-300 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5 backdrop-blur-[1px]">
+                                  <span className="px-2.5 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold text-xs flex items-center gap-1 shadow-lg">
+                                    <ZoomIn className="w-3.5 h-3.5" />
+                                    <span>{t('viewImage', language)}</span>
+                                  </span>
+                                </div>
+                              </div>
+                              <div>
+                                <h4 className="text-xs sm:text-sm font-bold text-slate-100 group-hover:text-amber-300 transition-colors">
+                                  {title}
+                                </h4>
+                                {caption && (
+                                  <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">
+                                    {caption}
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Sections List */}
                   <div className="space-y-4">
@@ -605,23 +694,43 @@ export const RulesView: React.FC<RulesViewProps> = ({
                             {content.split('\n\n').map((paragraph, pIdx) => {
                               const trimmed = paragraph.trim();
                               if (!trimmed) return null;
-                              const isListItem = /^(?:\d+[).]|[a-z][).]|[•\-–—]|\([0-9a-z]+\))\s+/i.test(trimmed);
 
-                              if (isListItem) {
+                              // Check for Note / Clarification Callout
+                              const isCallout = /^(?:ПРИМЕЧАНИЕ|ПОЯСНЕНИЕ|NOTE|EXPLANATION|ВАЖНО|IMPORTANT)[:\s]/i.test(trimmed);
+                              if (isCallout) {
+                                return (
+                                  <div
+                                    key={pIdx}
+                                    className="flex items-start gap-2.5 p-3 sm:p-3.5 rounded-xl bg-amber-950/20 border border-amber-500/40 text-amber-200/90 text-xs sm:text-sm leading-relaxed whitespace-pre-line"
+                                  >
+                                    <Info className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                                    <div className="flex-1 whitespace-pre-line">
+                                      {highlightText(trimmed, searchQuery)}
+                                    </div>
+                                  </div>
+                                );
+                              }
+
+                              // Check for List Item (numbered, lettered, bullets)
+                              const listMatch = trimmed.match(/^((?:\d+[).]|[a-z][).]|[•\-–—]|\([0-9a-z]+\)))\s+([\s\S]*)$/i);
+                              if (listMatch) {
                                 return (
                                   <div
                                     key={pIdx}
                                     className="flex items-start gap-2.5 pl-3 py-1.5 rounded-lg bg-slate-900/50 border-l-2 border-rose-500/60 text-slate-200"
                                   >
-                                    <span className="leading-relaxed">
-                                      {highlightText(trimmed, searchQuery)}
+                                    <span className="font-mono text-xs font-bold text-rose-400 shrink-0 pt-0.5 select-none">
+                                      {listMatch[1]}
+                                    </span>
+                                    <span className="leading-relaxed whitespace-pre-line flex-1">
+                                      {highlightText(listMatch[2], searchQuery)}
                                     </span>
                                   </div>
                                 );
                               }
 
                               return (
-                                <p key={pIdx} className="leading-relaxed">
+                                <p key={pIdx} className="leading-relaxed whitespace-pre-line">
                                   {highlightText(trimmed, searchQuery)}
                                 </p>
                               );
@@ -816,6 +925,11 @@ export const RulesView: React.FC<RulesViewProps> = ({
                       </div>
                     </div>
                     <div className="flex items-center gap-1.5 shrink-0">
+                      {art.images && art.images.length > 0 && (
+                        <span className="p-1 rounded bg-amber-500/15 text-amber-400 border border-amber-500/30 flex items-center">
+                          <ImageIcon className="w-3 h-3" />
+                        </span>
+                      )}
                       <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800/80 text-slate-400 font-mono">
                         {art.sections.length}
                       </span>
@@ -829,6 +943,112 @@ export const RulesView: React.FC<RulesViewProps> = ({
                 );
               })}
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Image Lightbox Modal */}
+      {activeImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/90 backdrop-blur-md animate-in fade-in duration-200"
+          onClick={() => setActiveImage(null)}
+        >
+          <div
+            className="bg-slate-900 border border-slate-700/80 w-full max-w-4xl rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[95vh] animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Lightbox Header */}
+            <div className="px-4 sm:px-6 py-3 border-b border-slate-800 bg-slate-900/90 flex items-center justify-between gap-3 shrink-0">
+              <div className="min-w-0 flex items-center gap-2">
+                <div className="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                  <ImageIcon className="w-4 h-4" />
+                </div>
+                <h3 className="text-xs sm:text-base font-bold text-white truncate">
+                  {ruleLanguage === 'ru' ? activeImage.titleRu : activeImage.titleEn}
+                </h3>
+              </div>
+
+              {/* Zoom & Action Controls */}
+              <div className="flex items-center gap-1.5 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setZoomLevel((z) => Math.max(0.7, +(z - 0.2).toFixed(1)))}
+                  className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+                  title={t('zoomOut', language)}
+                >
+                  <ZoomOut className="w-4 h-4" />
+                </button>
+
+                <span className="text-[11px] font-mono text-slate-400 px-1 select-none">
+                  {Math.round(zoomLevel * 100)}%
+                </span>
+
+                <button
+                  type="button"
+                  onClick={() => setZoomLevel((z) => Math.min(2.5, +(z + 0.2).toFixed(1)))}
+                  className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+                  title={t('zoomIn', language)}
+                >
+                  <ZoomIn className="w-4 h-4" />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setZoomLevel(1)}
+                  className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+                  title={t('resetZoom', language)}
+                >
+                  <RotateCcw className="w-3.5 h-3.5" />
+                </button>
+
+                <a
+                  href={activeImage.src}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+                  title="Открыть в новой вкладке"
+                >
+                  <Maximize2 className="w-3.5 h-3.5" />
+                </a>
+
+                <a
+                  href={activeImage.src}
+                  download={`${activeImage.id}.png`}
+                  className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+                  title="Скачать изображение"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                </a>
+
+                <button
+                  type="button"
+                  onClick={() => setActiveImage(null)}
+                  className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors ml-1"
+                  title="Закрыть (Esc)"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Lightbox Image Viewport */}
+            <div className="flex-1 overflow-auto p-4 flex items-center justify-center bg-slate-950/90 min-h-[300px] sm:min-h-[450px]">
+              <img
+                src={activeImage.src}
+                alt={ruleLanguage === 'ru' ? activeImage.titleRu : activeImage.titleEn}
+                style={{ transform: `scale(${zoomLevel})`, transition: 'transform 0.15s ease-out' }}
+                className="max-h-[70vh] max-w-full object-contain rounded-lg shadow-2xl origin-center select-none"
+              />
+            </div>
+
+            {/* Lightbox Footer Caption */}
+            {(activeImage.captionRu || activeImage.captionEn) && (
+              <div className="px-5 py-3 border-t border-slate-800 bg-slate-900/90 text-xs text-slate-300 leading-relaxed">
+                {ruleLanguage === 'ru'
+                  ? (activeImage.captionRu || activeImage.captionEn)
+                  : (activeImage.captionEn || activeImage.captionRu)}
+              </div>
+            )}
           </div>
         </div>
       )}

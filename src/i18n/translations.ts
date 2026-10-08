@@ -96,6 +96,13 @@ export const translations = {
     matchesFound: 'Найдено пунктов',
     searchInToc: 'Поиск по статьям...',
     closeToc: 'Закрыть',
+    illustrationsTitle: 'Схемы и иллюстрации статьи',
+    viewImage: 'Смотреть схему',
+    zoomIn: 'Увеличить',
+    zoomOut: 'Уменьшить',
+    resetZoom: 'Сброс',
+    noteCallout: 'Примечание',
+    hasDiagramsBadge: 'Схемы / Иллюстрации',
 
     // Explanation Modal
     modalQuestionTitle: 'Формулировка вопроса WKF',
@@ -220,6 +227,13 @@ export const translations = {
     matchesFound: 'Sections found',
     searchInToc: 'Search articles...',
     closeToc: 'Close',
+    illustrationsTitle: 'Article Schemes & Illustrations',
+    viewImage: 'View diagram',
+    zoomIn: 'Zoom in',
+    zoomOut: 'Zoom out',
+    resetZoom: 'Reset',
+    noteCallout: 'Note',
+    hasDiagramsBadge: 'Diagrams / Schemes',
 
     // Explanation Modal
     modalQuestionTitle: 'Official WKF Question Formulation',

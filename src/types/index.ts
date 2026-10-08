@@ -84,6 +84,15 @@ export interface UserProfile {
   lastActiveAt: number;
 }
 
+export interface RuleImage {
+  id: string;
+  src: string;
+  titleRu: string;
+  titleEn: string;
+  captionRu?: string;
+  captionEn?: string;
+}
+
 // Rules types
 export interface RuleSection {
   id: string; // e.g. "2.2.1a" or "5.7.6"
@@ -93,6 +102,7 @@ export interface RuleSection {
   titleEn?: string;
   contentEn: string;
   contentRu: string;
+  images?: RuleImage[];
 }
 
 export interface RuleArticle {
@@ -102,6 +112,7 @@ export interface RuleArticle {
   titleEn: string;
   titleRu: string;
   sections: RuleSection[];
+  images?: RuleImage[];
 }
 
 export interface RuleBook {

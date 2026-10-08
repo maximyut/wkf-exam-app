@@ -228,7 +228,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
           </div>
 
           {/* Filter Pills */}
-          <div className="flex items-center gap-1 p-1 bg-slate-900 border border-slate-800 rounded-xl overflow-x-auto self-stretch sm:self-auto justify-between sm:justify-start">
+          <div className="flex items-center gap-1 p-1 bg-slate-900 border border-slate-800 rounded-xl overflow-x-auto scrollbar-none self-stretch sm:self-auto justify-between sm:justify-start">
             <button
               type="button"
               onClick={() => setFilter('all')}

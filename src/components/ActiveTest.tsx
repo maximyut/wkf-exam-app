@@ -308,11 +308,11 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
 
           {/* Question Text */}
           <div className="py-1 sm:py-2">
-            <h2 className="text-base sm:text-2xl font-bold text-slate-100 leading-relaxed sm:leading-snug select-none">
+            <h2 className="text-base sm:text-2xl font-bold text-slate-100 leading-relaxed sm:leading-snug select-none whitespace-pre-line">
               {getQuestionText(currentQuestion, config.language)}
             </h2>
             {config.language === 'ru' && currentQuestion.questionEn && currentQuestion.questionRu && currentQuestion.questionEn !== currentQuestion.questionRu && (
-              <p className="text-xs sm:text-sm text-slate-400 font-normal italic mt-2.5 pt-2 border-t border-slate-800/80 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-400 font-normal italic mt-2.5 pt-2 border-t border-slate-800/80 leading-relaxed whitespace-pre-line">
                 {currentQuestion.questionEn}
               </p>
             )}

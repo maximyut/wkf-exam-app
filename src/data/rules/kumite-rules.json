@@ -65,7 +65,7 @@
           "title": "",
           "titleRu": "",
           "titleEn": "",
-          "contentRu": "1.6 Рефери (SHUSHIN) будет стоять по центру между двумя матами, лицом к спортсменам, на расстоянии двух метров от границы соревновательной зоны. Каждый Судья\n\n(FUKUSHIN) будет сидеть в отведённом для этого месте. Если он сидит на татами, то его место будет находиться примерно в 1,5 метрах от углов в зоне безопасности.",
+          "contentRu": "1.6 Рефери (SHUSHIN) будет стоять по центру между двумя матами, лицом к спортсменам, на расстоянии двух метров от границы соревновательной зоны. Каждый Судья (FUKUSHIN) будет сидеть в отведённом для этого месте. Если он сидит на татами, то его место будет находиться примерно в 1,5 метрах от углов в зоне безопасности.",
           "contentEn": "1.6 The Referee (SHUSHIN) will be standing centred between the two mats, facing the Athletes at a distance of two metres from the boundary of the competition area. Each Judge (FUKUSHIN) will be seated at the designated area. If seated on the TATAMI, they will be placed approximately 1.5 metres off the corners in the safety area."
         },
         {
@@ -102,7 +102,25 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "1.10 Тренеры располагаются за пределами зоны безопасности, с соответствующей выступлению их спортсмена стороне, лицом к официальному столу. В случаях, когда конфигурация татами не позволяет разместить тренеров лицом к официальному столу, их можно разместить по обе стороны от официального стола. В случаях, если используется видеоповтор, необходимо присутствие контролёра тренера (Coach Supervisor). Судейство по флагам До медалей Поединки за медали Судейство с джойстиками До медалей Поединки за медали",
-          "contentEn": "1.10 Coaches will be seated outside the safety area, on their respective sides of the TATAMI towards the official table. In cases where the configuration of Tatami makes it impractical to place the Coaches facing the official table, they may instead be placed on each side of the official table. If in such cases, video review is used, Coach supervisors must be deployed. Rules Flag System Competition Set Up Initial Rounds Medal bouts Joysticks System Competition Set Up Initial Rounds Medal bouts Rules"
+          "contentEn": "1.10 Coaches will be seated outside the safety area, on their respective sides of the TATAMI towards the official table. In cases where the configuration of Tatami makes it impractical to place the Coaches facing the official table, they may instead be placed on each side of the official table. If in such cases, video review is used, Coach supervisors must be deployed. Rules Flag System Competition Set Up Initial Rounds Medal bouts Joysticks System Competition Set Up Initial Rounds Medal bouts"
+        }
+      ],
+      "images": [
+        {
+          "id": "kumite-tatami-area",
+          "src": "/images/rules/kumite-tatami-area.png",
+          "titleRu": "Схема площадки для соревнований по Кумитэ",
+          "titleEn": "Kumite Competition Area Layout",
+          "captionRu": "Официальная разметка татами WKF: соревновательная зона 8×8 м, зона безопасности 2 м, расположение судей (SHUSHIN, FUKUSHIN), KANSA и тренеров.",
+          "captionEn": "Official WKF tatami layout: 8x8m competition area, 2m safety area, positions for Referee, Judges, Match Supervisor and Coaches."
+        },
+        {
+          "id": "kumite-competition-setups",
+          "src": "/images/rules/kumite-competition-setups.png",
+          "titleRu": "Организация судейства: по флагам и с джойстиками",
+          "titleEn": "Competition Setups: Flag & Joystick Systems",
+          "captionRu": "Расположение судейских бригад при судействе по флагам и судействе с электронной системой (джойстиками) в отборочных и медальных поединках.",
+          "captionEn": "Layout of refereeing panels for Flag system and Joystick system during preliminary rounds and medal bouts."
         }
       ]
     },
@@ -191,7 +209,7 @@
           "title": "",
           "titleRu": "",
           "titleEn": "",
-          "contentRu": "2.2.1 Спортсмены должны носить белое кимоно для каратэ, одобренное WKF, без окантовки или личной вышивки, за исключением случаев, прямо разрешённых Исполнительным комитетом WKF и указанных в информационном бюллетене соревнований:\n\na) На всех официальных соревнованиях WKF (чемпионаты мира и Karate 1 – Премьер- лига, Серия А и Юношеская лига) на кимоно для каратэ должны быть вышитые логотипы на плечах красного или синего цвета соответственно, согласно жеребьёвке. Исключения составляют победители предыдущего сезона Премьер- лиги, которые должны носить золотую вышивку на плечах на текущих соревнованиях Премьер-лиги, и действующий чемпион мира среди взрослых, который должен носить золотую вышивку на плечах на текущем чемпионате мира среди взрослых. Это в равной степени относится как к индивидуальным, так и к командным соревнованиям. WKF не требует, чтобы члены команды носили кимоно для каратэ одного и того же бренда.\n\nb) На каратэ-ги могут быть размещены только оригинальные этикетки производителя.\n\nНа левой стороне груди куртки размещается национальный герб или флаг страны, размер которого не должен превышать 12 см на 8 см. Кроме того, на спине необходимо будет носить идентификационный номер, выданный Организационным комитетом. Номер на спине обязателен для участия в турнирах Karate 1 – Премьер-лига, Чемпионате Мира и Кубке Мира.\n\nc) Спортсмены или команды должны носить одобренный WKF красный пояс\n\n(AKA) или синий пояс (AO), присвоенный по результатам жеребьёвки, без каких-либо личных вышивок, рекламы или маркировок, кроме обычной этикетки производителя. Во время поединка нельзя носить квалификационные пояса.\n\nd) Красный и синий пояса должны быть шириной около пяти сантиметров и достаточной длины, чтобы с каждой стороны узла оставалось по пятнадцать сантиметров свободного пространства, но не длиннее трёх четвертей длины бедра.\n\ne) Куртка, затянутая на талии поясом, должна иметь минимальную длину, закрывающую бедра, но не должна превышать трёх четвертей длины бедра.\n\nf) Спортсменки могут носить простую белую футболку под курткой для карате.\n\ng) Куртки без завязок использовать нельзя. Завязки, удерживающие куртку на месте, должны быть завязаны в начале поединка. Если они порвутся во время поединка, спортсмен не обязан менять куртку.\n\nh) Максимальная длина рукавов куртки не должна превышать длину сгиба запястья и не должна быть короче половины длины предплечья.\n\ni) Рукава куртки нельзя закатывать.\n\nj) Брюки должны быть достаточно длинными, чтобы закрывать не менее двух третей голени, и не должны опускаться ниже лодыжки. Штанины нельзя подворачивать.\n\nk) Каратэ-ги нельзя изменять или модифицировать с целью изменения его формы.",
+          "contentRu": "2.2.1 Спортсмены должны носить белое кимоно для каратэ, одобренное WKF, без окантовки или личной вышивки, за исключением случаев, прямо разрешённых Исполнительным комитетом WKF и указанных в информационном бюллетене соревнований:\n\na) На всех официальных соревнованиях WKF (чемпионаты мира и Karate 1 – Премьер- лига, Серия А и Юношеская лига) на кимоно для каратэ должны быть вышитые логотипы на плечах красного или синего цвета соответственно, согласно жеребьёвке. Исключения составляют победители предыдущего сезона Премьер- лиги, которые должны носить золотую вышивку на плечах на текущих соревнованиях Премьер-лиги, и действующий чемпион мира среди взрослых, который должен носить золотую вышивку на плечах на текущем чемпионате мира среди взрослых. Это в равной степени относится как к индивидуальным, так и к командным соревнованиям. WKF не требует, чтобы члены команды носили кимоно для каратэ одного и того же бренда.\n\nb) На каратэ-ги могут быть размещены только оригинальные этикетки производителя.\n\nНа левой стороне груди куртки размещается национальный герб или флаг страны, размер которого не должен превышать 12 см на 8 см. Кроме того, на спине необходимо будет носить идентификационный номер, выданный Организационным комитетом. Номер на спине обязателен для участия в турнирах Karate 1 – Премьер-лига, Чемпионате Мира и Кубке Мира.\n\nc) Спортсмены или команды должны носить одобренный WKF красный пояс (AKA) или синий пояс (AO), присвоенный по результатам жеребьёвки, без каких-либо личных вышивок, рекламы или маркировок, кроме обычной этикетки производителя. Во время поединка нельзя носить квалификационные пояса.\n\nd) Красный и синий пояса должны быть шириной около пяти сантиметров и достаточной длины, чтобы с каждой стороны узла оставалось по пятнадцать сантиметров свободного пространства, но не длиннее трёх четвертей длины бедра.\n\ne) Куртка, затянутая на талии поясом, должна иметь минимальную длину, закрывающую бедра, но не должна превышать трёх четвертей длины бедра.\n\nf) Спортсменки могут носить простую белую футболку под курткой для карате.\n\ng) Куртки без завязок использовать нельзя. Завязки, удерживающие куртку на месте, должны быть завязаны в начале поединка. Если они порвутся во время поединка, спортсмен не обязан менять куртку.\n\nh) Максимальная длина рукавов куртки не должна превышать длину сгиба запястья и не должна быть короче половины длины предплечья.\n\ni) Рукава куртки нельзя закатывать.\n\nj) Брюки должны быть достаточно длинными, чтобы закрывать не менее двух третей голени, и не должны опускаться ниже лодыжки. Штанины нельзя подворачивать.\n\nk) Каратэ-ги нельзя изменять или модифицировать с целью изменения его формы.",
           "contentEn": "2.2.1 Athletes must wear a WKF Approved white Karategi without piping or personal embroidery other than allowed explicitly by the WKF EC and specified in the bulletin for the competition:\n\na) For all official WKF events (World Championships and Karate 1 - Premier League, Series A and Youth League), the Karategi must have embroidered brands on the shoulders in red or blue, respectively, according to the draw. Exceptions include the grand winners of the previous Premier League season, who should wear a gold shoulder embroidery in current Premier League events, and the incumbent Senior World Champion, who should wear a gold shoulder embroidery in the current Senior World Championship.\n\nThis applies equally to individuals and teams. There is no WKF requirement for the Team members wearing the same brand of Karategi.\n\nb) Only the original manufacturer’s labels may be displayed on the Karategi.\n\nRules The national emblem or flag of the country will be worn on the left breast of the jacket and may not exceed an overall size of 12cm by 8cm. In addition, identification issued by the Organising Committee will be worn on the back. The back number is mandatory for Karate 1 – Premier League, Karate World Championships and Karate World Cup. Rules\n\nc) Athletes or Teams must wear a WKF Approved red belt (AKA) or blue belt (AO) as allocated by the draw, without any personal embroideries, advertising or markings other than the customary label from the manufacturer. Belts of grade cannot be worn during the bout.\n\nd) The red and blue belts must be around five centimetres wide and of a length sufficient to allow fifteen centimetres free on each side of the knot, but not longer than three- quarters of thigh length.\n\ne) The jacket, when tightened around the waist with the belt, must be of a minimum length that covers the hips, but must not be more than three-quarters of thigh length.\n\nf) Female Athletes can wear a plain white T-shirt beneath the Karate jacket.\n\ng) Jackets without ties cannot be used. The jacket ties holding the jacket in place must be tied at the beginning of the bout. If they are torn off during the bout, the Athlete is not required to change the jacket.\n\nh) The maximum length of the jacket sleeves must be no longer than the bend of the wrist and no shorter than halfway down the forearm.\n\ni) Jacket sleeves cannot be rolled up.\n\nj) The trousers must be long enough to cover at least two-thirds of the shin and must not reach below the anklebone. Trouser legs cannot be rolled up.\n\nk) The Karategi must not be altered or manipulated to change its shape."
         },
         {
@@ -264,7 +282,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "2.2.9 Ношение любой несанкционированной одежды, снаряжения или оборудования запрещено.",
-          "contentEn": "2.2.9 The wearing of any unauthorised apparel, clothing or equipment is forbidden. Rules"
+          "contentEn": "2.2.9 The wearing of any unauthorised apparel, clothing or equipment is forbidden."
         },
         {
           "id": "2.2.10",
@@ -345,7 +363,17 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "2.3.3 Главный судья может разрешить тренерам использовать официальную футболку федерации или однотонную футболку без надписей и логотипов вместо спортивной куртки.",
-          "contentEn": "2.3.3 The Chief Referee can allow Coaches to use the federation’s official Team t-shirt or a plain coloured t-shirt without writing or logos instead of the tracksuit jacket. Rules"
+          "contentEn": "2.3.3 The Chief Referee can allow Coaches to use the federation’s official Team t-shirt or a plain coloured t-shirt without writing or logos instead of the tracksuit jacket."
+        }
+      ],
+      "images": [
+        {
+          "id": "kumite-uniform-layout",
+          "src": "/images/rules/kumite-uniform-layout.png",
+          "titleRu": "Схема расположения эмблем и спонсоров на форме",
+          "titleEn": "Official Karategi Uniform Layout",
+          "captionRu": "Требования к экипировке WKF: размещение национального герба, полос на плечах (AKA/AO), спонсорских нашивок и логотипов производителей.",
+          "captionEn": "WKF uniform specifications: national emblem, shoulder stripes (AKA/AO), sponsor patches and manufacturer labels."
         }
       ]
     },
@@ -534,7 +562,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "3.5.2 Матчи по кумитэ для женских команд состоят из 3 поединков. Для первого матча команда должна выставить 3 участницы. Для участия в соревнованиях по круговой системе команда также должна иметь 1 дополнительную запасную спортсменку, зарегистрированную для возможного участия в последующих поединках, и может также иметь вторую запасную спортсменку по желанию, таким образом, максимальное количество участниц в команде составляет 5. Для участия в любых матчах на выбывание в команде всегда должно быть минимум 2 участницы.",
-          "contentEn": "3.5.2 Matches in Kumite for female Teams consist of 3 bouts. The Team must present 3 participants for the initial match. To participate in Round-robin competition, the Team must also have 1 additional back-up Athlete registered for possible participation in subsequent bouts and may also have a second optional back-up Athlete - bringing the maximum size of the Team to 5 Athletes. For any elimination match, the Team must always have a minimum of 2 participants in order to compete. Rules"
+          "contentEn": "3.5.2 Matches in Kumite for female Teams consist of 3 bouts. The Team must present 3 participants for the initial match. To participate in Round-robin competition, the Team must also have 1 additional back-up Athlete registered for possible participation in subsequent bouts and may also have a second optional back-up Athlete - bringing the maximum size of the Team to 5 Athletes. For any elimination match, the Team must always have a minimum of 2 participants in order to compete."
         },
         {
           "id": "3.5.3",
@@ -642,7 +670,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "3.6.5 Участники могут быть отобраны для каждого раунда из всей команды. Порядок их боев может меняться в каждом раунде при условии предварительного уведомления о новом порядке боев до начала раунда, но после уведомления изменить его можно только после завершения раунда.",
-          "contentEn": "3.6.5 The participants can be selected for each round from the full Team. Their fighting order can be changed for each round, provided the new fighting order is notified before the round, but once notified, it cannot be changed until that round is completed. Rules"
+          "contentEn": "3.6.5 The participants can be selected for each round from the full Team. Their fighting order can be changed for each round, provided the new fighting order is notified before the round, but once notified, it cannot be changed until that round is completed."
         },
         {
           "id": "3.6.6",
@@ -687,7 +715,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "3.7.1 В индивидуальных соревнованиях Премьер-лиги, проводимых по круговой системе с группами по 4 спортсмена, максимальное количество участников (32 человека) разделено на 8 групп по 4 спортсмена или меньше. Победители каждой из восьми групп выходят в четвертьфиналы, полуфиналы и финал. Проигравшие финалистам в четвертьфиналах и полуфиналах борются за бронзовые медали. В то время как во втором этапе индивидуального чемпионата мира среди взрослых победители и финалисты каждой из 8 групп выходят в 1/16 финала, четвертьфиналы, полуфиналы и финал. Проигравшие финалистам в четвертьфиналах и полуфиналах продолжают борьбу за бронзовые медали.",
-          "contentEn": "3.7.1 In individual Premier League events, Round-robin competition using groups of 4 Athletes, the maximum 32 participants are divided into 8 groups of 4 Athletes or fewer. The winner of each of the eight groups go on to regular quarterfinals, semi-finals and final. The losers to the finalists in the quarter- and semi-finals compete for the bronze medals. While in Individual World Senior Championship Phase 2, the winners and runners-up of each of the 8 groups advance to the regular round 16, quarterfinals, semi-finals and final. The losers to the finalists in the quarter- and semi-finals compete for the bronze medals. Rules"
+          "contentEn": "3.7.1 In individual Premier League events, Round-robin competition using groups of 4 Athletes, the maximum 32 participants are divided into 8 groups of 4 Athletes or fewer. The winner of each of the eight groups go on to regular quarterfinals, semi-finals and final. The losers to the finalists in the quarter- and semi-finals compete for the bronze medals. While in Individual World Senior Championship Phase 2, the winners and runners-up of each of the 8 groups advance to the regular round 16, quarterfinals, semi-finals and final. The losers to the finalists in the quarter- and semi-finals compete for the bronze medals."
         },
         {
           "id": "3.7.2",
@@ -696,7 +724,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "3.7.2 В зависимости от количества спортсменов (32 или менее), распределение по группам будет производиться согласно следующей таблице: Количество участников/групп Участники в группе Примечания 8 групп 1 2 3 4 5 6 7 8 Количество участников: 24-32 Жеребьевка ► 3 2 4 1 32 4 4 4 4 4 4 4 4 Квалифицируется первый из каждой группы. 31 4 4 4 4 4 4 4 3 30 4 4 4 3 4 4 4 3 29 4 3 4 3 4 4 4 3 28 4 3 4 3 4 3 4 3 27 4 3 4 3 3 3 4 3 26 3 3 4 3 3 3 4 3 25 3 3 3 3 3 3 4 3 24 3 3 3 3 3 3 3 3 6 групп 1 2 3 4 5 6 7 8 Количество участников: 18-23 Жеребьевка ► 3 2 4 1 23 4 4 4 4 4 3 Квалификацию проходят победитель каждой группы и два лучших участника, занявших вторые места. 22 4 4 3 4 4 3 21 4 3 3 4 4 3 20 4 3 3 4 3 3 19 4 3 3 3 3 3 18 3 3 3 3 3 3 5 групп 1 2 3 4 5 6 7 8 Количество участников: 17 Жеребьевка ► 3 2 4 1 17 3 3 4 4 3 Квалификацию получают победитель каждой группы и три лучших участника, занявших вторые места. 4 группы 1 2 3 4 5 6 7 8 Количество участников: 12-16 Жеребьевка ► 3 2 4 1 16 4 4 4 4 Квалифицируются занявшие первое и второе место в каждой группе. 15 4 4 4 3 14 4 3 4 3 13 3 3 4 3 12 3 3 3 3 3 группы 1 2 3 4 5 6 7 8 Количество участников: 9-11 Жеребьевка ► 3 2 1 11 4 4 3 Квалификацию проходят занявшие первое и второе место в каждой группе, а также два лучших спортсмена с третьим результатом. 10 4 3 3 9 3 3 3 2 группы 1 2 3 4 5 6 7 8 Количество участников: 6-8 Жеребьевка ► 2 1 8 4 4 Занявшие первое и второе место в каждой группе сразятся непосредственно в полуфинале. 7 4 3 6 3 3 1 группа 1 2 3 4 5 6 7 8 Количество участников: 3-5 Жеребьевка ► 1 5 5 Финал между первым и вторым местом в группе и только один поединок за бронзу. 4 4 3 3",
-          "contentEn": "3.7.2 According to the number of Athletes (32 or less), the allocation to groups will be as per the following table: Number of Athletes/Groups Athletes per group Notes 8 Groups 1 2 3 4 5 6 7 8 Participation: 24-32 Athletes Seed ► 3 2 4 1 32 4 4 4 4 4 4 4 4 The first of each Group qualify. 31 4 4 4 4 4 4 4 3 30 4 4 4 3 4 4 4 3 29 4 3 4 3 4 4 4 3 28 4 3 4 3 4 3 4 3 27 4 3 4 3 3 3 4 3 26 3 3 4 3 3 3 4 3 25 3 3 3 3 3 3 4 3 24 3 3 3 3 3 3 3 3 6 Groups 1 2 3 4 5 6 7 8 Participation:18-23 Athletes Seed ► 3 2 4 1 23 4 4 4 4 4 3 The first of each Group and the two best runners-up qualify. 22 4 4 3 4 4 3 21 4 3 3 4 4 3 20 4 3 3 4 3 3 19 4 3 3 3 3 3 18 3 3 3 3 3 3 5 Groups 1 2 3 4 5 6 7 8 Participation: 17 Athletes Seed ► 3 2 4 1 17 3 3 4 4 3 The first of each Group and the best three runners-up qualify. 4 Groups 1 2 3 4 5 6 7 8 Participation: 12-16 Athletes Seed ► 3 2 4 1 16 4 4 4 4 The first and runner-up of each Group. 15 4 4 4 3 14 4 3 4 3 13 3 3 4 3 12 3 3 3 3 3 Groups 1 2 3 4 5 6 7 8 Participation: 9-11 Athletes Seed ► 3 2 1 11 4 4 3 The first and runner-up of each Group, as well as the best two number- threes qualify. 10 4 3 3 9 3 3 3 2 Groups 1 2 3 4 5 6 7 8 Participation: 6-8 Athletes Seed ► 2 1 8 4 4 The first and runner-up of each Group, will compete directly in the semi-finals. 7 4 3 6 3 3 1 Group 1 2 3 4 5 6 7 8 Participation: 3-5 Athletes Seed ► 1 5 5 Final between first and runner-up of the Group, and only one bronze medal bout. 4 4 3 3 Rules"
+          "contentEn": "3.7.2 According to the number of Athletes (32 or less), the allocation to groups will be as per the following table: Number of Athletes/Groups Athletes per group Notes 8 Groups 1 2 3 4 5 6 7 8 Participation: 24-32 Athletes Seed ► 3 2 4 1 32 4 4 4 4 4 4 4 4 The first of each Group qualify. 31 4 4 4 4 4 4 4 3 30 4 4 4 3 4 4 4 3 29 4 3 4 3 4 4 4 3 28 4 3 4 3 4 3 4 3 27 4 3 4 3 3 3 4 3 26 3 3 4 3 3 3 4 3 25 3 3 3 3 3 3 4 3 24 3 3 3 3 3 3 3 3 6 Groups 1 2 3 4 5 6 7 8 Participation:18-23 Athletes Seed ► 3 2 4 1 23 4 4 4 4 4 3 The first of each Group and the two best runners-up qualify. 22 4 4 3 4 4 3 21 4 3 3 4 4 3 20 4 3 3 4 3 3 19 4 3 3 3 3 3 18 3 3 3 3 3 3 5 Groups 1 2 3 4 5 6 7 8 Participation: 17 Athletes Seed ► 3 2 4 1 17 3 3 4 4 3 The first of each Group and the best three runners-up qualify. 4 Groups 1 2 3 4 5 6 7 8 Participation: 12-16 Athletes Seed ► 3 2 4 1 16 4 4 4 4 The first and runner-up of each Group. 15 4 4 4 3 14 4 3 4 3 13 3 3 4 3 12 3 3 3 3 3 Groups 1 2 3 4 5 6 7 8 Participation: 9-11 Athletes Seed ► 3 2 1 11 4 4 3 The first and runner-up of each Group, as well as the best two number- threes qualify. 10 4 3 3 9 3 3 3 2 Groups 1 2 3 4 5 6 7 8 Participation: 6-8 Athletes Seed ► 2 1 8 4 4 The first and runner-up of each Group, will compete directly in the semi-finals. 7 4 3 6 3 3 1 Group 1 2 3 4 5 6 7 8 Participation: 3-5 Athletes Seed ► 1 5 5 Final between first and runner-up of the Group, and only one bronze medal bout. 4 4 3 3"
         },
         {
           "id": "3.7.3",
@@ -804,7 +832,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "3.11.4 На официальных мероприятиях WKF, за исключением Молодёжной лиги, смена тренера во время поединка запрещена. В командных матчах смена тренера между поединками разрешена.",
-          "contentEn": "3.11.4 In official WKF events, with the exception of Youth League, it is not permitted to change the Coach during a bout. In team matches, it is allowed to change the Coach between bouts. Rules"
+          "contentEn": "3.11.4 In official WKF events, with the exception of Youth League, it is not permitted to change the Coach during a bout. In team matches, it is allowed to change the Coach between bouts."
         },
         {
           "id": "3.3.3",
@@ -812,8 +840,8 @@
           "title": "",
           "titleRu": "",
           "titleEn": "",
-          "contentRu": "3.3.3 For other WKF competitions, refer to the respective organising rules regarding seeding procedures.” Rules",
-          "contentEn": "3.3.3 For other WKF competitions, refer to the respective organising rules regarding seeding procedures.” Rules"
+          "contentRu": "3.3.3 For other WKF competitions, refer to the respective organising rules regarding seeding procedures.”",
+          "contentEn": "3.3.3 For other WKF competitions, refer to the respective organising rules regarding seeding procedures.”"
         }
       ]
     },
@@ -930,7 +958,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "4.4.1 В начале поединка по кумитэ Рефери стоит на внешнем краю соревновательной площадки. Слева от Рефери стоят Судьи № 1 и 2, а справа – Судьи № 3 и 4.",
-          "contentEn": "4.4.1 At the start of a Kumite match, the Referee stands on the outside edge of the match area. On the Referee’s left stand Judges numbers 1 and 2, and on the right stand Judges numbers 3 and 4. Rules"
+          "contentEn": "4.4.1 At the start of a Kumite match, the Referee stands on the outside edge of the match area. On the Referee’s left stand Judges numbers 1 and 2, and on the right stand Judges numbers 3 and 4."
         },
         {
           "id": "4.4.2",
@@ -984,7 +1012,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "4.5.1 В соревнованиях Молодёжной лиги допускается использование только двух угловых судей. Эта процедура описана в ПРИЛОЖЕНИИ 5.",
-          "contentEn": "4.5.1 For Youth League competitions, the use of only two corner Judges is allowed. This procedure is described in APPENDIX 5. Rules"
+          "contentEn": "4.5.1 For Youth League competitions, the use of only two corner Judges is allowed. This procedure is described in APPENDIX 5."
         }
       ]
     },
@@ -1064,7 +1092,7 @@
           "title": "",
           "titleRu": "",
           "titleEn": "",
-          "contentRu": "6.2 Спортсмены или команды, не явившиеся по вызову, будут дисквалифицированы\n\n(KIKEN) из данной категории. В командных матчах счёт за несостоявшийся поединок будет установлен 8-0 (засчитывается как YUKO) в пользу команды соперников. В индивидуальных соревнованиях по круговой системе счёт поединка будет установлен 4-0 (засчитывается как YUKO) в пользу соперника.",
+          "contentRu": "6.2 Спортсмены или команды, не явившиеся по вызову, будут дисквалифицированы (KIKEN) из данной категории. В командных матчах счёт за несостоявшийся поединок будет установлен 8-0 (засчитывается как YUKO) в пользу команды соперников. В индивидуальных соревнованиях по круговой системе счёт поединка будет установлен 4-0 (засчитывается как YUKO) в пользу соперника.",
           "contentEn": "6.2 Individual Athletes or Teams that do not present themselves when called will be disqualified\n\n(KIKEN) from that category. In Team matches, the score for the bout not taking place will then be set to 8-0 (counted as YUKO) in favour of the other Team. In Individual Round-robin, the score for the bout will be set to 4-0 (counted as YUKO)."
         },
         {
@@ -1092,7 +1120,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "6.5 При объявлении дисквалификации KIKEN Рефери указывает пальцем в сторону отсутствующего спортсмена или команды, произнося \"AKA/AO KIKEN\", а затем объявляет \"AKA/AO NO KACHI\", используя жест KACHI (победа) в сторону соперника.",
-          "contentEn": "6.5 When announcing disqualification by KIKEN, the Referee will signal by pointing their finger towards the side of the missing Athlete or Team, announcing “AKA/AO KIKEN”, and then “AKA/AO no KACHI”, giving the signal for KACHI (win) for the opponent. Rules"
+          "contentEn": "6.5 When announcing disqualification by KIKEN, the Referee will signal by pointing their finger towards the side of the missing Athlete or Team, announcing “AKA/AO KIKEN”, and then “AKA/AO no KACHI”, giving the signal for KACHI (win) for the opponent."
         }
       ]
     },
@@ -1199,8 +1227,8 @@
           "title": "",
           "titleRu": "",
           "titleEn": "",
-          "contentRu": "7.11 In the event that a bout starts without the time being recorded and the bout is then halted, and the remaining time is agreed upon between both coaches, the issue of the duration of the bout can no longer be protested. Rules",
-          "contentEn": "7.11 In the event that a bout starts without the time being recorded and the bout is then halted, and the remaining time is agreed upon between both coaches, the issue of the duration of the bout can no longer be protested. Rules"
+          "contentRu": "7.11 In the event that a bout starts without the time being recorded and the bout is then halted, and the remaining time is agreed upon between both coaches, the issue of the duration of the bout can no longer be protested.",
+          "contentEn": "7.11 In the event that a bout starts without the time being recorded and the bout is then halted, and the remaining time is agreed upon between both coaches, the issue of the duration of the bout can no longer be protested."
         }
       ]
     },
@@ -1262,7 +1290,7 @@
           "title": "",
           "titleRu": "",
           "titleEn": "",
-          "contentRu": "8.6 Для присуждения баллов используется следующая шкала: YUKO (1 балл) присуждается за прямой удар рукой (TSUKI) или круговой удар рукой\n\n(UCHI) в зачётную зону.\n\nWAZA-ARI (2 балла) присуждается за удар ногой в зону CHUDAN. IPPON (3 балла) присуждается за удары ногами в зону JODAN или любую оцениваемую технику рукой, выполненную против соперника, у которого любая часть тела, кроме ступней, соприкасается с татами, за исключением касания татами одним коленом во время выполнения техники (HIZA GAMAE).",
+          "contentRu": "8.6 Для присуждения баллов используется следующая шкала: YUKO (1 балл) присуждается за прямой удар рукой (TSUKI) или круговой удар рукой (UCHI) в зачётную зону.\n\nWAZA-ARI (2 балла) присуждается за удар ногой в зону CHUDAN. IPPON (3 балла) присуждается за удары ногами в зону JODAN или любую оцениваемую технику рукой, выполненную против соперника, у которого любая часть тела, кроме ступней, соприкасается с татами, за исключением касания татами одним коленом во время выполнения техники (HIZA GAMAE).",
           "contentEn": "8.6 The following scale is used for awarding of points:\n\n• YUKO (1 point) is awarded for TSUKI (straight punch) or UCHI (strike) to a scoring area.\n\n• WAZA ARI (2 points) is awarded for CHUDAN kicks.\n\n• IPPON (3 points) is awarded for JODAN kicks or any legal technique against an opponent whose any part of the body other than the feet is in contact with the mat, with the exception of HIZA GAMAE (One knee touching the mat while executing a technique)."
         },
         {
@@ -1290,7 +1318,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "8.9 \"Касание кожи\" разрешено во всех возрастных категориях. \"Касание кожи\" определяется как касание защищённого шлема или головы соперника без передачи энергии (приложения силы).",
-          "contentEn": "8.9 “Skin touch” is allowed in all age categories. “Skin touch” is defined as touching the target without transferring energy into the protected helmet or head of the Athlete. Rules"
+          "contentEn": "8.9 “Skin touch” is allowed in all age categories. “Skin touch” is defined as touching the target without transferring energy into the protected helmet or head of the Athlete."
         },
         {
           "id": "8.10",
@@ -1308,7 +1336,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "8.11 Техника не оценивается, если:\n\na) Выполняется после сигнала об окончании времени или после команды Рефери \"YAME\".\n\nb) Выполняется во время или после команды \"WAKARETE\" до того, как прозвучит команда \"TSUZUKETE\".\n\nc) Выполняется, когда атакующий участник находится за пределами соревновательной зоны (JOGAI).\n\nd) Следует за нарушением правил, таким как чрезмерный контакт или причинение травмы.\n\ne) Атакующий спортсмен после выполнения техники поворачивается спиной к сопернику (отсутствие готовности к продолжению поединка).\n\nf) Само по себе является нарушением правил или следует за ним (например, чрезмерный контакт, захват, удержание и т.д.).",
-          "contentEn": "8.11 A technique is invalid if:\n\na) Executed after the time-up signal or the Referee calling “YAME”.\n\nb) Executed upon or after “WAKARETE” before “TSUZUKETE” has been called.\n\nc) Executed when the performer is outside the competition area (JOGAI).\n\nd) Followed by a foul of excessive contact or otherwise causing injury.\n\ne) One turns one’s back to the opponent after a technique (lack of awareness).\n\nf) It is executed after a violation of the rules (such as excessive contact, holding, grabbing, etc.) meaning that one cannot use a foul to create the opening for a score.\n\nRules"
+          "contentEn": "8.11 A technique is invalid if:\n\na) Executed after the time-up signal or the Referee calling “YAME”.\n\nb) Executed upon or after “WAKARETE” before “TSUZUKETE” has been called.\n\nc) Executed when the performer is outside the competition area (JOGAI).\n\nd) Followed by a foul of excessive contact or otherwise causing injury.\n\ne) One turns one’s back to the opponent after a technique (lack of awareness).\n\nf) It is executed after a violation of the rules (such as excessive contact, holding, grabbing, etc.) meaning that one cannot use a foul to create the opening for a score."
         }
       ]
     },
@@ -1362,7 +1390,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "9.1.4 Рефери, основываясь исключительно на собственном мнении, имеет право отстранить от соревнований любого Тренера, не соблюдающего правила поведения или препятствующего упорядоченному проведению поединка, и отложить продолжение поединка до тех пор, пока Тренер не выполнит его требования. Полномочия Рефери также распространяются и на других членов команды Спортсмена, присутствующих на соревнованиях. Тренерам, отстраненным от соревнований, запрещается секундировать спортсменов как на соревновательной площадке, так и за её пределами.",
-          "contentEn": "9.1.4 A Referee may, based solely on their own Judgement, ban from the competition floor any Coach failing to conform to proper conduct, or that, in the opinion of the Referee, interferes with the orderly conduct of the bout, and postpone the continuation of a bout until the Coach complies. The same authority of the Referee extends to the compliance of other members of the Athlete’s entourage present on the competition floor. Coaches banned from the competition are not allowed to coach or guide the Athletes, in or out of the field of play. Rules"
+          "contentEn": "9.1.4 A Referee may, based solely on their own Judgement, ban from the competition floor any Coach failing to conform to proper conduct, or that, in the opinion of the Referee, interferes with the orderly conduct of the bout, and postpone the continuation of a bout until the Coach complies. The same authority of the Referee extends to the compliance of other members of the Athlete’s entourage present on the competition floor. Coaches banned from the competition are not allowed to coach or guide the Athletes, in or out of the field of play."
         },
         {
           "id": "9.1.5",
@@ -1389,7 +1417,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "9.1.7 Спортсмен может незаметно сообщить тренеру о своём желании запросить видеоповтор.",
-          "contentEn": "9.1.7 The Athlete may discreetly signal to the Coach the wish for them to request a video review. Rules"
+          "contentEn": "9.1.7 The Athlete may discreetly signal to the Coach the wish for them to request a video review."
         }
       ]
     },
@@ -1424,8 +1452,8 @@
           "title": "",
           "titleRu": "",
           "titleEn": "",
-          "contentRu": "10.1.2 Два вида неофициальных предупреждений: TSUZUKETE Возобновить поединок Чтобы призвать Спортсменов начать активно действовать, следует использовать жест, такой же, как для приглашения выйти на татами, в сочетании с командой \"TSUZUKETE \". WAKARETE Выйти из клинча Чтобы побудить Спортменов выйти из клинча, для временной остановки поединка без остановки времени используется жест \"Разойтись\" и команда \"WAKARETE\". Спортсмены должны разойтись, затем звучит команда \"TSUZUKETE\", поединок возобновляется.",
-          "contentEn": "10.1.2 There are two types of Informal Warnings: TSUZUKETE for encouraging activity To urge the Athletes to commence activity by gesturing in the same way as is customary for making the Athletes stepping on to the TATAMI, combined with the instruction “TSUZUKETE”. WAKARETE for breaking up a clinch To break-up a clinch, using the same gesture as is customary for making the Athletes step back on the TATAMI combined with giving the order “WAKARETE” to temporarily stop the action without stopping the clock. The Athletes must separate – after which the order “TSUZUKETE” is given for resuming action."
+          "contentRu": "10.1.2 Два вида неофициальных предупреждений:\n\n• TSUZUKETE (Возобновить поединок) — чтобы призвать Спортсменов начать активно действовать, следует использовать жест, такой же, как для приглашения выйти на татами, в сочетании с командой \"TSUZUKETE\".\n\n• WAKARETE (Выйти из клинча) — чтобы побудить Спортсменов выйти из клинча, для временной остановки поединка без остановки времени используется жест \"Разойтись\" и команда \"WAKARETE\". Спортсмены должны разойтись, затем звучит команда \"TSUZUKETE\", поединок возобновляется.",
+          "contentEn": "10.1.2 There are two types of Informal Warnings:\n\n• TSUZUKETE for encouraging activity — to urge the Athletes to commence activity by gesturing in the same way as is customary for making the Athletes stepping on to the TATAMI, combined with the instruction “TSUZUKETE”.\n\n• WAKARETE for breaking up a clinch — to break up a clinch, using the same gesture as is customary for making the Athletes step back on the TATAMI combined with giving the order “WAKARETE” to temporarily stop the action without stopping the clock. The Athletes must separate – after which the order “TSUZUKETE” is given for resuming action."
         },
         {
           "id": "10.1.3",
@@ -1470,7 +1498,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "10.2.1 Существует два вида официальных предупреждений – CHUI и HANSOKU CHUI: CHUI Предупреждение Наказание может быть назначено до трёх раз за незначительные нарушения, не уменьшающие шансы другого спортсмена на победу HANSOKU CHUI Предупреждение перед дисквалификацией в случае дальнейших нарушений Выносят за более серьёзные нарушения, которые значительно снижают потенциал соперника на победу, или Спортсмену за следующее нарушение, если ему/ей уже вынесли 3 предупреждения CHUI.",
-          "contentEn": "10.2.1 There are two degrees of official warnings - CHUI and HANSOKU CHUI: CHUI Warning is given, up to three times, for smaller infractions that do not diminish the other Athlete’s chances of winning. Rules"
+          "contentEn": "10.2.1 There are two degrees of official warnings - CHUI and HANSOKU CHUI: CHUI Warning is given, up to three times, for smaller infractions that do not diminish the other Athlete’s chances of winning."
         },
         {
           "id": "10.3",
@@ -1515,7 +1543,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "10.3.4 Если ситуация, по всей видимости, может привести к дисквалификации, Рефери может подозвать одного или нескольких Судей для краткой консультации (SHUGO) перед объявлением решения. SHUGO является обязательным перед вынесением дисквалификации за затягивание времени или для вынесения SHIKKAKU.",
-          "contentEn": "10.3.4 When a situation appears to possibly warrant a disqualification, the Referee can call one or more judges for a brief consultation (SHUGO) before announcing any decision. SHUGO is obligatory before imposing disqualifications based on time-wasting situations or in order to impose SHIKKAKU. Rules"
+          "contentEn": "10.3.4 When a situation appears to possibly warrant a disqualification, the Referee can call one or more judges for a brief consultation (SHUGO) before announcing any decision. SHUGO is obligatory before imposing disqualifications based on time-wasting situations or in order to impose SHIKKAKU."
         },
         {
           "id": "10.4",
@@ -1578,7 +1606,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "10.4.6 Контакт с горлом: Любое прикосновение к горлу, за исключением случаев, когда оно произошло по вине самого пострадавшего, должно сопровождаться предупреждением или наказанием.",
-          "contentEn": "10.4.6 Contact to the throat: Any contact to the throat, unless received by the recipient’s own fault, must result in a warning or penalty. Rules"
+          "contentEn": "10.4.6 Contact to the throat: Any contact to the throat, unless received by the recipient’s own fault, must result in a warning or penalty."
         },
         {
           "id": "10.4.7",
@@ -1659,7 +1687,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "10.4.15 Пассивность – это ситуация, когда ни один из спортсменов не пытается набрать очки, или один спортсмен не пытается набрать очки, несмотря на отставание по очкам, или когда соперник лидирует благодаря SENSHU. Перед остановкой боя для объявления пассивности рефери должен сначала объявить TSUZEKETE в качестве неформального предупреждения, используя соответствующий сигнал и команду. Объявление пассивности не может быть сделано в течение первых или последних 15 секунд боя.",
-          "contentEn": "10.4.15 Passivity refers to situations where neither Athlete makes attempts to score, or a single Athlete does not attempt to score despite being behind on points or the opponent has a lead because of SENSHU. The Referee, before stopping the bout to give passivity, must first announce TSUZEKETE as an informal warning, using the appropriate signal and command. Passivity cannot be given during the first or last 15 seconds of a bout. Rules"
+          "contentEn": "10.4.15 Passivity refers to situations where neither Athlete makes attempts to score, or a single Athlete does not attempt to score despite being behind on points or the opponent has a lead because of SENSHU. The Referee, before stopping the bout to give passivity, must first announce TSUZEKETE as an informal warning, using the appropriate signal and command. Passivity cannot be given during the first or last 15 seconds of a bout."
         },
         {
           "id": "10.4.16",
@@ -1722,7 +1750,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "10.7.2 Если Спортсмен получил наказание KIKEN или SHIKKAKU на соревнованиях по круговой системе (Round-robin), то баллы, набранные в предыдущих поединках, объявляются аннулированными (результаты аннулируются). Если такая ситуация происходит в последнем поединке круговой системы, то результат поединка записывается в обычном порядке и не влияет на результаты предыдущих поединков.",
-          "contentEn": "10.7.2 If an Athlete receives KIKEN or SHIKKAKU in Round-robin competition, all previous bouts are voided from the result unless it is the last scheduled bout for the disqualified Athlete, in which case the result of the bout is recorded in the usual manner without consequence for the results of the previous bouts. Rules"
+          "contentEn": "10.7.2 If an Athlete receives KIKEN or SHIKKAKU in Round-robin competition, all previous bouts are voided from the result unless it is the last scheduled bout for the disqualified Athlete, in which case the result of the bout is recorded in the usual manner without consequence for the results of the previous bouts."
         }
       ]
     },
@@ -1830,7 +1858,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "11.2.7 Если спортсмен, участвующий в соревнованиях по круговой системе, вынужден сняться с соревнований из-за травмы, все предыдущие поединки аннулируются, за исключением если это не последний запланированный поединок травмированного спортсмена, в этом случае результат поединка регистрируется в обычном порядке без влияния на результаты предыдущих поединков.",
-          "contentEn": "11.2.7 Should an Athlete in Round-robin competition have to withdraw because of injury, all previous bouts are voided from the result unless it is the last scheduled bout for the injured Athlete, in which case the result of the bout is recorded in the usual manner without consequence for the results of the previous bouts. Rules"
+          "contentEn": "11.2.7 Should an Athlete in Round-robin competition have to withdraw because of injury, all previous bouts are voided from the result unless it is the last scheduled bout for the injured Athlete, in which case the result of the bout is recorded in the usual manner without consequence for the results of the previous bouts."
         },
         {
           "id": "11.3",
@@ -1839,7 +1867,7 @@
           "titleRu": "Травма обоих спортсменов",
           "titleEn": "Injury to both Athletes",
           "contentRu": "11.3 Травма обоих спортсменов Если два спортсмена получили травму друг друга или страдают от последствий ранее полученных травм и признаны турнирным врачом неспособными продолжать поединок, исход поединка определяется в обычном порядке как это происходит при окончании основного времени.",
-          "contentEn": "11.3 Injury to both Athletes If two Athletes injure each other or are suffering from the effects of previously incurred injury and are declared by the Tournament Doctor to be unable to continue, the bout is decided as one normally would at full time. Rules"
+          "contentEn": "11.3 Injury to both Athletes If two Athletes injure each other or are suffering from the effects of previously incurred injury and are declared by the Tournament Doctor to be unable to continue, the bout is decided as one normally would at full time."
         }
       ]
     },
@@ -2100,7 +2128,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "12.5.3 Если в дополнительном поединке не будет определён победитель по очкам, и ни один из спортсменов не получит \"SENSHU\", то исход дополнительного поединка будет определён на основе \"HANTEI\" по той же процедуре, что и для индивидуальных поединков. Результат \"HANTEI\" в дополнительном поединке также определит результат командного матча.",
-          "contentEn": "12.5.3 If the extra bout does not produce a winner based on superiority on points, nor any of the Athletes receive SENSHU, the extra bout will be decided based on HANTEI according to the same procedure as for individual bouts. The result of the HANTEI for the extra bout will then also determine the result of the Team match. Rules"
+          "contentEn": "12.5.3 If the extra bout does not produce a winner based on superiority on points, nor any of the Athletes receive SENSHU, the extra bout will be decided based on HANTEI according to the same procedure as for individual bouts. The result of the HANTEI for the extra bout will then also determine the result of the Team match."
         },
         {
           "id": "12.5.4",
@@ -2127,7 +2155,7 @@
           "titleRu": "Ведение счета",
           "titleEn": "Scorekeeping",
           "contentRu": "12.6 Ведение счета Для фиксации баллов контролёр счета будет использовать следующие символы:",
-          "contentEn": "12.6 Scorekeeping The Score Supervisor will use the following symbols for registration of points: Rules"
+          "contentEn": "12.6 Scorekeeping The Score Supervisor will use the following symbols for registration of points:"
         }
       ]
     },
@@ -2244,7 +2272,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "13.1.11 В протесте необходимо указать имя и страну спортсменов, а также точное описание того, что именно оспаривается. Информация о причастных к инциденту должностных лицах заполняется татами менеджером. Общие претензии к общему уровню соревнований не принимаются в качестве законного протеста. Бремя доказывания обоснованности протеста лежит на заявителе. Протест должен быть передан представителю апелляционного жюри татами менеджером. В установленном порядке жюри рассмотрит обстоятельства, привёдшие к обжалуемому решению.",
-          "contentEn": "13.1.11 The protest must give the name and country of the Athletes and the precise details of what is being protested. The information of officials implicated is completed by the Tatami Manager. No general claims about overall standards will be accepted as a legitimate protest. The burden of proving the validity of the protest lies with the complainant. The protest must be submitted to a representative of the Appeals Jury by the Tatami Manager. In due course, the Jury will review the circumstances leading to the protested decision. Rules"
+          "contentEn": "13.1.11 The protest must give the name and country of the Athletes and the precise details of what is being protested. The information of officials implicated is completed by the Tatami Manager. No general claims about overall standards will be accepted as a legitimate protest. The burden of proving the validity of the protest lies with the complainant. The protest must be submitted to a representative of the Appeals Jury by the Tatami Manager. In due course, the Jury will review the circumstances leading to the protested decision."
         },
         {
           "id": "13.1.12",
@@ -2370,7 +2398,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "13.4.1 Если протест признан недействительным, Апелляционное жюри назначит одного из своих членов для устного уведомления лица подавшего протест о том, что протест отклонён, пометит оригинал документа словом \"ОТКЛОНЕНО\", получит подпись каждого из членов Апелляционного жюри и сообщит лицу подавшему протест о принятом решении.",
-          "contentEn": "13.4.1 If a protest is found invalid, the Appeals Jury will appoint one of its members to verbally notify the protester that the protest has been declined, mark the original document with the word “DECLINED”, have it signed by each of the members of the Appeals Jury, and inform the protester of the decision. Rules"
+          "contentEn": "13.4.1 If a protest is found invalid, the Appeals Jury will appoint one of its members to verbally notify the protester that the protest has been declined, mark the original document with the word “DECLINED”, have it signed by each of the members of the Appeals Jury, and inform the protester of the decision."
         },
         {
           "id": "13.4.2",
@@ -2433,7 +2461,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "13.5.2 Отчёт должен быть подписан всеми тремя членами Апелляционного жюри и представлен главному арбитру и Оргкомитету соревнований.",
-          "contentEn": "13.5.2 The report should be signed by all three members of the Appeals Jury and submitted to the Chief Referee and the Organising Commission. Rules"
+          "contentEn": "13.5.2 The report should be signed by all three members of the Appeals Jury and submitted to the Chief Referee and the Organising Commission."
         }
       ]
     },
@@ -2532,7 +2560,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "14.10 Если один тренер показывает карточку для видеопросмотра, а другой тренер хочет просмотреть тот же эпизод, второй тренер должен поднять свою карточку до начала просмотра, чтобы не потерять право запросить видеопросмотр данного эпизода. Видеопросмотр считается начатым, когда Рефери делает соответствующий жест.",
-          "contentEn": "14.10 If one Coach shows the card for video review and the other Coach wants a review of the same instance, the second Coach must raise his card before the review starts in order not to lose his right to request video review for that instance. The video review is considered started when the Referee makes the gesture. Rules"
+          "contentEn": "14.10 If one Coach shows the card for video review and the other Coach wants a review of the same instance, the second Coach must raise his card before the review starts in order not to lose his right to request video review for that instance. The video review is considered started when the Referee makes the gesture."
         },
         {
           "id": "14.11",
@@ -2595,7 +2623,17 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "14.18 В таблице ниже указано количество карточек для видео просмотра, допустимых на каждом этапе мероприятий WKF: ЭТАП 1 – ЧЕМПИОНАТ МИРА (индивидуальный) Тренер будет иметь 1 карту видео просмотра для групп 3-4 спортсмена на групповом этапе Тренер будет иметь 2 карты видео просмотра для групп 5-6 спортсменов на групповом этапе Тренер будет иметь 1 карту видео просмотра в первом раунде этапа на выбывание Тренер будет иметь 1 карту видео просмотра в квалификационном раунде этапа на выбывание КОМАНДНЫЙ ЧЕМПИОНАТ МИРА Мужские команды Тренер будет иметь 3 карты видео просмотра на групповом этапе Тренер будет иметь 3 карты видео просмотра в четвертьфинале Тренер будет иметь 3 карты видео просмотра в полуфинале Тренер будет иметь 3 карты видео просмотра в поединках за медали Женские команды Тренер будет иметь 2 карты видео просмотра на групповом этапе Тренер будет иметь 2 карты видео просмотра в четвертьфинале Тренер будет иметь 2 карты видео просмотра в полуфинале Тренер будет иметь 2 карты видео просмотра в поединках за медали ЭТАП 1 – ЧЕМПИОНАТ МИРА (индивидуальный) Тренер будет иметь 1 карту видео просмотра на групповом этапе Тренер будет иметь 1 карту видео просмотра на групповом этапе 16 Тренер будет иметь 1 карту видео просмотра в четвертьфинале Тренер будет иметь 1 карту видео просмотра в полуфинале Тренер будет иметь 1 карту видео просмотра в поединках за медали ПРЕМЬЕР-ЛИГА Тренер будет иметь 1 карту видео просмотра на групповом этапе Тренер будет иметь 1 карту видео просмотра в четвертьфинале Тренер будет иметь 1 карту видео просмотра в полуфинале Тренер будет иметь 1 карту видео просмотра в поединках за медали Командные соревнования (предварительные и утешительные поединки) Тренер будет иметь 1 карту видео просмотра на групповом этапе на выбывание Тренер будет иметь 1 карту видео просмотра в полуфинале Тренер будет иметь 1 карту видео просмотра в утешительных поединках Тренер будет иметь 1 карту видео просмотра в поединках за медали Индивидуальные соревнования (предварительные и утешительные поединки) Тренер будет иметь 1 карту видео просмотра на групповом этапе на выбывание Тренер будет иметь 1 карту видео просмотра в полуфинале Тренер будет иметь 1 карту видео просмотра в утешительных поединках Тренер будет иметь 1 карту видео просмотра в поединках за медали Только одна карта видео просмотра может быть использована для любого индивидуального боя",
-          "contentEn": "14.18 The following table determines the video review cards allowable per phase for WKF events: Rules"
+          "contentEn": "14.18 The following table determines the video review cards allowable per phase for WKF events:"
+        }
+      ],
+      "images": [
+        {
+          "id": "kumite-video-review-cards",
+          "src": "/images/rules/kumite-video-review-cards.png",
+          "titleRu": "Карточки запроса видеоповтора (VR Cards)",
+          "titleEn": "Video Review Request Cards",
+          "captionRu": "Карточки для тренеров красного (AKA) и синего (AO) участников: 1 балл (YUKO), 2 балла (WAZA-ARI), 3 балла (IPPON).",
+          "captionEn": "Coach cards for red (AKA) and blue (AO) competitors: 1 point (YUKO), 2 points (WAZA-ARI), 3 points (IPPON)."
         }
       ]
     },
@@ -2766,7 +2804,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "15.6.2 В случае, если Рефери не услышит сигнал об окончании времени, свисток даст контроллер счета, а не KANSA.",
-          "contentEn": "15.6.2 In the event that the Referee does not hear the time-up bell, the Score-Supervisor will blow his whistle, not KANSA. Rules"
+          "contentEn": "15.6.2 In the event that the Referee does not hear the time-up bell, the Score-Supervisor will blow his whistle, not KANSA."
         }
       ]
     },
@@ -2901,7 +2939,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "16.3.4 Спортсмен, имеющий двойное гражданство (то есть одно в соответствии с законодательством одной страны, другое в соответствии с законодательством другой страны), может представлять только одну из стран по своему выбору. После того, как спортсмен представлял обе страны, для дальнейших изменений потребуется одобрение Исполнительного комитета WKF, после мотивированного письменного запроса соответствующей национальной федерации президенту WKF.",
-          "contentEn": "16.3.4 An Athlete who possesses dual nationality (i.e. one by virtue of the law of one country, the other by virtue of the law of another country) may only represent one or another country as the Athlete in question selects. Once having represented both countries, WKF EC approval will be necessary for a further change, following a reasoned written demand by the relevant NF to the WKF President. Rules"
+          "contentEn": "16.3.4 An Athlete who possesses dual nationality (i.e. one by virtue of the law of one country, the other by virtue of the law of another country) may only represent one or another country as the Athlete in question selects. Once having represented both countries, WKF EC approval will be necessary for a further change, following a reasoned written demand by the relevant NF to the WKF President."
         },
         {
           "id": "16.3.5",
@@ -2955,7 +2993,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "16.3.10 После того, как спортсмен представит все участвующие национальные федерации, для любых дальнейших изменений потребуется одобрение Исполнительного комитета WKF.",
-          "contentEn": "16.3.10 Once the Athlete has represented all the NFs involved, the WKF EC approval will be necessary for any further change. Rules"
+          "contentEn": "16.3.10 Once the Athlete has represented all the NFs involved, the WKF EC approval will be necessary for any further change."
         }
       ]
     },
@@ -2991,7 +3029,7 @@
           "titleRu": "",
           "titleEn": "",
           "contentRu": "17.3 Любое отклонение от Правил, применяемых к данному соревнованию, должно быть объявлено в официальном бюллетене или приглашении на мероприятие.",
-          "contentEn": "17.3 Any deviation from the Competition Rules applied to a competition must be announced in the official bulletin or invitation to the event. Rules"
+          "contentEn": "17.3 Any deviation from the Competition Rules applied to a competition must be announced in the official bulletin or invitation to the event."
         },
         {
           "id": "intro",
@@ -3018,7 +3056,7 @@
           "titleRu": "Общие положения",
           "titleEn": "Общие положения",
           "contentRu": "Время от времени могут возникать ситуации, когда правила не содержат конкретных указаний по разрешению проблемы. В таких случаях главный судья соревнований имеет право разрешить проблему, применив аналогичные решения к аналогичным случаям, предусмотренным правилами, или руководствуясь своим собственным суждением. Перед принятием решения главный судья может проконсультироваться с назначенным представителем WKF на турнире или передать вопрос на рассмотрение спортивному комиссару.",
-          "contentEn": "From time to time, situations may occur where the rules fall short of giving specific instructions to resolve an issue. In such instances, the Chief Referee for the competition has the authority to resolve the issue by applying analogous resolutions to similar cases found in the rules or their best judgment. Before making a decision, the Chief Referee may consult the assigned WKF Representative for the tournament or escalate the issue to the Sports Commissioner for consultation before taking a decision. Rules"
+          "contentEn": "From time to time, situations may occur where the rules fall short of giving specific instructions to resolve an issue. In such instances, the Chief Referee for the competition has the authority to resolve the issue by applying analogous resolutions to similar cases found in the rules or their best judgment. Before making a decision, the Chief Referee may consult the assigned WKF Representative for the tournament or escalate the issue to the Sports Commissioner for consultation before taking a decision."
         }
       ]
     },
@@ -3036,7 +3074,7 @@
           "titleRu": "Общие положения",
           "titleEn": "Общие положения",
           "contentRu": "ШОБУ ХАДЖИМЭ Начать матч или поединок После объявления рефери делает шаг назад АТО ШИБАРАКУ Осталось немного времени За 15 секунд до фактического окончания боя хронометрист подаст звуковой сигнал, и рефери объявит: \"Ато Шибараку\". ЯМЭ СТОП Прерывание или окончание боя. В момент объявления рефери делает движение рукой, напоминающее рубящий удар сверху вниз. МОТО НО ИЧИ Исходное положение Спортсмены и Рефери возвращаются на свои исходные позиции. ЦУЗУКЕТЕ Продолжить поединок Возобновление боя после команды \"Вакарете\" допускается в случае несанкционированного перерыва или когда рефери дает неофициальный приказ о начале боя из-за отсутствия активности. ЦУЗУКЕТЕ ХАДЖИМЭ Возобновить поединок – начать Рефери стоит в прямой стойке. Произнося \"Цузукетэ\", он вытягивает руки ладонями наружу в сторону спортсменов. Произнося \"Хадзимэ\", он поворачивает ладони и быстро приближает их друг к другу, одновременно отступая назад. ФУКУШИН ШУГО Созыв судей бригады Рефери созывает судей для совещания. HANTEI Решение Рефери призывает принять решение в конце ничейного поединка. После короткого двухтонального свистка судьи подают свои голоса, а рефери указывает на победителя, поднимая руку. ХИКИВАКЭ Ничья В случае ничьей рефери скрещивает руки, затем вытягивает их вперед ладонями. АКА (АО) НО КАЧИ Красный (Синий) побеждает Рефери поднимает руку в сторону победителя. АКА (АО) IPPON Красный (Синий) набирает три балла Рефери поднимает руку под углом 45 градусов в сторону заработавшего балл спортсмена. АКА (АО) WAZA- ARI Красный (Синий) получает два балла Рефери вытягивает руку на уровне плеча в сторону спортсмена, заработавшего оценку. АКА (АО) YUKO Красный (Синий) получает один балл Рефери вытягивает руку вниз под углом 45 градусов в сторону спортсмена, заработавшего балл. ЧУЙ Предупреждение Рефери показывает знак, указывающий на тип нарушения, в адрес нарушителя, а затем показывает от 1 до 3 пальцев в зависимости от того, является ли это 1-е, 2-е или 3-е предупреждение. HANSOKU-ЧУЙ Предупреждение о дисквалификация Рефери показывает знак, обозначающий тип нарушения, нарушителю, а затем указывает одним пальцем на пояс нарушителя. HANSOKU Дисквалификация Рефери указывает на лицо нарушителя и объявляет о победе соперника JOGAI Выход за площадку для соревнований не вызванный действиями противника Рефери указывает указательным пальцем на бок нарушителя, чтобы показать, что спортсмен покинул зону, после чего следует вынесение соответствующего предупреждения или наказания. SENSHU Преимущество первого безапелляционного балла После присуждения балла обычным способом, Рефери произносит \"АКА (АО) SENSHU\", держа согнутую руку поднятой ладонью, обращенной к лицу Рефери. SHIKKAKU Дисквалификация с соревнований Рефери указывает на лицо нарушителя, затем жестом отводит от зоны соревнований и объявляет о победе соперника. ТОРИМАСЕН Отмена Решение аннулировано. Рефери скрещивает руки вниз. KIKEN Отказ (неявка) Рефери указывает вниз под углом 45 градусов в направлении стороны татами, где находится спортсмен или команда. МУБОБИ Пренебрежение собственной защитой Рефери касается своего лица, затем поворачивает край его руки вперед и назад, указывая на то, что спортсмен подверг себя опасности. ВАКАРЕТЕ Разойтись Рефери жестом призывает спортсменов разойтись из клинча или прекратить стояние грудь к груди, раздвигая руки движением ладонами наружу и отдавая словесную команду. Спортсмены останавливаются и расходятся до получения команды \"Цузукетэ\".",
-          "contentEn": "SHOBU HAJIME Start the Match or Bout After the announcement, the Referee takes a step back. ATO SHIBARAKU A little more time left An audible signal will be given by the timekeeper 15 seconds before the actual end of the bout and the Referee will announce “Ato Shibaraku”. YAME Stop Interruption, or end of the bout. As they make the announcement, the Referee makes a downward chopping motion with his hand. MOTO NO ICHI Original position Athletes and Referee return to their starting positions. TSUZUKETE Fight on Resumption of fighting ordered after WAKARETE, when an unauthorised interruption occurs – or when the Referee gives an informal order to commence fighting due to lack of activity TSUZUKETE HAJIME Resume fighting – Begin The Referee stands in a forward stance. As they says “Tsuzukete” they extend their arms, palms outwards towards the Athletes. As they says “Hajime” they turn the palms and brings them rapidly towards one another, at the same time stepping back. FUKUSHIN SHUGO Judges called The Referee calls the Judges to assemble. HANTEI Decision Referee calls for a decision at the end of an inconclusive bout. After a two-tone short blast of the whistle, the Judges signal their votes, and the Referee indicates the winner by raising their arm. HIKIWAKE Draw In case of a tied bout, the Referee crosses his arms, then extends them with the palms showing to the front. AKA (AO) NO KACHI Red (Blue) wins The Referee raises their arm on the side of the winner. AKA (AO) IPPON Red (Blue) scores three The Referee raises their arm up at 45 degrees on the side of the scorer. points AKA (AO) WAZA-ARI Red (Blue) scores two The Referee extends their arm at shoulder level on the side of the scorer. points AKA (AO) YUKO Red (Blue) scores one The Referee extends their arm downward at 45 degrees on the side of point the scorer. CHUI Warning The Referee shows the signal for the type of offense towards the offender followed by showing 1 to 3 fingers depending on if this is the 1st, 2nd or 3rd warning. HANSOKU-CHUI Warning of The Referee shows the signal for the type of offense towards the disqualification offender followed by pointing with one finger towards the offender’s belt. HANSOKU Disqualification The Referee points to the face of the offender and announces a win for the opponent. JOGAI Exit from the The Referee points their index finger to the side of the offender to competition area not indicate that the Athlete has moved out of the area followed by the caused by the opponent applicable warning or penalty. SENSHU First unopposed point After awarding the point in the regular fashion, the Referee calls “AKA advantage (AO) SENSHU” while holding lifting their bent arm with the palm facing the Referee’ s own face. SHIKKAKU Disqualification from the The Referee points to the face of the offender, then away from the tournament competition area, and announces a win for the opponent. TORIMASEN Cancellation A decision is annulled. The Referee crosses their hands in a downward movement. KIKEN Renunciation The Referee points downwards at 45 degrees in the direction of the Athlete’s or Team’s side of the Tatami. MUBOBI Self-Endangerment The Referee touches their face then turning their hand edge forward, moves it back and forth to indicate that the Athlete endangered himself. WAKARETE “Separate” The Referee motions for the Athletes to separate from a clinch, or standing chest to chest, by separating his hands with a motion with the palms outward while giving the verbal order. The Athletes halts action and separate until receiving the order “Tsuzukete”. Rules"
+          "contentEn": "SHOBU HAJIME Start the Match or Bout After the announcement, the Referee takes a step back. ATO SHIBARAKU A little more time left An audible signal will be given by the timekeeper 15 seconds before the actual end of the bout and the Referee will announce “Ato Shibaraku”. YAME Stop Interruption, or end of the bout. As they make the announcement, the Referee makes a downward chopping motion with his hand. MOTO NO ICHI Original position Athletes and Referee return to their starting positions. TSUZUKETE Fight on Resumption of fighting ordered after WAKARETE, when an unauthorised interruption occurs – or when the Referee gives an informal order to commence fighting due to lack of activity TSUZUKETE HAJIME Resume fighting – Begin The Referee stands in a forward stance. As they says “Tsuzukete” they extend their arms, palms outwards towards the Athletes. As they says “Hajime” they turn the palms and brings them rapidly towards one another, at the same time stepping back. FUKUSHIN SHUGO Judges called The Referee calls the Judges to assemble. HANTEI Decision Referee calls for a decision at the end of an inconclusive bout. After a two-tone short blast of the whistle, the Judges signal their votes, and the Referee indicates the winner by raising their arm. HIKIWAKE Draw In case of a tied bout, the Referee crosses his arms, then extends them with the palms showing to the front. AKA (AO) NO KACHI Red (Blue) wins The Referee raises their arm on the side of the winner. AKA (AO) IPPON Red (Blue) scores three The Referee raises their arm up at 45 degrees on the side of the scorer. points AKA (AO) WAZA-ARI Red (Blue) scores two The Referee extends their arm at shoulder level on the side of the scorer. points AKA (AO) YUKO Red (Blue) scores one The Referee extends their arm downward at 45 degrees on the side of point the scorer. CHUI Warning The Referee shows the signal for the type of offense towards the offender followed by showing 1 to 3 fingers depending on if this is the 1st, 2nd or 3rd warning. HANSOKU-CHUI Warning of The Referee shows the signal for the type of offense towards the disqualification offender followed by pointing with one finger towards the offender’s belt. HANSOKU Disqualification The Referee points to the face of the offender and announces a win for the opponent. JOGAI Exit from the The Referee points their index finger to the side of the offender to competition area not indicate that the Athlete has moved out of the area followed by the caused by the opponent applicable warning or penalty. SENSHU First unopposed point After awarding the point in the regular fashion, the Referee calls “AKA advantage (AO) SENSHU” while holding lifting their bent arm with the palm facing the Referee’ s own face. SHIKKAKU Disqualification from the The Referee points to the face of the offender, then away from the tournament competition area, and announces a win for the opponent. TORIMASEN Cancellation A decision is annulled. The Referee crosses their hands in a downward movement. KIKEN Renunciation The Referee points downwards at 45 degrees in the direction of the Athlete’s or Team’s side of the Tatami. MUBOBI Self-Endangerment The Referee touches their face then turning their hand edge forward, moves it back and forth to indicate that the Athlete endangered himself. WAKARETE “Separate” The Referee motions for the Athletes to separate from a clinch, or standing chest to chest, by separating his hands with a motion with the palms outward while giving the verbal order. The Athletes halts action and separate until receiving the order “Tsuzukete”."
         }
       ]
     },
@@ -3054,7 +3092,49 @@
           "titleRu": "Общие положения",
           "titleEn": "Общие положения",
           "contentRu": "НАЧАЛО И ОСТАНОВКА БОЯ ШОМА НИ РЭЙ (1/3) ШОМА НИ РЭЙ (2/3) ШОМА НИ РЭЙ (3/3) ОТОГА НИ РЭЙ (1/3) ОТОГА НИ РЭЙ (2/3) ОТОГА НИ РЭЙ (3/3) ШОБУ ХАДЖИМЕ МОТО НО ИЧИ ЯМЭ (1/2) ЯМЭ (2/2) БАЛЛЫ И ОТМЕНА YUKO (1/2) YUKO (2/2) ВАЗААРИ (1/2) ВАЗААРИ (2/2) IPPON (1/2) IPPON (2/2) SENSHU ТОРИМАСЭН (1/2) ОТМЕНА ТОРИМАСЭН (2/2) ОТМЕНА ПРЕДУПРЕЖДЕНИЯ ЦУЗУКЕТЕ (1/2) ЦУЗУКЕТЕ (2/2) ВАКАРЕТЕ (1/2) ВАКАРЕТЕ (2/2) ПАССИВНОСТЬ (1/2) ПАССИВНОСТЬ (2/2) ЧРЕЗМЕРНЫЙ КОНТАКТ ИЛИ ПРЕУВЕЛИЧЧЕ НИЕ ИМИТАЦИЯ ТРАВМЫ ДЗЕГАЙ ОПАСТНЫЙ ТРАВМЫ БРОСОК МУБОБИ УКЛОНЕНИЕ ТОЛЧОК ЗАХВАТ НЕКОНТРОЛИРУЕМАЯ АТАКА СИМУЛЯЦИЯ АТАКИ (ЛОКТЕМ) СИМУЛЯЦИЯ АТАКИ (ГОЛОВОЙ)` СИМУЛЯЦИЯ АТАКИ (КОЛЕНОМ) НЕСПОРТИВНОЕ ПОВЕДЕНИЕ, РАЗГОВОРЫ ЧУЙ #1 ЧУЙ #2 ЧУЙ #3 HANSOKU ЧУЙ (1/2) HANSOKU ЧУЙ (2/2) РЕШЕНИЕ ФУКУШИН ШУГО (1/2) ФУКУШИН ШУГО (2/2) AKA (AO) KIKEN HANTEI HANSOKU (1/2) HANSOKU (2/2) SHIKKAKU (1/3) SHIKKAKU (2/3) SHIKKAKU (3/3) ХИКИВАКЕ (1/2) ХИКИВАКЕ (2/2) AKA (AO) НО КАЧИ AKA (AO) НО КАЧИ (1/2) (2/2) ВИДЕОПОВТОР ВИДЕОПОВТОР (1/4) ВИДЕОПОВТОР (2/4) ВИДЕОПОВТОР (3/4) ВИДЕОПОВТОР (4/4) МИНАЙ СИГНАЛЫ ФЛАГАМИ ПОЗИЦИЯ СУДЬИ YUKO ВАЗА АРИ IPPON",
-          "contentEn": "STARTING AND STOPPING THE BOUT SHOMEN NI REI ( 1 / 3 ) SHOMEN NI REI ( 2 / 3 ) SHOMEN NI REI ( 3 / 3 ) OTAGAI NI REI ( 1 / 3 ) OTAGAI NI REI ( 2 / 3 ) OTAGAI NI REI ( 3 / 3 ) SHOBU HAJIME MOTO NO ICHI YAME ( 1 / 2 ) YAME ( 2 / 2 ) POINTS AND CANCELLATIONS YUKO ( 1 / 2 ) YUKO ( 2 / 2 ) WAZA ARI ( 1 / 2 ) WAZA ARI ( 2 / 2 ) Rules IPPON ( 1 / 2 ) IPPON ( 2 / 2 ) SENSHU TORIMASEN ( 1 / 2 ) CANCELLATION TORIMASEN ( 2 / 2 ) CANCELLATION WARNINGS TSUZUKETE ( 1 / 2 ) TSUZUKETE ( 2 / 2 ) WAKARETE ( 1 / 2 ) WAKARETE ( 2 / 2 ) PASSIVITY ( 1 / 2 ) PASSIVITY ( 2 / 2 ) HARD CONTACT OR DANGEROUS THROWS EXAGGERATING INJURY Rules FEIGNING INJURY JOGAI Rules MUBOBI AVOIDING COMBAT PUSHING GRABBING UNCONTROLLED ATTACK SIMULATED ATTACK ( ELBOW) SIMULATED ATTACK ( HEAD) ` SIMULATED ATTACK ( KNEE) GOUDING OR TALKING CHUI # 1 CHUI # 2 CHUI # 3 HANSOKU CHUI ( 1 / 2 ) HANSOKU CHUI ( 2 / 2 ) Rules DECISION FUKUSHIN SHUGO (1 / 2 ) FUKUSHIN SHUGO ( 2 /2 ) AKA ( AO) KIKEN HANTEI HANSOKU ( 1 / 2 ) HANSOKU ( 2 / 2 ) SHIKKAKU ( 1 / 3 ) - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - SHIKKAKU ( 2 / 3 ) SHIKKAKU ( 3 / 3 ) HIKIWAKE ( 1 / 2 ) HIKIWAKE ( 2 / 2 ) AKA ( AO) NO KACH I ( 1 / 2 ) AKA ( AO) NO KACH I ( 2 / 2 ) Rules VIDEO REVIEW SIGNALS VIDEO REVIEW ( 1 / 4 ) VIDEO REVIEW ( 2 / 4 ) VIDEO REVIEW ( 3 / 4 ) VIDEO REVIEW ( 4 / 4 ) MIENAI FLAG SIGNALS SIT TING POSITION YUKO WAZA ARI IPPON Rules"
+          "contentEn": "STARTING AND STOPPING THE BOUT SHOMEN NI REI ( 1 / 3 ) SHOMEN NI REI ( 2 / 3 ) SHOMEN NI REI ( 3 / 3 ) OTAGAI NI REI ( 1 / 3 ) OTAGAI NI REI ( 2 / 3 ) OTAGAI NI REI ( 3 / 3 ) SHOBU HAJIME MOTO NO ICHI YAME ( 1 / 2 ) YAME ( 2 / 2 ) POINTS AND CANCELLATIONS YUKO ( 1 / 2 ) YUKO ( 2 / 2 ) WAZA ARI ( 1 / 2 ) WAZA ARI ( 2 / 2 ) Rules IPPON ( 1 / 2 ) IPPON ( 2 / 2 ) SENSHU TORIMASEN ( 1 / 2 ) CANCELLATION TORIMASEN ( 2 / 2 ) CANCELLATION WARNINGS TSUZUKETE ( 1 / 2 ) TSUZUKETE ( 2 / 2 ) WAKARETE ( 1 / 2 ) WAKARETE ( 2 / 2 ) PASSIVITY ( 1 / 2 ) PASSIVITY ( 2 / 2 ) HARD CONTACT OR DANGEROUS THROWS EXAGGERATING INJURY Rules FEIGNING INJURY JOGAI Rules MUBOBI AVOIDING COMBAT PUSHING GRABBING UNCONTROLLED ATTACK SIMULATED ATTACK ( ELBOW) SIMULATED ATTACK ( HEAD) ` SIMULATED ATTACK ( KNEE) GOUDING OR TALKING CHUI # 1 CHUI # 2 CHUI # 3 HANSOKU CHUI ( 1 / 2 ) HANSOKU CHUI ( 2 / 2 ) Rules DECISION FUKUSHIN SHUGO (1 / 2 ) FUKUSHIN SHUGO ( 2 /2 ) AKA ( AO) KIKEN HANTEI HANSOKU ( 1 / 2 ) HANSOKU ( 2 / 2 ) SHIKKAKU ( 1 / 3 ) - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - SHIKKAKU ( 2 / 3 ) SHIKKAKU ( 3 / 3 ) HIKIWAKE ( 1 / 2 ) HIKIWAKE ( 2 / 2 ) AKA ( AO) NO KACH I ( 1 / 2 ) AKA ( AO) NO KACH I ( 2 / 2 ) Rules VIDEO REVIEW SIGNALS VIDEO REVIEW ( 1 / 4 ) VIDEO REVIEW ( 2 / 4 ) VIDEO REVIEW ( 3 / 4 ) VIDEO REVIEW ( 4 / 4 ) MIENAI FLAG SIGNALS SIT TING POSITION YUKO WAZA ARI IPPON"
+        }
+      ],
+      "images": [
+        {
+          "id": "kumite-signals-start-stop",
+          "src": "/images/rules/kumite-signals-start-stop.png",
+          "titleRu": "Жесты рефери: Начало и остановка боя",
+          "titleEn": "Referee Gestures: Starting and Stopping the Bout",
+          "captionRu": "Официальные сигналы: SHOMEN NI REI, OTSONI REI, HAJIME, YAME, TSUZUKETE, WAKARETE.",
+          "captionEn": "Official gestures: SHOMEN NI REI, OTSONI REI, HAJIME, YAME, TSUZUKETE, WAKARETE."
+        },
+        {
+          "id": "kumite-signals-scores-cancellations",
+          "src": "/images/rules/kumite-signals-scores-cancellations.png",
+          "titleRu": "Жесты рефери: Присуждение баллов и отмена",
+          "titleEn": "Referee Gestures: Scores and Cancellations",
+          "captionRu": "Сигналы присуждения IPPON, WAZA-ARI, преимущество SENSHU, отмена оценки TORIMASEN, возобновление боя.",
+          "captionEn": "Official signals for IPPON, WAZA-ARI, SENSHU advantage, cancellation TORIMASEN, and resuming action."
+        },
+        {
+          "id": "kumite-signals-penalties-warnings",
+          "src": "/images/rules/kumite-signals-penalties-warnings.png",
+          "titleRu": "Жесты рефери: Предупреждения и нарушения",
+          "titleEn": "Referee Gestures: Fouls and Prohibited Behaviour",
+          "captionRu": "Сигналы нарушений: MUBOBI (самоподвержение опасности), JOGAI (выход), уклонение от боя, клинч, неконтролируемая атака, симуляция.",
+          "captionEn": "Signals for fouls: MUBOBI, JOGAI, avoiding combat, clinching, pushing, uncontrolled attacks, simulation."
+        },
+        {
+          "id": "kumite-signals-decisions",
+          "src": "/images/rules/kumite-signals-decisions.png",
+          "titleRu": "Жесты рефери: Решения и дисквалификации",
+          "titleEn": "Referee Gestures: Decisions and Penalties",
+          "captionRu": "Официальные сигналы: совещание судей (FUKUSHIN SHUGO), KIKEN (неявка), HANTEI (решение), HANSOKU (дисквалификация), SHIKKAKU.",
+          "captionEn": "Official signals: FUKUSHIN SHUGO, KIKEN, HANTEI, HANSOKU, SHIKKAKU."
+        },
+        {
+          "id": "kumite-signals-video-review-flags",
+          "src": "/images/rules/kumite-signals-video-review-flags.png",
+          "titleRu": "Видеоповтор и сигналы флагами судей",
+          "titleEn": "Video Review Signals & Judge Flag Signals",
+          "captionRu": "Жесты запроса видеоповтора и стандартные положения флагов угловых судей: YUKO, WAZA-ARI, IPPON, MIENAI, JOGAI, предупреждение.",
+          "captionEn": "VR review gestures and judge flag signals: YUKO, WAZA-ARI, IPPON, MIENAI, JOGAI, warnings."
         }
       ]
     },
@@ -3072,7 +3152,7 @@
           "titleRu": "Общие положения",
           "titleEn": "Общие положения",
           "contentRu": "Мужчины (18+ лет) Мужчины (18+ лет) Мужчины (18+ лет) Мужчины (18+ лет) Мужчины (18+ лет) Мужчины до 21 года (18-20 лет) Мужчины до 21 года (18-20 лет) Мужчины до 21 года (18-20 лет) Мужчины до 21 года (18-20 лет) Мужчины до 21 года (18-20 лет) Юниоры (16-17 лет) Юниоры (16-17 лет) Юниоры (16-17 лет) Юниоры (16-17 лет) Юниоры (от 16 до 18 лет) Кадеты (14-15 лет) Кадеты (14-15 лет) Кадеты (14-15 лет) Кадеты (14-15 лет) Кадеты (14-15 лет) Юноши до 14 лет (12-13 лет) Юноши до 14 лет (12-13 лет) Юноши до 14 лет (12-13 лет) Юноши до 14 лет (12-13 лет) Юноши до 14 лет (12-13 лет)\n\n- 60 кг Женщины (18+ лет) - 50 кг\n\n- 67 кг Женщины (18+ лет) - 55 кг\n\n- 75 кг Женщины (18+ лет) - 61 кг\n\n- 84 кг Женщины (18+ лет) - 68 кг + 84 кг Женщины (18+ лет) + 68 кг\n\n- 60 кг Женщины до 21 года (от 18 до 20 лет) - 50 кг\n\n- 67 кг Женщины до 21 года (от 18 до 20 лет) - 55 кг\n\n- 75 кг Женщины до 21 года (от 18 до 20 лет) - 61 кг\n\n- 84 кг Женщины до 21 года (от 18 до 20 лет) - 68 кг + 84 кг Женщины до 21 года (от 18 до 20 лет) + 68 кг\n\n- 55 кг Юниорки (16-17 лет) - 48 кг\n\n- 61 кг Юниорки (16-17 лет) - 53 кг\n\n- 68 кг Юниорки (16-17 лет) - 59 кг\n\n- 76 кг Юниорки (16-17 лет) - 66 кг + 76 кг Юниорки (16-17 лет) + 66 кг\n\n- 52 кг Кадетки (14-15 лет) - 47 кг\n\n- 57 кг Кадетки (14-15 лет) - 54 кг\n\n- 63 кг Кадетки (14-15 лет) - 61 кг\n\n- 70 кг Кадетки (14-15 лет) + 61 кг + 70 кг\n\n- 40 кг Девушки до 14 лет (12-13 лет) - 42 кг\n\n- 45 кг Девушки до 14 лет (12-13 лет) - 47 кг\n\n- 50 кг Девушки до 14 лет (12-13 лет) - 52 кг\n\n- 55 кг Девушки до 14 лет (12-13 лет) + 52 кг +55 кг",
-          "contentEn": "Male Senior (18+ years) - 60 kg Female Senior (18+ years) - 50 kg Male Senior (18+ years) - 67 kg Female Senior (18+ years) - 55 kg Male Senior (18+ years) - 75 kg Female Senior (18+ years) - 61 kg Male Senior (18+ years) - 84 kg Female Senior (18+ years) - 68 kg Male Senior (18+ years) + 84 kg Female Senior (18+ years) + 68 kg Male U21 (18 to <21 years) - 60 kg Female U21 (18 to <21 years) - 50 kg Male U21 (18 to <21 years) - 67 kg Female U21 (18 to <21 years) - 55 kg Male U21 (18 to <21 years) - 75 kg Female U21 (18 to <21 years) - 61 kg Male U21 (18 to <21 years) - 84 kg Female U21 (18 to <21 years) - 68 kg Male U21 (18 to <21 years) + 84 kg Female U21 (18 to <21 years) + 68 kg Male Junior (16 to <18 years) - 55 kg Female Junior (16 to <18 years) - 48 kg Male Junior (16 to <18 years) - 61 kg Female Junior (16 to <18 years) - 53 kg Male Junior (16 to <18 years) - 68 kg Female Junior (16 to <18 years) - 59 kg Male Junior (16 to <18 years) - 76 kg Female Junior (16 to <18 years) - 66 kg Male Junior (16 to <18 years) + 76 kg Female Junior (16 to <18 years) + 66 kg Male Cadet (14 to <16 years) - 52 kg Female Cadet (14 to <16 years) - 47 kg Male Cadet (14 to <16 years) - 57 kg Female Cadet (14 to <16 years) - 54 kg Male Cadet (14 to <16 years) - 63 kg Female Cadet (14 to <16 years) - 61 kg Male Cadet (14 to <16 years) - 70 kg Female Cadet (14 to <16 years) + 61 kg Male Cadet (14 to <16 years) + 70 kg Male U14 (12 to <14 years) - 40 kg Female U14 (12 to <14 years) - 42 kg Male U14 (12 to <14 years) - 45 kg Female U14 (12 to <14 years) - 47 kg Male U14 (12 to <14 years) - 50 kg Female U14 (12 to <14 years) - 52 kg Male U14 (12 to <14 years) Male U14 (12 to <14 years)\n\n- 55 kg +55 kg Female U14 (12 to <14 years) + 52 kg Rules"
+          "contentEn": "Male Senior (18+ years) - 60 kg Female Senior (18+ years) - 50 kg Male Senior (18+ years) - 67 kg Female Senior (18+ years) - 55 kg Male Senior (18+ years) - 75 kg Female Senior (18+ years) - 61 kg Male Senior (18+ years) - 84 kg Female Senior (18+ years) - 68 kg Male Senior (18+ years) + 84 kg Female Senior (18+ years) + 68 kg Male U21 (18 to <21 years) - 60 kg Female U21 (18 to <21 years) - 50 kg Male U21 (18 to <21 years) - 67 kg Female U21 (18 to <21 years) - 55 kg Male U21 (18 to <21 years) - 75 kg Female U21 (18 to <21 years) - 61 kg Male U21 (18 to <21 years) - 84 kg Female U21 (18 to <21 years) - 68 kg Male U21 (18 to <21 years) + 84 kg Female U21 (18 to <21 years) + 68 kg Male Junior (16 to <18 years) - 55 kg Female Junior (16 to <18 years) - 48 kg Male Junior (16 to <18 years) - 61 kg Female Junior (16 to <18 years) - 53 kg Male Junior (16 to <18 years) - 68 kg Female Junior (16 to <18 years) - 59 kg Male Junior (16 to <18 years) - 76 kg Female Junior (16 to <18 years) - 66 kg Male Junior (16 to <18 years) + 76 kg Female Junior (16 to <18 years) + 66 kg Male Cadet (14 to <16 years) - 52 kg Female Cadet (14 to <16 years) - 47 kg Male Cadet (14 to <16 years) - 57 kg Female Cadet (14 to <16 years) - 54 kg Male Cadet (14 to <16 years) - 63 kg Female Cadet (14 to <16 years) - 61 kg Male Cadet (14 to <16 years) - 70 kg Female Cadet (14 to <16 years) + 61 kg Male Cadet (14 to <16 years) + 70 kg Male U14 (12 to <14 years) - 40 kg Female U14 (12 to <14 years) - 42 kg Male U14 (12 to <14 years) - 45 kg Female U14 (12 to <14 years) - 47 kg Male U14 (12 to <14 years) - 50 kg Female U14 (12 to <14 years) - 52 kg Male U14 (12 to <14 years) Male U14 (12 to <14 years)\n\n- 55 kg +55 kg Female U14 (12 to <14 years) + 52 kg"
         }
       ]
     },
@@ -3098,8 +3178,18 @@
           "title": "Общие положения",
           "titleRu": "Общие положения",
           "titleEn": "Общие положения",
-          "contentRu": "WKF OFFICIAL PROTEST FORM The protest must be prepaid KUMITE DATE COMPETITION PLACE …….. / …….. / …….. CATEGORY: COMPETITOR’S COUNTRIES AO AKA Country: Country: PROTEST DESCRIPTION …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………......................... …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… NAME OF COACH / NF REP. COUNTRY Valid as receipt by the WKF SIGNATURE : TATAMI nr. KANSA : PANEL REFEREE JUDGE 1 JUDGE 2 JUDGE 3 JUDGE 4 NAME COUNTRY RESPONSIBLE TM SCORE SUPERVISOR VR JUDGE Rules",
-          "contentEn": "WKF OFFICIAL PROTEST FORM The protest must be prepaid KUMITE DATE COMPETITION PLACE …….. / …….. / …….. CATEGORY: COMPETITOR’S COUNTRIES AO AKA Country: Country: PROTEST DESCRIPTION …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………......................... …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… NAME OF COACH / NF REP. COUNTRY Valid as receipt by the WKF SIGNATURE : TATAMI nr. KANSA : PANEL REFEREE JUDGE 1 JUDGE 2 JUDGE 3 JUDGE 4 NAME COUNTRY RESPONSIBLE TM SCORE SUPERVISOR VR JUDGE Rules"
+          "contentRu": "WKF OFFICIAL PROTEST FORM The protest must be prepaid KUMITE DATE COMPETITION PLACE …….. / …….. / …….. CATEGORY: COMPETITOR’S COUNTRIES AO AKA Country: Country: PROTEST DESCRIPTION …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………......................... …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… NAME OF COACH / NF REP. COUNTRY Valid as receipt by the WKF SIGNATURE : TATAMI nr. KANSA : PANEL REFEREE JUDGE 1 JUDGE 2 JUDGE 3 JUDGE 4 NAME COUNTRY RESPONSIBLE TM SCORE SUPERVISOR VR JUDGE",
+          "contentEn": "WKF OFFICIAL PROTEST FORM The protest must be prepaid KUMITE DATE COMPETITION PLACE …….. / …….. / …….. CATEGORY: COMPETITOR’S COUNTRIES AO AKA Country: Country: PROTEST DESCRIPTION …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………......................... …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… …………………………………………………………………………………………………………………… NAME OF COACH / NF REP. COUNTRY Valid as receipt by the WKF SIGNATURE : TATAMI nr. KANSA : PANEL REFEREE JUDGE 1 JUDGE 2 JUDGE 3 JUDGE 4 NAME COUNTRY RESPONSIBLE TM SCORE SUPERVISOR VR JUDGE"
+        }
+      ],
+      "images": [
+        {
+          "id": "kumite-protest-form",
+          "src": "/images/rules/kumite-protest-form.png",
+          "titleRu": "Официальная форма протеста WKF (Кумитэ)",
+          "titleEn": "Official WKF Kumite Protest Form",
+          "captionRu": "Бланк подачи официального протеста в Апелляционное жюри соревнований.",
+          "captionEn": "Official form for lodging a protest to the Appeals Jury."
         }
       ]
     },
@@ -3117,7 +3207,17 @@
           "titleRu": "Общие положения",
           "titleEn": "Общие положения",
           "contentRu": "Порядок судейства в кумитэ с участием только двух угловых судей.\n\n1. При использовании системы с двумя угловыми Судьями, угловые Судьи и Рефери несут взаимную ответственность за набранные очки. Угловые Судьи используют флажки для подачи сигналов.\n\n2. Помимо указания очков, угловые судьи будут помогать Рефери, подавая сигналы о нарушениях правил (JOGAI) и чрезмерном контакте, но Рефери сохраняет автономию в вынесении предупреждений и наказаний, и его решение будет отменено только двумя Судьями, указавшими на одно и то же нарушение.\n\n3. Баллы присуждаются, если два Судьи или один Судья плюс Рефери согласны с заработанным баллом.\n\n4. Для того чтобы охватить все три ракурса, Рефери ни в коем случае не должен располагаться на одной стороне с двумя Судьями.\n\n5. Тренеры должны располагаться перед Рефери, а не позади него.\n\n6. Рефери может показывать и запрашивать подтверждение баллов, набранных в его видимости. В этом случае сигналы рефери для YUKO, WAZA-ARI и IPPON такие же, как и по обычным правилам кумитэ, за исключением того, что локоть рефери касается его туловища при подаче соответствующего сигнала. После получения подтверждения сигнала, сигналы при начислении очков такие же, как и для поединков по обычным правилам.\n\n7. Если один судья сигнализирует о заработанном балле, а другой – о предупреждении или наказании, окончательное решение принимает Рефери, поддержав одного из Судей.\n\n8. Если два судьи, или один Судья и Рефери, отдадут разные баллы одному и тому же спортсмену, будет присуждён более высокий балл.\n\n9. Если один Судья показывает оценку, но Рефери не согласен, Рефери покажет жест TORIMASEN, не останавливая поединок.\n\n10. Если оба Судьи сигнализируют о заработанных баллах, но разным спортсменам, Рефери может присудить баллы обоим.\n\nДополнительные сигналы флагами при судействе с двумя Судьями. JOGAI Постукивание по полу в сторону спортсмена КОНТАКТ Скрещивание флагов в сторону участника на уровне лица СХЕМА ЗОНЫ СОРЕВНОВАНИЙ",
-          "contentEn": "Procedure for refereeing Kumite with only two corner Judges\n\n1. When using the two-corner judge system, the corner Judges and the Referee all have mutual responsibility for points. Flags are used by the Corner Judges for signalling.\n\n2. In addition to showing points, the Corner Judges will assist the Referee by giving signals for JOGAI and excessive contact, but the Referee remains autonomous in applying warnings and penalties, and will only be overruled by two judges indicating the same foul.\n\n3. Points are awarded if two Judges, or one Judge plus the Referee, agree on the score.\n\n4. In order to be able to cover all three angles of view, the referee should never position themselves on the same side as the two Judges.\n\n5. The Coaches should be placed in front of the Referee and not behind.\n\n6. The Referee can show and ask for support for points that are made in their field of play. In this case, the Referee´s signals for YUKO, WAZA ARI and IPPON are the same as in the regular Kumite rules, with the exception that the Referee's elbow is touching their torso while indicating the respective signal. After the Referee has received support, the signals when giving points are the same as for bouts under regular rules.\n\n7. If one Judge signals for a point and the other for a warning or penalty, the Referee will take the final decision by supporting one of the Judges.\n\n8. If the two Judges, or one Judge and the Referee, show different points for the same Athletes, the higher will be given.\n\n9. If one judge indicates a score but the Referee disagrees, the Referee will show the gesture for TORIMASEN without stopping the bout.\n\n10. If both Judges signal a point, but for different Athletes, the Referee may award both points.\n\nRules ADDITIONAL FLAG SIGNALS FOR TWO JUDGE SYSTEM JOGAI CONTACT Tapping the floor to the side Crossing the flags to the side of the face COMPETITION AREA LAYOUT Rules"
+          "contentEn": "Procedure for refereeing Kumite with only two corner Judges\n\n1. When using the two-corner judge system, the corner Judges and the Referee all have mutual responsibility for points. Flags are used by the Corner Judges for signalling.\n\n2. In addition to showing points, the Corner Judges will assist the Referee by giving signals for JOGAI and excessive contact, but the Referee remains autonomous in applying warnings and penalties, and will only be overruled by two judges indicating the same foul.\n\n3. Points are awarded if two Judges, or one Judge plus the Referee, agree on the score.\n\n4. In order to be able to cover all three angles of view, the referee should never position themselves on the same side as the two Judges.\n\n5. The Coaches should be placed in front of the Referee and not behind.\n\n6. The Referee can show and ask for support for points that are made in their field of play. In this case, the Referee´s signals for YUKO, WAZA ARI and IPPON are the same as in the regular Kumite rules, with the exception that the Referee's elbow is touching their torso while indicating the respective signal. After the Referee has received support, the signals when giving points are the same as for bouts under regular rules.\n\n7. If one Judge signals for a point and the other for a warning or penalty, the Referee will take the final decision by supporting one of the Judges.\n\n8. If the two Judges, or one Judge and the Referee, show different points for the same Athletes, the higher will be given.\n\n9. If one judge indicates a score but the Referee disagrees, the Referee will show the gesture for TORIMASEN without stopping the bout.\n\n10. If both Judges signal a point, but for different Athletes, the Referee may award both points.\n\nRules ADDITIONAL FLAG SIGNALS FOR TWO JUDGE SYSTEM JOGAI CONTACT Tapping the floor to the side Crossing the flags to the side of the face COMPETITION AREA LAYOUT"
+        }
+      ],
+      "images": [
+        {
+          "id": "kumite-two-judge-system",
+          "src": "/images/rules/kumite-two-judge-system.png",
+          "titleRu": "Судейство с двумя судьями",
+          "titleEn": "Two-Judge Refereeing System",
+          "captionRu": "Схема размещения двух угловых судей и рефери, а также дополнительные сигналы флагами для двух судей (JOGAI, контакт).",
+          "captionEn": "Diagram of two corner judges placement, plus additional flag signals for the two-judge system."
         }
       ]
     },

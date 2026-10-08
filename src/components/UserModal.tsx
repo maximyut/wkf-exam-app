@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, UserPlus, Check, Trash2, User, Trophy, BarChart3 } from 'lucide-react';
 import type { UserProfile } from '../types';
 import { getUsers, createUser, deleteUser, setActiveUserId, getUserStats } from '../utils/storage';
@@ -20,6 +20,23 @@ export const UserModal: React.FC<UserModalProps> = ({
   const [newUserName, setNewUserName] = useState('');
   const [isCreating, setIsCreating] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+
+  useEffect(() => {
+    if (!isOpen) return;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -64,6 +81,7 @@ export const UserModal: React.FC<UserModalProps> = ({
       }
     }
   };
+
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200 safe-modal-overlay">

@@ -267,8 +267,8 @@ export const AnswersView: React.FC<AnswersViewProps> = ({
 
                 {/* Explanation Snippet */}
                 {expText && (
-                  <div className="mt-2.5 p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal">
-                    <span className="font-semibold text-amber-400/90 mr-1.5">Пояснение:</span>
+                  <div className="mt-2.5 p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-xs sm:text-[13px] text-slate-300 leading-relaxed font-normal whitespace-pre-line">
+                    <span className="font-semibold text-amber-400/90 mr-1.5">{language === 'ru' ? 'Пояснение:' : 'Explanation:'}</span>
                     {expText}
                   </div>
                 )}
