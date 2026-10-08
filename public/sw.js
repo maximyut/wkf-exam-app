@@ -1,22 +1,30 @@
-const CACHE_NAME = 'wkf-exam-v3';
+const CACHE_NAME = 'wkf-exam-v5';
 
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/data.json',
   '/manifest.webmanifest',
   '/favicon.png',
   '/wkf-logo.png',
   '/pwa-192x192.png',
   '/pwa-512x512.png',
-  '/apple-touch-icon.png'
+  '/apple-touch-icon.png',
+  '/data/kumite.json',
+  '/data/kata.json',
+  '/data.json'
 ];
 
-// Install: pre-cache static assets
+// Install: pre-cache static assets resiliently
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(STATIC_ASSETS);
+    caches.open(CACHE_NAME).then(async (cache) => {
+      for (const asset of STATIC_ASSETS) {
+        try {
+          await cache.add(asset);
+        } catch (err) {
+          console.warn(`[SW] Precache skipped for ${asset}:`, err);
+        }
+      }
     }).then(() => self.skipWaiting())
   );
 });
@@ -44,8 +52,8 @@ self.addEventListener('fetch', (event) => {
   // Ignore non-http(s) requests (chrome-extension, etc.)
   if (!url.protocol.startsWith('http')) return;
 
-  // For data.json: Network-First with cache fallback (so latest updates are fetched, but works offline)
-  if (url.pathname === '/data.json') {
+  // For data files (kumite.json, kata.json): Network-First with cache fallback
+  if (url.pathname.startsWith('/data/') || url.pathname === '/data.json') {
     event.respondWith(
       fetch(request)
         .then((networkResponse) => {
@@ -76,14 +84,14 @@ self.addEventListener('fetch', (event) => {
         return cachedResponse;
       }
       return fetch(request).then((networkResponse) => {
-        if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
+        if (networkResponse && networkResponse.status === 200) {
           const copy = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
         }
         return networkResponse;
       }).catch(() => {
         // Fallback for html
-        if (request.headers.get('accept')?.includes('text/html')) {
+        if (request.headers.get('accept')?.includes('text/html') || request.mode === 'navigate') {
           return caches.match('/index.html');
         }
       });

@@ -395,15 +395,45 @@ export const RulesView: React.FC<RulesViewProps> = ({
                             </button>
                           </div>
 
-                          {sec.title && (
-                            <h3 className="text-xs sm:text-sm font-bold text-slate-200 mb-1.5">
-                              {ruleLanguage === 'ru' ? (sec.titleRu || sec.title) : sec.title}
-                            </h3>
-                          )}
+                          {/* Title if present and distinct from content start */}
+                          {(() => {
+                            const rawTitle = (ruleLanguage === 'ru' ? (sec.titleRu || sec.title) : (sec.titleEn || sec.title))?.trim();
+                            if (!rawTitle) return null;
+                            const cleanContent = content.replace(/^(\d+(?:\.\d+)+(?:[a-z])?|KR\s*\S+|PR\s*\S+|Статья\s*\S+)\s*/i, '').trim();
+                            if (cleanContent.toLowerCase().startsWith(rawTitle.toLowerCase())) return null;
 
-                          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed whitespace-pre-line font-normal">
-                            {content}
-                          </p>
+                            return (
+                              <h3 className="text-xs sm:text-sm font-bold text-slate-100 mb-2 tracking-wide">
+                                {rawTitle}
+                              </h3>
+                            );
+                          })()}
+
+                          {/* Formatted Paragraphs & Lists */}
+                          <div className="space-y-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                            {content.split('\n\n').map((paragraph, pIdx) => {
+                              const trimmed = paragraph.trim();
+                              if (!trimmed) return null;
+                              const isListItem = /^(?:\d+[).]|[a-z][).]|[•\-–—]|\([0-9a-z]+\))\s+/i.test(trimmed);
+
+                              if (isListItem) {
+                                return (
+                                  <div
+                                    key={pIdx}
+                                    className="flex items-start gap-2.5 pl-3 py-1.5 rounded-lg bg-slate-900/50 border-l-2 border-rose-500/60 text-slate-200"
+                                  >
+                                    <span className="leading-relaxed">{trimmed}</span>
+                                  </div>
+                                );
+                              }
+
+                              return (
+                                <p key={pIdx} className="leading-relaxed">
+                                  {trimmed}
+                                </p>
+                              );
+                            })}
+                          </div>
                         </div>
                       );
                     })}

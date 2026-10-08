@@ -90,6 +90,7 @@ export interface RuleSection {
   code?: string; // e.g. "KR 2.2.1a" or "PR 4.6.11"
   title?: string;
   titleRu?: string;
+  titleEn?: string;
   contentEn: string;
   contentRu: string;
 }

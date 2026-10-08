@@ -1,7 +1,7 @@
 {
-  "name": "WKF Kumite Referee Exam",
+  "name": "WKF Referee Exam: Kumite & Kata 2026",
   "short_name": "WKF Exam",
-  "description": "Приложение для подготовки и сдачи теоретического экзамена судей WKF Kumite",
+  "description": "Приложение для подготовки и сдачи теоретического экзамена судей WKF (Кумитэ и Ката 2026)",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
