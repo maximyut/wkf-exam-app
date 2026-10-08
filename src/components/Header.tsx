@@ -2,12 +2,14 @@ import React from 'react';
 import { User, Volume2, VolumeX, History, Play, BookOpen, HelpCircle, Languages } from 'lucide-react';
 import type { UserProfile, Discipline, Language, ViewMode } from '../types';
 import { t } from '../i18n/translations';
+import { WkfLogo } from './WkfLogo';
 
 interface HeaderProps {
   activeUser: UserProfile;
   discipline: Discipline;
   language: Language;
   soundEnabled: boolean;
+  theme?: 'dark' | 'light';
   onToggleSound: () => void;
   onSelectDiscipline: (d: Discipline) => void;
   onToggleLanguage: () => void;
@@ -21,6 +23,7 @@ export const Header: React.FC<HeaderProps> = ({
   discipline,
   language,
   soundEnabled,
+  theme = 'dark',
   onToggleSound,
   onSelectDiscipline,
   onToggleLanguage,
@@ -40,10 +43,9 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => onNavigate('setup')}
               className="flex items-center gap-2 cursor-pointer group select-none shrink-0"
             >
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white p-1 flex items-center justify-center shadow-md shadow-black/20 group-hover:scale-105 transition-transform shrink-0">
-                <img
-                  src="/wkf-logo.png"
-                  alt="WKF Logo"
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-slate-800/80 border border-slate-700/60 p-1 flex items-center justify-center shadow-md shadow-black/20 group-hover:scale-105 group-hover:border-slate-600 transition-all shrink-0">
+                <WkfLogo
+                  theme={theme}
                   className="w-full h-full object-contain"
                 />
               </div>

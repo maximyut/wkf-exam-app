@@ -228,6 +228,7 @@ export const App: React.FC = () => {
         discipline={activeDiscipline}
         language={language}
         soundEnabled={soundEnabled}
+        theme={settings.theme || 'dark'}
         onToggleSound={handleToggleSound}
         onSelectDiscipline={handleSelectDiscipline}
         onToggleLanguage={handleToggleLanguage}
