@@ -88,6 +88,14 @@ export const translations = {
     ruleNotFound: 'Статьи по вашему запросу не найдены',
     switchRulebook: 'Правила:',
     languageLabel: 'Язык текста:',
+    viewModeAll: 'Все статьи',
+    viewModeSingle: 'По статьям',
+    prevArticle: 'Предыдущая статья',
+    nextArticle: 'Следующая статья',
+    backToTop: 'Наверх',
+    matchesFound: 'Найдено пунктов',
+    searchInToc: 'Поиск по статьям...',
+    closeToc: 'Закрыть',
 
     // Explanation Modal
     modalQuestionTitle: 'Формулировка вопроса WKF',
@@ -204,6 +212,14 @@ export const translations = {
     ruleNotFound: 'No articles found matching your query',
     switchRulebook: 'Ruleset:',
     languageLabel: 'Rule text language:',
+    viewModeAll: 'All Articles',
+    viewModeSingle: 'By Article',
+    prevArticle: 'Previous Article',
+    nextArticle: 'Next Article',
+    backToTop: 'Top',
+    matchesFound: 'Sections found',
+    searchInToc: 'Search articles...',
+    closeToc: 'Close',
 
     // Explanation Modal
     modalQuestionTitle: 'Official WKF Question Formulation',

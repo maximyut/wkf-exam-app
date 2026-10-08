@@ -98,6 +98,7 @@ export interface RuleSection {
 export interface RuleArticle {
   id: string; // e.g. "article-2"
   number: number | string; // e.g. 2 or "Appendix 1"
+  code?: string; // e.g. "Статья 1"
   titleEn: string;
   titleRu: string;
   sections: RuleSection[];
