@@ -1,0 +1,347 @@
+{
+  "id": "kata-rules-2026",
+  "discipline": "kata",
+  "titleEn": "WKF Kata Competition Rules",
+  "titleRu": "Правила соревнований WKF по Ката",
+  "version": "2026.0",
+  "pdfUrlEn": "/docs/wkf-kata-rules-2026-en.pdf",
+  "pdfUrlRu": "/docs/wkf-kata-rules-2026-ru.pdf",
+  "articles": [
+    {
+      "id": "art-1",
+      "number": 1,
+      "titleEn": "ARTICLE 1: KATA COMPETITION AREA",
+      "titleRu": "СТАТЬЯ 1: ПЛОЩАДКА ДЛЯ СОРЕВНОВАНИЙ ПО КАТА",
+      "sections": [
+        {
+          "id": "1.1",
+          "code": "KR 1.1",
+          "title": "Competition Area Dimensions",
+          "titleRu": "Размеры соревновательной площадки",
+          "contentEn": "The competition area will be a WKF Approved matted square, with sides of eight metres (measured from the outside). There will be a clear safety area of two metres on each side.",
+          "contentRu": "Площадка для соревнований представляет собой квадрат из матов, утвержденных WKF, со сторонами восемь метров (измеряется снаружи). Зона безопасности шириной 2 метра окружает площадку для соревнований."
+        },
+        {
+          "id": "1.2",
+          "code": "KR 1.2",
+          "title": "Judges Seating",
+          "titleRu": "Размещение судей",
+          "contentEn": "The Judges sit behind a table facing the middle of the tatami having AO to the left and AKA to the right.",
+          "contentRu": "Судьи сидят за столом лицом к центру татами, так, чтобы АО располагался слева, а АКА справа."
+        },
+        {
+          "id": "1.3",
+          "code": "KR 1.3",
+          "title": "Safety Perimeter",
+          "titleRu": "Периметр безопасности",
+          "contentEn": "There must be no advertisement hoardings, walls, pillars etc. within one metre of the safety area's outer perimeter.",
+          "contentRu": "В пределах одного метра от внешнего периметра зоны безопасности не должно быть никакой рекламы, стен, столбов, конструкций и т. д."
+        },
+        {
+          "id": "1.4",
+          "code": "KR 1.4",
+          "title": "Coaches Placement",
+          "titleRu": "Размещение тренеров",
+          "contentEn": "Coaches will be seated outside the safety area, on their respective sides of the Tatami towards the official table. In cases where the configuration of Tatami makes it impractical to place the Coaches facing the official table, they may instead be placed on each side of the official table.",
+          "contentRu": "Тренеры располагаются за пределами зоны безопасности, с соответствующей выступлению их спортсмена стороне, лицом к официальному столу. В случаях, когда конфигурация татами не позволяет разместить тренеров лицом к официальному столу, их можно разместить по обе стороны от официального стола."
+        },
+        {
+          "id": "1.5",
+          "code": "KR 1.5",
+          "title": "Mat Color Surface",
+          "titleRu": "Поверхность покрытия татами",
+          "contentEn": "Mats must form a uniform coloured surface for Kata competition.",
+          "contentRu": "Площадка для Ката должна представлять собой единую однотонную поверхность покрытия."
+        }
+      ]
+    },
+    {
+      "id": "art-2",
+      "number": 2,
+      "titleEn": "ARTICLE 2: OFFICIAL ATTIRE",
+      "titleRu": "СТАТЬЯ 2: ОФИЦИАЛЬНАЯ ОДЕЖДА",
+      "sections": [
+        {
+          "id": "2.1",
+          "code": "KR 2.1",
+          "title": "Judges Uniform",
+          "titleRu": "Форма судей",
+          "contentEn": "Judges uniform: single-breasted navy-blue blazer (19-4023 TPX), plain light-grey trousers without turn-ups (18-0201 TPX), white shirt with short sleeves, plain dark blue or black socks, black slip-on shoes, official tie without tiepin, black whistle with white cord. Heels > 4cm forbidden. Private electronics / sunglasses strictly forbidden.",
+          "contentRu": "Официальная форма судей: темно-синий пиджак (19-4023 TPX), светло-серые брюки без отворотов (18-0201 TPX), белая рубашка с коротким рукавом, темно-синие/черные носки, черные туфли без шнурков, официальный галстук без зажима, черный свисток с белым шнурком. Каблуки более 4 см запрещены. Телефоны, смарт-часы и солнцезащитные очки строго запрещены."
+        },
+        {
+          "id": "2.2.1a",
+          "code": "KR 2.2.1a",
+          "title": "Karate Gi Brands and Embroidery",
+          "titleRu": "Марки кимоно и вышивки",
+          "contentEn": "Athletes must wear a white WKF approved Karategi. Red or blue embroidered brands on shoulders according to draw. Team members do not need to wear the same brand of Karategi.",
+          "contentRu": "Спортсмены носят белое кимоно WKF approved. Красная или синяя вышивка на плечах по жеребьевке. Члены команды НЕ обязаны носить кимоно одной и той же марки."
+        },
+        {
+          "id": "2.2.1h",
+          "code": "KR 2.2.1h",
+          "title": "Female Athletes T-Shirt",
+          "titleRu": "Футболка для спортсменок",
+          "contentEn": "Female Athletes can, if they want, wear a plain white T-shirt beneath the Karate jacket. It is permitted but not mandatory.",
+          "contentRu": "Женщины-спортсменки могут по желанию надевать простую белую футболку под куртку кимоно («может», но не «обязана»)."
+        },
+        {
+          "id": "2.2.1k",
+          "code": "KR 2.2.1k",
+          "title": "Jacket Sleeves",
+          "titleRu": "Рукава куртки",
+          "contentEn": "The maximum length of the jacket sleeves must be no longer than the bend of the wrist and no shorter than halfway down the forearm. Jacket sleeves cannot be rolled up.",
+          "contentRu": "Максимальная длина рукавов куртки — не длиннее сгиба запястья и не короче середины предплечья. Рукава куртки нельзя закатывать."
+        },
+        {
+          "id": "2.2.1l",
+          "code": "KR 2.2.1l",
+          "title": "Trousers Length",
+          "titleRu": "Длина брюк",
+          "contentEn": "The trousers must be long enough to cover at least two thirds of the shin and must not reach below the anklebone. Trouser legs may not be rolled up.",
+          "contentRu": "Брюки должны закрывать не менее 2/3 голени и не опускаться ниже лодыжки. Штанины нельзя подворачивать."
+        },
+        {
+          "id": "2.2.4",
+          "code": "KR 2.2.4",
+          "title": "Glasses",
+          "titleRu": "Очки",
+          "contentEn": "Glasses are forbidden. Prescription sport-glasses or soft contact lenses can be worn at the Athlete's own risk.",
+          "contentRu": "Обычные очки запрещены. Спортивные очки по рецепту или мягкие контактные линзы разрешены на собственный риск спортсмена."
+        },
+        {
+          "id": "2.2.6",
+          "code": "KR 2.2.6",
+          "title": "Hair and Decorations",
+          "titleRu": "Прическа и украшения",
+          "contentEn": "Ribbons, beads and other decorations are prohibited. One or two discreet rubber bands on a single ponytail is permitted.",
+          "contentRu": "Ленты, бусины и украшения запрещены. Разрешены 1 или 2 незаметные резинки на одном хвосте."
+        },
+        {
+          "id": "2.2.7",
+          "code": "KR 2.2.7",
+          "title": "Unauthorised Apparel and Weapons",
+          "titleRu": "Неразрешенная экипировка и оружие",
+          "contentEn": "The wearing of any unauthorised apparel, clothing or equipment is forbidden. Traditional weapons, ancillary equipment or additional apparel are not allowed.",
+          "contentRu": "Запрещено ношение неразрешенной экипировки. Традиционное оружие, дополнительное снаряжение или одежда строго запрещены."
+        }
+      ]
+    },
+    {
+      "id": "art-3",
+      "number": 3,
+      "titleEn": "ARTICLE 3: ORGANISATION OF KATA COMPETITION",
+      "titleRu": "СТАТЬЯ 3: ОРГАНИЗАЦИЯ СОРЕВНОВАНИЙ ПО КАТА",
+      "sections": [
+        {
+          "id": "3.1.1",
+          "code": "KR 3.1.1",
+          "title": "General Nature of Kata",
+          "titleRu": "Общие принципы Ката",
+          "contentEn": "Kata is not a dance or theatrical performance. It must adhere to traditional values and principles, be realistic in fighting terms, display concentration, power, impact, strength, speed and balance.",
+          "contentRu": "Ката — не танец и не театральное представление. Оно должно соответствовать традиционным ценностям, быть реалистичным в боевом отношении, демонстрировать концентрацию, силу, мощь, скорость, ритм и баланс."
+        },
+        {
+          "id": "3.5.1",
+          "code": "KR 3.5.1",
+          "title": "Team Composition",
+          "titleRu": "Состав команды",
+          "contentEn": "Kata Teams consist of 3 or 4 Athletes, of which 3 compete in each round.",
+          "contentRu": "Команды по ката состоят из 3 или 4 спортсменов, из которых 3 выступают в каждом раунде."
+        },
+        {
+          "id": "3.5.2",
+          "code": "KR 3.5.2",
+          "title": "Facing Direction at Start/Finish",
+          "titleRu": "Направление команды при старте и финише",
+          "contentEn": "In Team Kata, all three Team members must start the Kata facing in the same direction and towards the Judges. (At finish facing the same direction towards judges is not required).",
+          "contentRu": "В командном ката все три члена команды должны начинать ката лицом в одном направлении и к судьям. При завершении одинаковое направление к судьям не требуется."
+        },
+        {
+          "id": "3.5.4",
+          "code": "KR 3.5.4",
+          "title": "Medal Bouts and Bunkai",
+          "titleRu": "Медальные поединки и Бункай",
+          "contentEn": "In the bouts for medals of Team Kata Competition, the Teams will perform their chosen Kata in the usual way. They will then perform a demonstration of the meaning of the Kata (Bunkai). There is no bow between Kata and Bunkai.",
+          "contentRu": "В боях за медали в командных ката команды исполняют ката, а затем демонстрацию его значения (Бункай). Поклона между Ката и Бункай нет."
+        },
+        {
+          "id": "3.5.6",
+          "code": "KR 3.5.6",
+          "title": "Kata + Bunkai Time Limit",
+          "titleRu": "Лимит времени Ката + Бункай",
+          "contentEn": "The total time allowed for the Kata & Bunkai demonstration combined is 5 minutes.",
+          "contentRu": "Общее время, отведенное на Ката и Бункай вместе, составляет 5 минут (не 6 минут)."
+        },
+        {
+          "id": "3.5.8",
+          "code": "KR 3.5.8",
+          "title": "Unconsciousness in Bunkai",
+          "titleRu": "Потеря сознания в Бункай",
+          "contentEn": "Playing unconscious while performing Bunkai is inappropriate: After being downed the Athlete should either raise to one knee or stand up within 2 seconds.",
+          "contentRu": "Имитация потери сознания более 2 секунд в Бункай недопустима: после падения спортсмен должен встать на одно колено или подняться в течение 2 секунд."
+        },
+        {
+          "id": "3.5.9",
+          "code": "KR 3.5.9",
+          "title": "Kani Basami in Bunkai",
+          "titleRu": "Кани Басами в Бункай",
+          "contentEn": "Although performing a scissor takedown technique to the neck (Kani Basami) area during BUNKAI is prohibited, a scissor takedown to the body or legs is permitted.",
+          "contentRu": "Бросок «ножницы» (Кани Басами) в область шеи во время Бункай запрещен, однако бросок ножницами по корпусу или ногам разрешен."
+        },
+        {
+          "id": "3.7.8",
+          "code": "KR 3.7.8",
+          "title": "SHIKKAKU after Round-robin",
+          "titleRu": "Дисквалификация ШИККАКУ после раунд-робин",
+          "contentEn": "If an already qualified individual athlete or Team is disqualified for misconduct (SHIKKAKU) at the conclusion of the Round-robin phase, their scheduled opponent in the first round of the elimination phase shall advance to the next round by bye (“walkover”).",
+          "contentRu": "Если уже квалифицированный спортсмен или команда дисквалифицируются (SHIKKAKU) после раунд-робин, их соперник проходит дальше без борьбы (walkover)."
+        }
+      ]
+    },
+    {
+      "id": "art-4",
+      "number": 4,
+      "titleEn": "ARTICLE 4: THE JUDGING PANEL",
+      "titleRu": "СТАТЬЯ 4: СУДЕЙСКАЯ БРИГАДА",
+      "sections": [
+        {
+          "id": "4.1",
+          "code": "KR 4.1",
+          "title": "Panel Size",
+          "titleRu": "Численность судейской бригады",
+          "contentEn": "For all official WKF competitions, the panel of seven Judges for each round of Round-robin competition, and five judges for eliminations will be designated by random selection.",
+          "contentRu": "Судейская бригада состоит из 7 судей для каждого круга раунд-робин и 5 судей для этапов выбывания (сокращение до 3 судей не предусмотрено)."
+        },
+        {
+          "id": "4.8",
+          "code": "KR 4.8",
+          "title": "Conflict of Interest / Nationality",
+          "titleRu": "Конфликт интересов и национальность",
+          "contentEn": "The Judges of a Kata bout must not have the nationality or be from the same National Federation of either of the participants. This applies to all bouts including medal bouts.",
+          "contentRu": "Судьи не могут иметь ту же национальность/NF, что и любой из участников. Это правило строго действует для всех поединков, включая медальные."
+        },
+        {
+          "id": "4.9",
+          "code": "KR 4.9",
+          "title": "Manual Judging by Flags",
+          "titleRu": "Судейство флажками",
+          "contentEn": "If manual judging by flags is employed, five Judges will be used: four placed at each corner of the Tatami and one functioning as Head Judge.",
+          "contentRu": "При судействе флажками используются 5 судей: четверо по углам татами и один старший судья в центре стола."
+        }
+      ]
+    },
+    {
+      "id": "art-5",
+      "number": 5,
+      "titleEn": "ARTICLE 5: EVALUATION",
+      "titleRu": "СТАТЬЯ 5: ОЦЕНКА",
+      "sections": [
+        {
+          "id": "5.1.1",
+          "code": "KR 5.1.1",
+          "title": "Official Kata List",
+          "titleRu": "Официальный список Ката",
+          "contentEn": "Only Kata from the WKF official Kata list (102 Katas) may be performed.",
+          "contentRu": "Разрешено исполнять только ката из официального списка WKF (всего 102 ката)."
+        },
+        {
+          "id": "5.2.1",
+          "code": "KR 5.2.1",
+          "title": "Number of Kata Required",
+          "titleRu": "Количество требуемых Ката",
+          "contentEn": "An Athlete or Team must perform a different kata, up to 5, for each round until medal matches. No kata can be performed twice in a row, or more than twice total. Any kata can be performed in the medal round unless already performed twice.",
+          "contentRu": "Спортсмен должен выполнять разные ката (до 5) до финала. Ката нельзя исполнять дважды подряд или более 2 раз за турнир. Любое ката можно исполнять в финале, если оно не повторялось дважды."
+        },
+        {
+          "id": "5.4.1",
+          "code": "KR 5.4.1",
+          "title": "Scoring Scale",
+          "titleRu": "Шкала оценок",
+          "contentEn": "Each performance is given a score using a scale from 5.0 to 10.0 in increments of 0.1. A disqualification is indicated by 0.0.",
+          "contentRu": "Оценка выставляется по шкале от 5.0 до 10.0 с шагом 0.1. Дисквалификация обозначается 0.0."
+        },
+        {
+          "id": "5.4.3",
+          "code": "KR 5.4.3",
+          "title": "Importance of Bunkai",
+          "titleRu": "Значение Бункай",
+          "contentEn": "Bunkai is performed for Team medal matches and is to be given equal importance as the Kata itself.",
+          "contentRu": "Бункай в медальных командных матчах имеет такое же важное значение, как и само Ката (50/50)."
+        },
+        {
+          "id": "5.6",
+          "code": "KR 5.6",
+          "title": "Evaluation Criteria (10 Criteria)",
+          "titleRu": "Критерии оценки (10 критериев)",
+          "contentEn": "10 criteria: 1. Stances, 2. Techniques, 3. Transitional movements, 4. Timing & synchronisation (MA-AI in Bunkai), 5. Correct breathing / Control, 6. Focus (KIME), 7. Conformance (KIHON), 8. Strength, 9. Speed, 10. Balance.",
+          "contentRu": "10 критериев: 1. Стойки, 2. Техника, 3. Перемещения, 4. Тайминг и синхронность (в Бункай — дистанция MA-AI), 5. Дыхание / Контроль, 6. Кимэ, 7. Соответствие Кихон, 8. Сила, 9. Скорость, 10. Баланс."
+        },
+        {
+          "id": "5.7",
+          "code": "KR 5.7",
+          "title": "Fouls",
+          "titleRu": "Фолы (Нарушения)",
+          "contentEn": "Fouls: announcing before bow; minor loss of balance; incomplete movements; asynchronous movement; audible cues from team members; theatrics (stamping feet, slapping chest/arms/gi, inappropriate exhalation); incorrect Kiai; belt coming loose; time wasting; causing injury in Bunkai; simulated unconsciousness >2 sec.",
+          "contentRu": "Фолы: объявление до поклона; легкая потеря баланса; неполный блок/удар; асинхронность; звуковые подсказки; театральность (топот, хлопки по кимоно, неуместный выдох); неправильный киай; сползание пояса; затягивание времени; травма в бункай; имитация бессознания >2 сек."
+        },
+        {
+          "id": "5.8",
+          "code": "KR 5.8",
+          "title": "Disqualification Reasons",
+          "titleRu": "Основания для дисквалификации",
+          "contentEn": "Disqualification: wrong/unannounced Kata; failing to bow; not starting facing judges; distinct pause/stop of several seconds; omitting/adding movements; belt falling off completely; exceeding 5 min limit for Kata+Bunkai; Kani Basami to neck; misconduct/refusing Chief Judge orders (SHIKKAKU).",
+          "contentRu": "Дисквалификация: неверное/необъявленное ката; отсутствие поклона; старт не лицом к судьям; явная пауза/остановка на несколько секунд; пропуск/добавление движений; полное падение пояса; превышение 5 минут Ката+Бункай; Кани Басами в шею; неподчинение старшему судье (SHIKKAKU)."
+        }
+      ]
+    },
+    {
+      "id": "art-6",
+      "number": 6,
+      "titleEn": "ARTICLE 6: OPERATION OF MATCHES",
+      "titleRu": "СТАТЬЯ 6: ПРОВЕДЕНИЕ МАТЧЕЙ",
+      "sections": [
+        {
+          "id": "6.1",
+          "code": "KR 6.1",
+          "title": "Notifying Runner",
+          "titleRu": "Уведомление раннера",
+          "contentEn": "Before each round Athletes/Teams must submit chosen Kata to assigned Runners who relay information to Software Technician. Number prevails over name in case of discrepancy.",
+          "contentRu": "Перед каждым раундом ката сообщается раннеру. При расхождении между номером и названием приоритет имеет официальный номер WKF."
+        },
+        {
+          "id": "6.6",
+          "code": "KR 6.6",
+          "title": "35 Seconds Countdown Clock",
+          "titleRu": "35 секунд до первого движения",
+          "contentEn": "Where countdown clock is provided on monitor, 35 seconds allowed from name announcement until first move after the bow.",
+          "contentRu": "Спортсмену дается 35 секунд с момента появления имени на мониторе до первого движения после поклона."
+        },
+        {
+          "id": "6.9",
+          "code": "KR 6.9",
+          "title": "Order of Performance",
+          "titleRu": "Порядок выступления",
+          "contentEn": "AKA (red) performs first, followed by AO (blue). Non-performing athlete waits at perimeter without moving or talking.",
+          "contentRu": "АКА (красный) выступает первым, затем АО (синий). Не выступающий спортсмен стоит на границе площадки молча и неподвижно."
+        }
+      ]
+    },
+    {
+      "id": "art-7",
+      "number": 7,
+      "titleEn": "ARTICLE 7: OFFICIAL PROTEST",
+      "titleRu": "СТАТЬЯ 7: ОФИЦИАЛЬНЫЙ ПРОТЕСТ",
+      "sections": [
+        {
+          "id": "7.1",
+          "code": "KR 7.1",
+          "title": "Protest Procedure",
+          "titleRu": "Процедура подачи протеста",
+          "contentEn": "Coach announces intent immediately after bout. Written report and fee within 5 minutes. Tatami Manager hands form to Appeals Jury. Appeals Jury of 3 senior referees, no abstentions.",
+          "contentRu": "Тренер заявляет о намерении сразу после боя. Бланк и сбор передаются татами-менеджеру в течение 5 минут. Апелляционное жюри из 3 человек принимает решение без воздержаний."
+        }
+      ]
+    }
+  ]
+}

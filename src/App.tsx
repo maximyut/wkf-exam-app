@@ -1,6 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import type { UserProfile, TestConfig, Question, TestResult, QuestionAnswerRecord } from './types';
-import { INITIAL_QUESTIONS, loadQuestions, parseQuestionsList } from './data/questions';
+import type {
+  UserProfile,
+  TestConfig,
+  Question,
+  TestResult,
+  QuestionAnswerRecord,
+  Discipline,
+  Language,
+  ViewMode,
+} from './types';
+import {
+  INITIAL_KUMITE_QUESTIONS,
+  INITIAL_KATA_QUESTIONS,
+  loadQuestions,
+  parseQuestionsList,
+} from './data/questions';
 import {
   getActiveUser,
   saveTestResult,
@@ -14,40 +28,74 @@ import { TestSetupModal } from './components/TestSetupModal';
 import { ActiveTest } from './components/ActiveTest';
 import { TestResults } from './components/TestResults';
 import { UserHistoryView } from './components/UserHistoryView';
-
-type ViewMode = 'setup' | 'test' | 'results' | 'history';
+import { AnswersView } from './components/AnswersView';
+import { RulesView } from './components/RulesView';
+import { ExplanationModal } from './components/ExplanationModal';
 
 export const App: React.FC = () => {
   const [activeUser, setActiveUser] = useState<UserProfile>(getActiveUser());
+  const [settings, setSettingsState] = useState(getSettings());
+  const [activeDiscipline, setActiveDiscipline] = useState<Discipline>(settings.discipline || 'kumite');
+  const [language, setLanguage] = useState<Language>(settings.language || 'ru');
   const [currentView, setCurrentView] = useState<ViewMode>('setup');
   const [isUserModalOpen, setIsUserModalOpen] = useState<boolean>(false);
 
-  // Dynamic questions list loaded from public/data.json with fallback to bundled data
-  const [allQuestions, setAllQuestions] = useState<Question[]>(INITIAL_QUESTIONS);
+  // Dynamic questions list loaded per discipline with bundled fallback
+  const initialData = activeDiscipline === 'kata' ? INITIAL_KATA_QUESTIONS : INITIAL_KUMITE_QUESTIONS;
+  const [allQuestions, setAllQuestions] = useState<Question[]>(initialData);
 
-  const [settings, setSettingsState] = useState(getSettings());
   const soundEnabled = settings.soundEnabled;
 
   const [activeConfig, setActiveConfig] = useState<TestConfig | null>(null);
   const [testQuestions, setTestQuestions] = useState<Question[]>([]);
   const [latestResult, setLatestResult] = useState<TestResult | null>(null);
 
-  // Load latest data.json from server on mount
+  // For Rules deep-linking from questions / answers / modals
+  const [rulesTargetQuery, setRulesTargetQuery] = useState<string | null>(null);
+
+  // For Explanation modal from Answers directory
+  const [answersModalRecord, setAnswersModalRecord] = useState<QuestionAnswerRecord | null>(null);
+
+  // Load questions whenever activeDiscipline changes
   useEffect(() => {
-    loadQuestions().then((loaded) => {
+    let cancelled = false;
+    loadQuestions(activeDiscipline).then((loaded) => {
+      if (cancelled) return;
       if (loaded && loaded.length > 0) {
         setAllQuestions(loaded);
+      } else {
+        setAllQuestions(activeDiscipline === 'kata' ? INITIAL_KATA_QUESTIONS : INITIAL_KUMITE_QUESTIONS);
       }
     });
-  }, []);
+    return () => {
+      cancelled = true;
+    };
+  }, [activeDiscipline]);
 
   const handleToggleSound = () => {
     const updated = saveSettings({ soundEnabled: !soundEnabled });
     setSettingsState(updated);
   };
 
+  const handleSelectDiscipline = (disc: Discipline) => {
+    if (disc === activeDiscipline) return;
+    saveSettings({ discipline: disc });
+    setActiveDiscipline(disc);
+  };
+
+  const handleToggleLanguage = () => {
+    const nextLang: Language = language === 'ru' ? 'en' : 'ru';
+    saveSettings({ language: nextLang });
+    setLanguage(nextLang);
+  };
+
   const handleUserChanged = (newUser: UserProfile) => {
     setActiveUser(newUser);
+  };
+
+  const handleOpenRules = (ruleRef?: string) => {
+    setRulesTargetQuery(ruleRef || null);
+    setCurrentView('rules');
   };
 
   // Optional: load data from custom json file selected by user
@@ -55,7 +103,7 @@ export const App: React.FC = () => {
     const parsed = parseQuestionsList(customQuestions);
     if (parsed.length > 0) {
       setAllQuestions(parsed);
-      alert(`Успешно загружено ${parsed.length} вопросов из data.json!`);
+      alert(`Успешно загружено ${parsed.length} вопросов!`);
     }
   };
 
@@ -65,7 +113,7 @@ export const App: React.FC = () => {
 
     // If "only mistakes" mode
     if (config.onlyMistakesMode) {
-      const mistakeIds = getUserMistakeQuestionIds(activeUser.id);
+      const mistakeIds = getUserMistakeQuestionIds(activeUser.id, config.discipline);
       const mistakeSet = new Set(mistakeIds);
       pool = pool.filter((q) => mistakeSet.has(q.id));
       if (pool.length === 0) {
@@ -81,7 +129,7 @@ export const App: React.FC = () => {
       }
     }
 
-    // Take requested count (default 70)
+    // Take requested count
     const selected = pool.slice(0, Math.min(config.questionCount, pool.length));
 
     setActiveConfig(config);
@@ -105,6 +153,8 @@ export const App: React.FC = () => {
       userId: activeUser.id,
       userName: activeUser.name,
       timestamp: Date.now(),
+      discipline: activeConfig.discipline,
+      language: activeConfig.language,
       config: activeConfig,
       totalQuestions: total,
       correctAnswersCount: correctCount,
@@ -133,6 +183,8 @@ export const App: React.FC = () => {
     }
 
     const config: TestConfig = {
+      discipline: activeDiscipline,
+      language: language,
       questionCount: pool.length,
       timeLimitPerQuestion: activeConfig ? activeConfig.timeLimitPerQuestion : 20,
       onlyMistakesMode: true,
@@ -145,13 +197,40 @@ export const App: React.FC = () => {
     setCurrentView('test');
   };
 
+  // Open explanation from Answers directory
+  const handleOpenAnswersExplanation = (q: Question) => {
+    const record: QuestionAnswerRecord = {
+      questionId: q.id,
+      discipline: q.discipline,
+      questionText: language === 'ru' && q.questionRu ? q.questionRu : (q.questionEn || q.question),
+      questionTextEn: q.questionEn || q.question,
+      questionTextRu: q.questionRu,
+      userAnswer: q.answer ? 'true' : 'false',
+      correctAnswer: q.answer,
+      isCorrect: true,
+      timeSpentSeconds: 0,
+      ruleArticle: q.ruleArticle,
+      ruleArticleEn: q.ruleArticleEn,
+      ruleQuote: q.ruleQuote,
+      ruleQuoteRu: q.ruleQuoteRu,
+      explanation: q.explanation,
+      explanationEn: q.explanationEn,
+      votes: q.votes,
+    };
+    setAnswersModalRecord(record);
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-rose-500 selection:text-white">
       {/* Header */}
       <Header
         activeUser={activeUser}
+        discipline={activeDiscipline}
+        language={language}
         soundEnabled={soundEnabled}
         onToggleSound={handleToggleSound}
+        onSelectDiscipline={handleSelectDiscipline}
+        onToggleLanguage={handleToggleLanguage}
         onOpenUserModal={() => setIsUserModalOpen(true)}
         onNavigate={(view) => setCurrentView(view)}
         currentView={currentView}
@@ -162,6 +241,8 @@ export const App: React.FC = () => {
         {currentView === 'setup' && (
           <TestSetupModal
             activeUser={activeUser}
+            discipline={activeDiscipline}
+            language={language}
             totalAvailableQuestions={allQuestions.length}
             onStartTest={handleStartTest}
             onOpenUserModal={() => setIsUserModalOpen(true)}
@@ -182,22 +263,58 @@ export const App: React.FC = () => {
         {currentView === 'results' && latestResult && (
           <TestResults
             result={latestResult}
+            discipline={activeDiscipline}
+            language={language}
             soundEnabled={soundEnabled}
             onRetakeTest={() => setCurrentView('setup')}
             onRetakeMistakes={handleRetakeMistakes}
             onNavigateToHistory={() => setCurrentView('history')}
+            onOpenRules={handleOpenRules}
           />
         )}
 
         {currentView === 'history' && (
           <UserHistoryView
             activeUser={activeUser}
+            discipline={activeDiscipline}
+            language={language}
             onRetakeTest={() => setCurrentView('setup')}
             onRetakeMistakes={handleRetakeMistakes}
             onBackToSetup={() => setCurrentView('setup')}
+            onOpenRules={handleOpenRules}
+          />
+        )}
+
+        {currentView === 'answers' && (
+          <AnswersView
+            questions={allQuestions}
+            discipline={activeDiscipline}
+            language={language}
+            onOpenExplanation={handleOpenAnswersExplanation}
+            onOpenRules={handleOpenRules}
+            onToggleLanguage={handleToggleLanguage}
+          />
+        )}
+
+        {currentView === 'rules' && (
+          <RulesView
+            discipline={activeDiscipline}
+            language={language}
+            targetRuleQuery={rulesTargetQuery}
+            onSelectDiscipline={handleSelectDiscipline}
+            onToggleLanguage={handleToggleLanguage}
           />
         )}
       </main>
+
+      {/* Answers Directory Modal */}
+      <ExplanationModal
+        record={answersModalRecord}
+        isOpen={!!answersModalRecord}
+        onClose={() => setAnswersModalRecord(null)}
+        language={language}
+        onOpenRules={handleOpenRules}
+      />
 
       {/* User Management Modal */}
       <UserModal

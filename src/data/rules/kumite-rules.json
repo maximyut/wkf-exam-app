@@ -1,0 +1,219 @@
+{
+  "id": "kumite-rules-2026",
+  "discipline": "kumite",
+  "titleEn": "WKF Kumite Competition Rules",
+  "titleRu": "Правила соревнований WKF по Кумитэ",
+  "version": "2026.01",
+  "pdfUrlEn": "/docs/wkf-kumite-rules-2026-en.pdf",
+  "pdfUrlRu": "/docs/wkf-kumite-rules-2026-ru.pdf",
+  "articles": [
+    {
+      "id": "art-1",
+      "number": 1,
+      "titleEn": "ARTICLE 1: KUMITE COMPETITION AREA",
+      "titleRu": "СТАТЬЯ 1: ПЛОЩАДКА ДЛЯ СОРЕВНОВАНИЙ ПО КУМИТЭ",
+      "sections": [
+        {
+          "id": "1.1",
+          "code": "Статья 1.1",
+          "title": "Dimensions and Boundary",
+          "titleRu": "Размеры площадки и границы",
+          "contentEn": "Matted square of 8x8m with an outer 1-metre area in another colour marking the boundary. 2 metres clear safety area surrounding competition area. 2m between competition areas.",
+          "contentRu": "Квадрат 8х8 метров с внешней метровой зоной предупреждения другого цвета. Зона безопасности 2 метра вокруг площадки. Расстояние между площадками не менее 2 метров."
+        },
+        {
+          "id": "1.6",
+          "code": "Статья 1.6",
+          "title": "Referee and Judges Position",
+          "titleRu": "Расположение рефери и судей",
+          "contentEn": "Referee (SHUSHIN) stands centred between two mats facing Athletes 2 metres from boundary. Judges (FUKUSHIN) seated approximately 1.5m off corners in safety area.",
+          "contentRu": "Рефери (СЮСИН) стоит в 2 метрах от границы лицом к спортсменам. Судьи (ФУКУСИН) располагаются по углам в 1,5 метрах в зоне безопасности."
+        }
+      ]
+    },
+    {
+      "id": "art-2",
+      "number": 2,
+      "titleEn": "ARTICLE 2: ATTIRE AND PROTECTIVE EQUIPMENT",
+      "titleRu": "СТАТЬЯ 2: ОДЕЖДА И ЗАЩИТНАЯ ЭКИПИРОВКА",
+      "sections": [
+        {
+          "id": "2.1",
+          "code": "Статья 2.1",
+          "title": "Referee and Judge Attire",
+          "titleRu": "Форма рефери и судей",
+          "contentEn": "Single-breasted navy-blue blazer (19-4023 TPX), light-grey trousers without turn-ups (18-0201 TPX), short-sleeve white shirt, black slip-on shoes, official tie without pin, black whistle with white cord. Heels > 4cm forbidden. Mobile devices and sunglasses forbidden.",
+          "contentRu": "Темно-синий пиджак (19-4023 TPX), светло-серые брюки (18-0201 TPX), белая рубашка с коротким рукавом, черные туфли без шнурков, официальный галстук без зажима, свисток. Каблуки более 4 см запрещены. Смартфоны и очки от солнца запрещены."
+        },
+        {
+          "id": "2.2.1",
+          "code": "Статья 2.2.1",
+          "title": "Karategi Requirements",
+          "titleRu": "Требования к каратэги",
+          "contentEn": "White WKF approved Karategi. Red/blue belts 5cm wide with 15cm free ends past knot, max 3/4 thigh length. Jacket covers hips up to 3/4 thigh. Sleeves reach wrist bend, min half forearm, cannot be rolled up. Trousers min 2/3 shin, not below anklebone.",
+          "contentRu": "Белое каратэги WKF approved. Красный/синий пояс шириной 5 см, концы 15 см после узла, не длиннее 3/4 бедра. Куртка закрывает бедра до 3/4 длины бедра. Рукава до сгиба запястья, не короче половины предплечья, не закатывать. Брюки не короче 2/3 голени, не ниже лодыжки."
+        },
+        {
+          "id": "2.2.5",
+          "code": "Статья 2.2.5",
+          "title": "Religious Headwear",
+          "titleRu": "Религиозный головной убор",
+          "contentEn": "Voluntary religious headwear approved by WKF: A black plain fabric head scarf covering hair, but not neck or throat area.",
+          "contentRu": "Религиозный головной убор: одобренный WKF простой черный тканевый платок, закрывающий волосы, но оставляющий открытыми шею и горло."
+        },
+        {
+          "id": "2.2.7",
+          "code": "Статья 2.2.7",
+          "title": "Compulsory Protective Equipment",
+          "titleRu": "Обязательная защитная экипировка",
+          "contentEn": "Compulsory: WKF approved mitts (red/blue), gum shield, body protector (chest protector for females), shin pads, foot protection, groin guard (males). For U14: protective helmet and external body protector compulsory.",
+          "contentRu": "Обязательно: накладки (красные/синие), капа, жилет защиты тела (для женщин нагрудник), накладки на голень и стопу (футы), ракушка (паховая защита). Для U14: шлем и внешний жилет защиты тела обязательны."
+        }
+      ]
+    },
+    {
+      "id": "art-5",
+      "number": 5,
+      "titleEn": "ARTICLE 5: DURATION OF BOUT",
+      "titleRu": "СТАТЬЯ 5: ПРОДОЛЖИТЕЛЬНОСТЬ ПОЕДИНКА",
+      "sections": [
+        {
+          "id": "5.1",
+          "code": "Статья 5.1",
+          "title": "Bout Duration by Category",
+          "titleRu": "Продолжительность боя по категориям",
+          "contentEn": "Senior Male & Female: 3 minutes effective time. U21 Male & Female: 3 minutes. Cadet & Junior: 2 minutes. Under 14: 1.5 minutes.",
+          "contentRu": "Взрослые (мужчины и женщины): 3 минуты чистого времени. До 21 года (U21): 3 минуты. Кадеты и юниоры: 2 минуты. До 14 лет (U14): 1,5 минуты чистого времени."
+        }
+      ]
+    },
+    {
+      "id": "art-8",
+      "number": 8,
+      "titleEn": "ARTICLE 8: SCORING",
+      "titleRu": "СТАТЬЯ 8: ОЦЕНКИ",
+      "sections": [
+        {
+          "id": "8.5",
+          "code": "Статья 8.5",
+          "title": "Six Scoring Criteria",
+          "titleRu": "Шесть критериев оценки",
+          "contentEn": "Six criteria: 1. Good form, 2. Sporting attitude, 3. Vigorous application, 4. Maintaining awareness (Zanshin), 5. Good timing, 6. Correct distance.",
+          "contentRu": "Шесть критериев: 1. Хорошая форма, 2. Спортивное отношение, 3. Мощное исполнение, 4. Заншин (контроль после удара), 5. Правильный момент времени, 6. Правильная дистанция."
+        },
+        {
+          "id": "8.6",
+          "code": "Статья 8.6",
+          "title": "Point Values: Yuko, Waza-Ari, Ippon",
+          "titleRu": "Баллы: Юко, Вадза-ари, Иппон",
+          "contentEn": "YUKO (1 point): Tsuki or Uchi to scoring area. WAZA-ARI (2 points): Chudan kicks. IPPON (3 points): Jodan kicks or scoring technique on opponent who has fallen / is off their feet.",
+          "contentRu": "ЮКО (1 балл): прямой или круговой удар рукой в зачетную зону. ВАДЗА-АРИ (2 балла): удар ногой в зону Чудан. ИППОН (3 балла): удар ногой в Дзёдан или оцениваемая техника по упавшему сопернику."
+        },
+        {
+          "id": "8.8",
+          "code": "Статья 8.8",
+          "title": "Skin Touch and Distance",
+          "titleRu": "Касание кожи и дистанция",
+          "contentEn": "Jodan kicks within 5cm (10cm for Cadets/U14), hand techniques within 2cm (5cm for Cadets/U14). Skin touch allowed without impact in all age categories. Throat touch strictly forbidden.",
+          "contentRu": "В Дзёдан: удары ногами до 5 см (10 см для кадетов/U14), руками до 2 см (5 см для кадетов/U14). Касание кожи (Skin touch) разрешено во всех категориях без передачи энергии. Контакт с горлом запрещен."
+        }
+      ]
+    },
+    {
+      "id": "art-10",
+      "number": 10,
+      "titleEn": "ARTICLE 10: WARNINGS & PENALTIES",
+      "titleRu": "СТАТЬЯ 10: ПРЕДУПРЕЖДЕНИЯ И НАКАЗАНИЯ",
+      "sections": [
+        {
+          "id": "10.1",
+          "code": "Статья 10.1",
+          "title": "Informal Warnings: Tsuzukete and Wakarete",
+          "titleRu": "Неофициальные предупреждения",
+          "contentEn": "TSUZUKETE (fight on) to encourage activity. WAKARETE (break clinch) to separate without stopping the clock.",
+          "contentRu": "ЦУДЗУКЭТЭ (продолжить поединок) для побуждения к активности. ВАКАРЕТЕ (разойтись) для разрыва клинча без остановки времени."
+        },
+        {
+          "id": "10.2",
+          "code": "Статья 10.2",
+          "title": "Official Warnings: CHUI and HANSOKU CHUI",
+          "titleRu": "Официальные предупреждения",
+          "contentEn": "CHUI given up to 3 times for smaller infractions. HANSOKU CHUI given for serious infractions or upon 4th infraction.",
+          "contentRu": "ЧУИ выносится до 3 раз за мелкие нарушения. ХАНСОКУ-ЧУИ выносится за серьезные нарушения или при 4-м нарушении."
+        },
+        {
+          "id": "10.3",
+          "code": "Статья 10.3",
+          "title": "Penalties: HANSOKU and SHIKKAKU",
+          "titleRu": "Наказания: ХАНСОКУ и ШИККАКУ",
+          "contentEn": "HANSOKU: disqualification from the bout. SHIKKAKU: disqualification from the entire tournament for malicious acts or harming prestige of Karate.",
+          "contentRu": "ХАНСОКУ: дисквалификация с данного боя. ШИККАКУ: дисквалификация со всего турнира за злонамеренные действия или ущерб престижу каратэ."
+        },
+        {
+          "id": "10.4.14",
+          "code": "Статья 10.4.14",
+          "title": "MUBOBI (Self-Endangerment)",
+          "titleRu": "МУБОБИ (Пренебрежение безопасностью)",
+          "contentEn": "MUBOBI is given when an Athlete is hit or injured through their own fault or negligence (turning back, dropping guard, refusing to block).",
+          "contentRu": "МУБОБИ выносится, когда спортсмен получает удар или травму по собственной вине или небрежности (поворот спиной, опущенные руки)."
+        },
+        {
+          "id": "10.4.15",
+          "code": "Статья 10.4.15",
+          "title": "Passivity and Avoiding Combat",
+          "titleRu": "Пассивность и уклонение от боя",
+          "contentEn": "Passivity cannot be given in first 15 seconds, last 15 seconds, or to someone having a lead by points or SENSHU. Avoiding combat during ATO SHIBARAKU results in min HANSOKU CHUI and loss of SENSHU.",
+          "contentRu": "Пассивность нельзя давать в первые 15 секунд, последние 15 секунд или лидирующему по очкам/СЕНШУ. Уклонение от боя во время АТО СИБАРАКУ влечет как минимум ХАНСОКУ-ЧУИ и потерю СЕНШУ."
+        }
+      ]
+    },
+    {
+      "id": "art-11",
+      "number": 11,
+      "titleEn": "ARTICLE 11: INJURIES AND ACCIDENTS",
+      "titleRu": "СТАТЬЯ 11: ТРАВМЫ И НЕСЧАСТНЫЕ СЛУЧАИ",
+      "sections": [
+        {
+          "id": "11.2.4",
+          "code": "Статья 11.2.4",
+          "title": "Ten-Second Rule",
+          "titleRu": "Правило десяти секунд",
+          "contentEn": "10-second rule: Any Athlete who lies flat after a fall, throw, or knockdown and does not fully regain their feet within 10 seconds is unfit to continue and withdrawn from all Kumite events in that tournament.",
+          "contentRu": "Правило 10 секунд: любой спортсмен, упавший на пол и не вставший на ноги в течение 10 секунд, считается непригодным к продолжению и снимается со всех поединков кумитэ турнира."
+        }
+      ]
+    },
+    {
+      "id": "art-12",
+      "number": 12,
+      "titleEn": "ARTICLE 12: CRITERIA FOR DECISION",
+      "titleRu": "СТАТЬЯ 12: КРИТЕРИИ ПРИНЯТИЯ РЕШЕНИЙ",
+      "sections": [
+        {
+          "id": "12.2",
+          "code": "Статья 12.2",
+          "title": "Bout Outcome & SENSHU",
+          "titleRu": "Исход поединка и СЕНШУ",
+          "contentEn": "Clear lead of 8 points wins immediately. At full time: highest score wins; if equal score, Athlete with SENSHU wins; if no Senshu, higher number of Ippon, then Waza-ari, then HANTEI.",
+          "contentRu": "Преимущество в 8 очков — досрочная победа. По окончании времени побеждает набравший больше очков; при равенстве — обладатель СЕНШУ; если нет СЕНШУ — по числу Иппон, затем Вадза-ари, затем ХАНТЕЙ."
+        }
+      ]
+    },
+    {
+      "id": "art-14",
+      "number": 14,
+      "titleEn": "ARTICLE 14: VIDEO REVIEW REQUEST",
+      "titleRu": "СТАТЬЯ 14: ВИДЕОПОВТОР",
+      "sections": [
+        {
+          "id": "14.2",
+          "code": "Статья 14.2",
+          "title": "Video Request Card",
+          "titleRu": "Карточка видеоповтора",
+          "contentEn": "Coach raises card or pushes joystick button for missed score. Last 6 seconds evaluated. If found valid, card retained; if invalid, coach loses card for rest of bout.",
+          "contentRu": "Тренер поднимает карточку видеоповтора. Оцениваются последние 6 секунд. При удовлетворении запроса карточка сохраняется; при отклонении тренер теряет карточку до конца боя."
+        }
+      ]
+    }
+  ]
+}

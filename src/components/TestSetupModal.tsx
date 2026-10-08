@@ -9,11 +9,14 @@ import {
   FileCode,
   Upload,
 } from 'lucide-react';
-import type { TestConfig, UserProfile } from '../types';
+import type { TestConfig, UserProfile, Discipline, Language } from '../types';
 import { getUserMistakeQuestionIds } from '../utils/storage';
+import { t } from '../i18n/translations';
 
 interface TestSetupProps {
   activeUser: UserProfile;
+  discipline: Discipline;
+  language: Language;
   totalAvailableQuestions: number;
   onStartTest: (config: TestConfig) => void;
   onOpenUserModal: () => void;
@@ -22,16 +25,19 @@ interface TestSetupProps {
 
 export const TestSetupModal: React.FC<TestSetupProps> = ({
   activeUser,
+  discipline,
+  language,
   totalAvailableQuestions,
   onStartTest,
   onOpenUserModal,
   onCustomDataLoaded,
 }) => {
-  const userMistakes = getUserMistakeQuestionIds(activeUser.id);
+  const userMistakes = getUserMistakeQuestionIds(activeUser.id, discipline);
   const hasMistakes = userMistakes.length > 0;
 
-  // Question count state
-  const [questionCount, setQuestionCount] = useState<number>(70);
+  // Question count state (default 70, or total if smaller)
+  const defaultCount = Math.min(70, totalAvailableQuestions);
+  const [questionCount, setQuestionCount] = useState<number>(defaultCount);
   const [customQuestionCount, setCustomQuestionCount] = useState<string>('');
   const [isCustomCount, setIsCustomCount] = useState<boolean>(false);
 
@@ -47,12 +53,12 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
   // Preset buttons
   const countPresets = [20, 50, 70, 100, totalAvailableQuestions];
   const timePresets = [
-    { label: '10 сек', val: 10 },
-    { label: '15 сек', val: 15 },
-    { label: '20 сек', val: 20 },
-    { label: '30 сек', val: 30 },
-    { label: '60 сек', val: 60 },
-    { label: 'Без таймера', val: 0 },
+    { label: `10 ${t('sec', language)}`, val: 10 },
+    { label: `15 ${t('sec', language)}`, val: 15 },
+    { label: `20 ${t('sec', language)}`, val: 20 },
+    { label: `30 ${t('sec', language)}`, val: 30 },
+    { label: `60 ${t('sec', language)}`, val: 60 },
+    { label: t('noTimer', language), val: 0 },
   ];
 
   const maxQuestions = onlyMistakes ? userMistakes.length : totalAvailableQuestions;
@@ -76,6 +82,8 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
     if (finalTime < 0) finalTime = 0;
 
     onStartTest({
+      discipline,
+      language,
       questionCount: finalCount,
       timeLimitPerQuestion: finalTime,
       onlyMistakesMode: onlyMistakes,
@@ -103,6 +111,11 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
     reader.readAsText(file);
   };
 
+  const isKata = discipline === 'kata';
+  const subtitle = isKata
+    ? t('setupSubtitleKata', language)
+    : t('setupSubtitleKumite', language);
+
   return (
     <div className="max-w-2xl mx-auto py-2 sm:py-4 px-3 sm:px-6">
       <div className="bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-2xl space-y-6 sm:space-y-8 relative overflow-hidden">
@@ -113,15 +126,15 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
         {/* Welcome & User banner */}
         <div className="relative flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-slate-800">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 text-[11px] font-medium mb-1.5 sm:mb-2">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-300 text-[11px] font-semibold mb-1.5 sm:mb-2 font-mono">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>WKF Kumite Referees & Judges</span>
+              <span>{isKata ? 'WKF KATA & PARA-KARATE' : 'WKF KUMITE REFEREES'}</span>
             </div>
             <h1 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Тестирование судей WKF
+              {t('setupTitle', language)}
             </h1>
             <p className="text-xs sm:text-sm text-slate-400 mt-0.5 sm:mt-1">
-              База {totalAvailableQuestions} официальных вопросов из data.json
+              {subtitle} ({totalAvailableQuestions} {language === 'ru' ? 'вопросов' : 'questions'})
             </p>
           </div>
 
@@ -134,7 +147,7 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
             </div>
             <div className="text-left">
               <p className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">
-                Текущий пользователь
+                {t('switchUser', language)}
               </p>
               <p className="text-xs font-bold text-slate-200 group-hover:text-white transition-colors">
                 {activeUser.name}
@@ -148,10 +161,10 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
           <div className="flex items-center justify-between">
             <label className="flex items-center gap-2 text-sm font-bold text-slate-200">
               <HelpCircle className="w-4 h-4 text-rose-500" />
-              Количество вопросов
+              <span>{t('questionCountLabel', language)}</span>
             </label>
             <span className="text-xs text-slate-400">
-              По умолчанию: <span className="text-rose-400 font-semibold">70</span> (из {maxQuestions})
+              {language === 'ru' ? 'Выбрано:' : 'Selected:'} <span className="text-rose-400 font-semibold">{questionCount}</span> / {maxQuestions}
             </span>
           </div>
 
@@ -174,7 +187,7 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
                       : 'bg-slate-800/70 hover:bg-slate-800 text-slate-300 hover:text-white border-slate-700/60'
                   }`}
                 >
-                  {cnt === totalAvailableQuestions ? `Все (${cnt})` : cnt}
+                  {cnt === totalAvailableQuestions ? `${t('allQuestionsPreset', language)} (${cnt})` : cnt}
                 </button>
               );
             })}
@@ -190,13 +203,13 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
                   : 'bg-slate-800/70 hover:bg-slate-800 text-slate-300 hover:text-white border-slate-700/60'
               }`}
             >
-              Свое число
+              {t('customCountPlaceholder', language)}
             </button>
           </div>
 
           {isCustomCount && (
             <div className="flex items-center gap-3 p-3 bg-slate-800/50 rounded-xl border border-slate-700/60">
-              <span className="text-xs text-slate-400">Количество:</span>
+              <span className="text-xs text-slate-400">{t('questionCountLabel', language)}:</span>
               <input
                 type="number"
                 min={1}
@@ -206,7 +219,7 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
                 placeholder={`1 - ${maxQuestions}`}
                 className="w-24 px-3 py-1.5 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white font-semibold focus:outline-none focus:border-rose-500"
               />
-              <span className="text-xs text-slate-500">от 1 до {maxQuestions}</span>
+              <span className="text-xs text-slate-500">1 – {maxQuestions}</span>
             </div>
           )}
         </div>
@@ -216,10 +229,10 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
           <div className="flex items-center justify-between">
             <label className="flex items-center gap-2 text-sm font-bold text-slate-200">
               <Clock className="w-4 h-4 text-amber-400" />
-              Время на каждый вопрос
+              <span>{t('timeLimitLabel', language)}</span>
             </label>
             <span className="text-xs text-slate-400">
-              По умолчанию: <span className="text-amber-400 font-semibold">20 сек</span>
+              {timeLimit > 0 ? `${timeLimit} ${t('sec', language)}` : t('noTimer', language)}
             </span>
           </div>
 
@@ -253,13 +266,13 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
               }}
               className="text-xs text-amber-400/80 hover:text-amber-400 underline underline-offset-4"
             >
-              {isCustomTime ? 'Выбрать из пресетов' : 'Задать другое количество секунд'}
+              {isCustomTime ? 'Выбрать пресет' : t('customTimePlaceholder', language)}
             </button>
           </div>
 
           {isCustomTime && (
             <div className="flex items-center gap-3 p-3 bg-slate-800/50 rounded-xl border border-slate-700/60">
-              <span className="text-xs text-slate-400">Секунд на вопрос:</span>
+              <span className="text-xs text-slate-400">{t('sec', language)}:</span>
               <input
                 type="number"
                 min={5}
@@ -304,17 +317,17 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
               </div>
               <div>
                 <p className="text-xs sm:text-sm font-bold text-slate-200 flex items-center gap-2">
-                  <span>Режим «Работа над ошибками»</span>
+                  <span>{t('onlyMistakesMode', language)}</span>
                   {hasMistakes && (
                     <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300">
-                      {userMistakes.length} вопр.
+                      {userMistakes.length} {language === 'ru' ? 'вопр.' : 'q.'}
                     </span>
                   )}
                 </p>
                 <p className="text-[11px] text-slate-400">
                   {hasMistakes
-                    ? 'Тестирование только по тем вопросам, в которых вы ошибались ранее'
-                    : 'Ошибок в истории пока нет. Пройдите обычный тест!'}
+                    ? `${t('mistakesAvailable', language)} ${userMistakes.length}`
+                    : t('noMistakesYet', language)}
                 </p>
               </div>
             </div>
@@ -339,10 +352,10 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
               </div>
               <div>
                 <p className="text-xs sm:text-sm font-bold text-slate-200">
-                  Случайный порядок вопросов
+                  {t('shuffleQuestions', language)}
                 </p>
                 <p className="text-[11px] text-slate-400">
-                  Перемешивать вопросы при создании каждого теста
+                  {language === 'ru' ? 'Случайный порядок вопросов при создании теста' : 'Random order of questions for each test'}
                 </p>
               </div>
             </div>
@@ -355,17 +368,23 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
           </div>
         </div>
 
-        {/* Section 4: Data.json Information & Custom File Upload */}
+        {/* Section 4: Data Information & Custom File Upload */}
         <div className="p-3.5 rounded-2xl bg-slate-950/60 border border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2 text-slate-400">
             <FileCode className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>Источник данных: <code className="text-emerald-300 font-mono">public/data.json</code> ({totalAvailableQuestions} вопр.)</span>
+            <span>
+              {language === 'ru' ? 'База данных:' : 'Dataset:'}{' '}
+              <code className="text-emerald-300 font-mono">
+                {isKata ? 'public/data/kata.json' : 'public/data/kumite.json'}
+              </code>{' '}
+              ({totalAvailableQuestions} {language === 'ru' ? 'вопр.' : 'q.'})
+            </span>
           </div>
 
           {onCustomDataLoaded && (
             <label className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white cursor-pointer border border-slate-700 transition-colors self-start sm:self-auto font-medium">
               <Upload className="w-3.5 h-3.5 text-amber-400" />
-              <span>Загрузить свой data.json</span>
+              <span>{language === 'ru' ? 'Загрузить свой JSON' : 'Upload custom JSON'}</span>
               <input
                 type="file"
                 accept=".json"
@@ -384,10 +403,13 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
             className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-rose-600 via-rose-500 to-amber-500 hover:from-rose-500 hover:to-amber-400 text-white font-extrabold text-base shadow-xl shadow-rose-900/30 flex items-center justify-center gap-3 hover:scale-[1.01] active:scale-[0.99] transition-all"
           >
             <Play className="w-5 h-5 fill-current" />
-            <span>Начать тест ({isCustomCount ? customQuestionCount || 70 : questionCount} вопросов)</span>
+            <span>
+              {t('startTestButton', language)} ({isCustomCount ? customQuestionCount || 70 : questionCount})
+            </span>
           </button>
         </div>
       </div>
     </div>
   );
 };
+

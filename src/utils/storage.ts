@@ -1,4 +1,4 @@
-import type { UserProfile, TestResult } from '../types';
+import type { UserProfile, TestResult, Discipline, Language } from '../types';
 
 const STORAGE_KEY_USERS = 'wkf_exam_users_v1';
 const STORAGE_KEY_ACTIVE_USER = 'wkf_exam_active_user_v1';
@@ -8,11 +8,15 @@ const STORAGE_KEY_SETTINGS = 'wkf_exam_settings_v1';
 export interface AppSettings {
   soundEnabled: boolean;
   theme: 'dark' | 'light';
+  discipline: Discipline;
+  language: Language;
 }
 
 const DEFAULT_SETTINGS: AppSettings = {
   soundEnabled: true,
   theme: 'dark',
+  discipline: 'kumite',
+  language: 'ru',
 };
 
 // --- Users ---
@@ -136,11 +140,11 @@ export function saveAllHistory(history: TestResult[]): void {
   }
 }
 
-export function getUserHistory(userId?: string): TestResult[] {
+export function getUserHistory(userId?: string, discipline?: Discipline): TestResult[] {
   const targetId = userId || getActiveUserId();
   const all = getAllHistory();
   return all
-    .filter((h) => h.userId === targetId)
+    .filter((h) => h.userId === targetId && (!discipline || (h.discipline || 'kumite') === discipline))
     .sort((a, b) => b.timestamp - a.timestamp);
 }
 
@@ -155,16 +159,20 @@ export function deleteTestResult(testId: string): void {
   saveAllHistory(all);
 }
 
-export function clearUserHistory(userId?: string): void {
+export function clearUserHistory(userId?: string, discipline?: Discipline): void {
   const targetId = userId || getActiveUserId();
-  const remaining = getAllHistory().filter((h) => h.userId !== targetId);
+  const remaining = getAllHistory().filter((h) => {
+    if (h.userId !== targetId) return true;
+    if (discipline && (h.discipline || 'kumite') !== discipline) return true;
+    return false;
+  });
   saveAllHistory(remaining);
 }
 
 // --- Mistakes Query ---
 
-export function getUserMistakeQuestionIds(userId?: string): number[] {
-  const history = getUserHistory(userId);
+export function getUserMistakeQuestionIds(userId?: string, discipline?: Discipline): number[] {
+  const history = getUserHistory(userId, discipline);
   const mistakeCountMap = new Map<number, number>();
 
   for (const test of history) {
@@ -191,8 +199,8 @@ export interface UserStatistics {
   passRate: number;
 }
 
-export function getUserStats(userId?: string): UserStatistics {
-  const history = getUserHistory(userId);
+export function getUserStats(userId?: string, discipline?: Discipline): UserStatistics {
+  const history = getUserHistory(userId, discipline);
   if (history.length === 0) {
     return {
       totalTests: 0,
@@ -255,3 +263,4 @@ export function saveSettings(settings: Partial<AppSettings>): AppSettings {
   }
   return updated;
 }
+

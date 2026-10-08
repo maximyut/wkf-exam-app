@@ -11,6 +11,8 @@ import {
 } from 'lucide-react';
 import type { Question, TestConfig, QuestionAnswerRecord, AnswerChoice } from '../types';
 import { playTickSound, playClickSound, playTimeoutSound } from '../utils/sound';
+import { t } from '../i18n/translations';
+import { getQuestionText, getExplanationText } from '../data/questions';
 
 interface ActiveTestProps {
   questions: Question[];
@@ -73,14 +75,18 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
 
       const record: QuestionAnswerRecord = {
         questionId: currentQuestion.id,
-        questionText: currentQuestion.question,
+        discipline: config.discipline,
+        questionText: getQuestionText(currentQuestion, config.language),
+        questionTextEn: currentQuestion.questionEn || currentQuestion.question,
+        questionTextRu: currentQuestion.questionRu || currentQuestion.question,
         userAnswer: choice,
         correctAnswer: currentQuestion.answer,
         isCorrect,
         timeSpentSeconds: timeSpent,
         ruleArticle: currentQuestion.ruleArticle,
         ruleQuote: currentQuestion.ruleQuote,
-        explanation: currentQuestion.explanation,
+        explanation: getExplanationText(currentQuestion, config.language),
+        explanationEn: currentQuestion.explanationEn,
         votes: currentQuestion.votes,
       };
 
@@ -98,7 +104,7 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
         onFinishTest(updatedRecords, totalDuration);
       }
     },
-    [currentIndex, currentQuestion, hasTimeLimit, onFinishTest, records, soundEnabled, timeLimit, totalQuestions]
+    [currentIndex, currentQuestion, hasTimeLimit, onFinishTest, records, soundEnabled, timeLimit, totalQuestions, config]
   );
 
   // Timer countdown effect
@@ -174,7 +180,7 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
         <div className="flex items-center gap-2 sm:gap-3">
           <div className="flex flex-col">
             <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-slate-400 font-semibold">
-              Вопрос
+              {t('questionProgress', config.language)}
             </span>
             <div className="flex items-baseline gap-1">
               <span className="text-lg sm:text-xl font-black text-white">{currentIndex + 1}</span>
@@ -209,13 +215,13 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
             />
             <div className="flex items-baseline gap-0.5">
               <span className="text-xl font-black tabular-nums">{timeLeft}</span>
-              <span className="text-xs font-medium text-slate-400">с</span>
+              <span className="text-xs font-medium text-slate-400">{t('timeRemaining', config.language)}</span>
             </div>
           </div>
         ) : (
           <div className="flex items-center gap-1.5 text-xs text-slate-400 font-medium px-3 py-1.5 rounded-xl bg-slate-800/60 border border-slate-700/50">
             <Clock className="w-3.5 h-3.5" />
-            <span>Без ограничения времени</span>
+            <span>{t('unlimitedTime', config.language)}</span>
           </div>
         )}
 
@@ -224,7 +230,7 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
           <button
             type="button"
             onClick={() => setIsPaused(!isPaused)}
-            title={isPaused ? 'Возобновить (Пробел)' : 'Пауза (Пробел)'}
+            title={isPaused ? (config.language === 'ru' ? 'Возобновить (Пробел)' : 'Resume (Space)') : (config.language === 'ru' ? 'Пауза (Пробел)' : 'Pause (Space)')}
             className={`p-2.5 rounded-xl border transition-all ${
               isPaused
                 ? 'bg-amber-500 text-slate-950 font-bold border-amber-400 shadow-lg shadow-amber-500/20'
@@ -237,7 +243,7 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
           <button
             type="button"
             onClick={() => setShowExitConfirm(true)}
-            title="Завершить тест"
+            title={config.language === 'ru' ? 'Завершить тест' : 'Exit test'}
             className="p-2.5 rounded-xl bg-slate-800 text-slate-400 hover:text-rose-400 hover:bg-slate-700 border border-slate-700/80 transition-all"
           >
             <LogOut className="w-4 h-4" />
@@ -275,16 +281,16 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
             <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center mb-3 sm:mb-4">
               <Pause className="w-6 h-6 sm:w-7 sm:h-7" />
             </div>
-            <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Тест приостановлен</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">{t('pauseTitle', config.language)}</h3>
             <p className="text-xs text-slate-400 max-w-sm mb-5 sm:mb-6">
-              Таймер заморожен. Нажмите кнопку продолжения или клавишу Пробел, чтобы возобновить тест.
+              {t('pauseDesc', config.language)}
             </p>
             <button
               onClick={() => setIsPaused(false)}
               className="px-5 sm:px-6 py-2 sm:py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm shadow-lg shadow-amber-500/20 flex items-center gap-2 transition-all"
             >
               <Play className="w-4 h-4 fill-current" />
-              <span>Продолжить тест</span>
+              <span>{t('resumeTest', config.language)}</span>
             </button>
           </div>
         )}
@@ -293,18 +299,23 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
         <div className="space-y-3 sm:space-y-4">
           <div className="flex items-center justify-between text-xs text-slate-500">
             <span className="font-semibold uppercase tracking-wider text-rose-400/90 text-[11px] sm:text-xs">
-              Вопрос {currentIndex + 1} из {totalQuestions}
+              {t('questionProgress', config.language)} {currentIndex + 1} {t('of', config.language)} {totalQuestions}
             </span>
             <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700/60 font-mono text-[10px] sm:text-xs">
               WKF #{currentQuestion.id}
             </span>
           </div>
 
-          {/* Question Text in English */}
+          {/* Question Text */}
           <div className="py-1 sm:py-2">
             <h2 className="text-base sm:text-2xl font-bold text-slate-100 leading-relaxed sm:leading-snug select-none">
-              {currentQuestion.question}
+              {getQuestionText(currentQuestion, config.language)}
             </h2>
+            {config.language === 'ru' && currentQuestion.questionEn && currentQuestion.questionRu && currentQuestion.questionEn !== currentQuestion.questionRu && (
+              <p className="text-xs sm:text-sm text-slate-400 font-normal italic mt-2.5 pt-2 border-t border-slate-800/80 leading-relaxed">
+                {currentQuestion.questionEn}
+              </p>
+            )}
           </div>
         </div>
 
@@ -323,9 +334,9 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
               </div>
               <div className="text-left">
                 <div className="text-lg sm:text-2xl font-black text-white tracking-wide">
-                  TRUE
+                  {t('trueBtn', config.language)}
                 </div>
-                <div className="text-[11px] sm:text-xs font-semibold text-emerald-400/90">ВЕРНО</div>
+                <div className="text-[11px] sm:text-xs font-semibold text-emerald-400/90">{t('trueSub', config.language)}</div>
               </div>
             </div>
 
@@ -347,9 +358,9 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
               </div>
               <div className="text-left">
                 <div className="text-lg sm:text-2xl font-black text-white tracking-wide">
-                  FALSE
+                  {t('falseBtn', config.language)}
                 </div>
-                <div className="text-[11px] sm:text-xs font-semibold text-rose-400/90">ЛОЖНО</div>
+                <div className="text-[11px] sm:text-xs font-semibold text-rose-400/90">{t('falseSub', config.language)}</div>
               </div>
             </div>
 
@@ -362,15 +373,15 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
 
       {/* Keyboard hints footer (hidden on mobile) */}
       <div className="mt-4 hidden sm:flex items-center justify-center gap-4 text-xs text-slate-500 select-none">
-        <span>Горячие клавиши:</span>
+        <span>{config.language === 'ru' ? 'Горячие клавиши:' : 'Shortcuts:'}</span>
         <span className="inline-flex items-center gap-1 font-mono">
-          <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">T</kbd> / <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">1</kbd> Верно
+          <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">T</kbd> / <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">1</kbd> {t('trueSub', config.language)}
         </span>
         <span className="inline-flex items-center gap-1 font-mono">
-          <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">F</kbd> / <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">2</kbd> Ложно
+          <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">F</kbd> / <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">2</kbd> {t('falseSub', config.language)}
         </span>
         <span className="inline-flex items-center gap-1 font-mono">
-          <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">Пробел</kbd> Пауза
+          <kbd className="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">Space</kbd> {config.language === 'ru' ? 'Пауза' : 'Pause'}
         </span>
       </div>
 
@@ -382,9 +393,9 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
               <AlertCircle className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white">Завершить тест?</h3>
+              <h3 className="text-lg font-bold text-white">{t('exitConfirmTitle', config.language)}</h3>
               <p className="text-xs text-slate-400 mt-1">
-                Вы ответили на {records.length} из {totalQuestions} вопросов. Неотвеченные вопросы будут засчитаны как пропущенные.
+                {t('exitConfirmDesc', config.language)}
               </p>
             </div>
             <div className="flex gap-2 pt-2">
@@ -393,7 +404,7 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
                 onClick={() => setShowExitConfirm(false)}
                 className="flex-1 py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-colors"
               >
-                Продолжить тест
+                {t('cancelExit', config.language)}
               </button>
               <button
                 type="button"
@@ -403,7 +414,7 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
                 }}
                 className="flex-1 py-2 px-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold transition-colors"
               >
-                Выйти в меню
+                {t('confirmExit', config.language)}
               </button>
             </div>
           </div>

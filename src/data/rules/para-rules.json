@@ -1,0 +1,131 @@
+{
+  "id": "para-rules-2026",
+  "discipline": "para-kata",
+  "titleEn": "WKF Para Karate Kata Competition Rules",
+  "titleRu": "Правила соревнований WKF по Пара-Каратэ (Ката)",
+  "version": "2026.0",
+  "pdfUrlEn": "/docs/wkf-para-karate-rules-2026-en.pdf",
+  "pdfUrlRu": "/docs/wkf-para-karate-rules-2026-en.pdf",
+  "articles": [
+    {
+      "id": "art-1",
+      "number": 1,
+      "titleEn": "ARTICLE 1: PARA KARATE KATA COMPETITION",
+      "titleRu": "СТАТЬЯ 1: СОРЕВНОВАНИЯ ПО ПАРА-КАРАТЭ КАТА",
+      "sections": [
+        {
+          "id": "1.1",
+          "code": "PR 1.1",
+          "title": "Purpose and Scope",
+          "titleRu": "Назначение и сфера применения",
+          "contentEn": "Para Karate is the modality of Karate adapted for Athletes with disabilities. Preserves Athlete safety and fair competition.",
+          "contentRu": "Пара-каратэ — это вид каратэ для спортсменов с инвалидностью, обеспечивающий безопасность и честную конкуренцию."
+        }
+      ]
+    },
+    {
+      "id": "art-2",
+      "number": 2,
+      "titleEn": "ARTICLE 2: DISCIPLINE, CATEGORIES AND SPORT CLASSES",
+      "titleRu": "СТАТЬЯ 2: ДИСЦИПЛИНА, КАТЕГОРИИ И СПОРТИВНЫЕ КЛАССЫ",
+      "sections": [
+        {
+          "id": "2.1.1",
+          "code": "PR 2.1.1",
+          "title": "Discipline and Categories",
+          "titleRu": "Категории Пара-Каратэ",
+          "contentEn": "Para Karate competitions include Individual Kata only (no Kumite). Three general categories: Visual Impairment (K10), Intellectual Impairment (K21 and K22), Physical Impairment (K30).",
+          "contentRu": "В пара-каратэ проводятся только индивидуальные Ката (кумитэ нет). Три основные категории: нарушения зрения (K10), интеллектуальные нарушения (K21, K22), физические нарушения (K30)."
+        },
+        {
+          "id": "2.1.3",
+          "code": "PR 2.1.3",
+          "title": "Multiple Impairments",
+          "titleRu": "Несколько нарушений",
+          "contentEn": "Athletes with more than one Eligible Impairment may compete in only one Sport Class per championship.",
+          "contentRu": "Спортсмены с несколькими нарушениями соревнуются только в одном спортивном классе за чемпионат."
+        },
+        {
+          "id": "2.1.4",
+          "code": "PR 2.1.4",
+          "title": "Compensation Score",
+          "titleRu": "Компенсационный балл",
+          "contentEn": "In Sport Classes K10 and K30, a Compensation Score is allocated by Classification Panel (not judges) and added to Judges score. Not allocated in K21/K22.",
+          "contentRu": "Для классов K10 и K30 компенсационный балл назначается классификационной панелью (не судьями). Для K21/K22 компенсационный балл не применяется."
+        }
+      ]
+    },
+    {
+      "id": "art-4",
+      "number": 4,
+      "titleEn": "ARTICLE 4: OFFICIAL ATTIRE & EQUIPMENT",
+      "titleRu": "СТАТЬЯ 4: ОФИЦИАЛЬНАЯ ОДЕЖДА И ОБОРУДОВАНИЕ",
+      "sections": [
+        {
+          "id": "4.4.5",
+          "code": "PR 4.4.5",
+          "title": "Prostheses and Crutches",
+          "titleRu": "Протезы и костыли",
+          "contentEn": "Prostheses (except for eyes), canes, crutches, and other equipment used for physical support are not allowed in Competition and Classification.",
+          "contentRu": "Протезы (кроме глазных), трости, костыли и ходунки запрещены во время выступления."
+        },
+        {
+          "id": "4.5.3",
+          "code": "PR 4.5.3",
+          "title": "Blindfolds for K10",
+          "titleRu": "Повязки на глаза для K10",
+          "contentEn": "Blindfolds required for all visually impaired Athletes (K10) during kata performance. No logos or sponsor markings allowed.",
+          "contentRu": "Повязки на глаза обязательны для K10 во время выступления. Логотипы и маркировки спонсоров запрещены."
+        },
+        {
+          "id": "4.6.6",
+          "code": "PR 4.6.6",
+          "title": "Wheelchair Leg Straps",
+          "titleRu": "Ремни для фиксации ног в коляске",
+          "contentEn": "Leg straps for wheelchair Athletes (K30) must be white, without logos, and made from material that is NOT elastic. Max 3 straps between ankles and hip. Upper body fixation forbidden.",
+          "contentRu": "Ремни для ног колясочников (K30) должны быть белыми, без логотипов, неэластичными. Максимум 3 ремня от щиколоток до бёдер. Фиксация верхней части тела запрещена."
+        },
+        {
+          "id": "4.6.11",
+          "code": "PR 4.6.11",
+          "title": "Advertising on Wheelchairs",
+          "titleRu": "Реклама на инвалидных колясках",
+          "contentEn": "Advertising prohibited on: backrest, side guards, armrests, footplate, castors, frame. Allowed only on wheel spokes area.",
+          "contentRu": "Реклама на спинке кресла, подлокотниках, подножках, роликах и раме запрещена. Разрешена только на дисках/спицах основных колес."
+        },
+        {
+          "id": "4.7.4",
+          "code": "PR 4.7.4",
+          "title": "Service Animals",
+          "titleRu": "Служебные животные",
+          "contentEn": "Certified medical service animals detecting life-threatening conditions are allowed at external perimeter. Therapy / emotional-support animals are forbidden in competition area or perimeter.",
+          "contentRu": "Сертифицированные медицинские служебные животные разрешены у внешнего периметра. Животные для эмоциональной поддержки запрещены."
+        }
+      ]
+    },
+    {
+      "id": "art-7",
+      "number": 7,
+      "titleEn": "ARTICLE 7: EVALUATION & TIES",
+      "titleRu": "СТАТЬЯ 7: ОЦЕНКА И РАЗРЕШЕНИЕ НИЧЬИХ",
+      "sections": [
+        {
+          "id": "7.2.2",
+          "code": "PR 7.2.2",
+          "title": "Kata Repetition for K21/K22",
+          "titleRu": "Повтор Ката для спортсменов K21/K22",
+          "contentEn": "Athletes from the Intellectually Impaired category (Sport Classes K21 and K22) may perform the same Kata in each round; thus, repetition is allowed.",
+          "contentRu": "Спортсмены с интеллектуальными нарушениями (K21 и K22) могут исполнять одно и то же ката в каждом раунде (повтор разрешен)."
+        },
+        {
+          "id": "7.7",
+          "code": "PR 7.7",
+          "title": "Resolving Ties in Para Karate",
+          "titleRu": "Разрешение ничьих в Пара-Каратэ",
+          "contentEn": "Para Karate has its own tie resolution steps (highest score including lowest score, then including lowest and highest, then ranking, then repeat kata).",
+          "contentRu": "В Пара-Каратэ действует собственная процедура разрешения ничьих (учет наименьшей оценки, затем обеих исключенных, затем рейтинг, затем повтор ката)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2114 @@
+[
+  {
+    "id": 1,
+    "discipline": "kata",
+    "question": "Kata team members must all wear the same brand of Karate Gi.",
+    "questionEn": "Kata team members must all wear the same brand of Karate Gi.",
+    "questionRu": "Все члены команды по ката должны носить каратэ-ги одной марки.",
+    "answer": false,
+    "ruleArticle": "KR 2.2.1a",
+    "ruleArticleEn": "KR 2.2.1a",
+    "explanation": "Нет требования, чтобы члены команды носили Karategi одной марки.",
+    "explanationEn": "False. Нет требования, чтобы члены команды носили Karategi одной марки.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 2,
+    "discipline": "kata",
+    "question": "The total time allowed for the Kata and BUNKAI demonstration combined is six minutes.",
+    "questionEn": "The total time allowed for the Kata and BUNKAI demonstration combined is six minutes.",
+    "questionRu": "Общее время, отведённое для демонстрации Ката и БУНКАЙ, составляет шесть минут.",
+    "answer": false,
+    "ruleArticle": "KR 3.5.6",
+    "ruleArticleEn": "KR 3.5.6",
+    "explanation": "Общее время Kata + BUNKAI — 5 минут, не 6.",
+    "explanationEn": "False. Общее время Kata + BUNKAI — 5 минут, не 6.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 3,
+    "discipline": "kata",
+    "question": "In Kata competition slight variations as taught by the contestant's style (Ryu- ha) are permitted.",
+    "questionEn": "In Kata competition slight variations as taught by the contestant's style (Ryu- ha) are permitted.",
+    "questionRu": "В соревнованиях по ката разрешены небольшие вариации в соответствии со стилем участника (Рю-ха).",
+    "answer": true,
+    "ruleArticle": "KR 5.3.2",
+    "ruleArticleEn": "KR 5.3.2",
+    "explanation": "Легкие вариации стиля (Ryu-ha) разрешены.",
+    "explanationEn": "True. Легкие вариации стиля (Ryu-ha) разрешены.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 4,
+    "discipline": "kata",
+    "question": "Glasses are forbidden in Kata competition.",
+    "questionEn": "Glasses are forbidden in Kata competition.",
+    "questionRu": "Очки запрещены в соревнованиях по ката.",
+    "answer": true,
+    "ruleArticle": "KR 2.2.4",
+    "ruleArticleEn": "KR 2.2.4",
+    "explanation": "Обычные очки запрещены; спортивные/контактные — на риск атлета.",
+    "explanationEn": "True. Обычные очки запрещены; спортивные/контактные — на риск атлета.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 5,
+    "discipline": "kata",
+    "question": "Only one discreet rubber band on a single ponytail is permitted.",
+    "questionEn": "Only one discreet rubber band on a single ponytail is permitted.",
+    "questionRu": "Разрешается использовать только одну незаметную резинку на одном хвосте.",
+    "answer": false,
+    "ruleArticle": "KR 2.2.6",
+    "ruleArticleEn": "KR 2.2.6",
+    "explanation": "Разрешены одна или две незаметные резинки на одном хвосте.",
+    "explanationEn": "False. Разрешены одна или две незаметные резинки на одном хвосте.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 6,
+    "discipline": "kata",
+    "question": "Kata competition can be organized in several formats.",
+    "questionEn": "Kata competition can be organized in several formats.",
+    "questionRu": "Соревнования по ката могут проводиться в нескольких форматах.",
+    "answer": true,
+    "ruleArticle": "KR 3.3.1",
+    "ruleArticleEn": "KR 3.3.1",
+    "explanation": "Ката может проводиться в нескольких форматах.",
+    "explanationEn": "True. Ката может проводиться в нескольких форматах.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 7,
+    "discipline": "kata",
+    "question": "In all competition formats, the number of Athletes cannot exceed 8.",
+    "questionEn": "In all competition formats, the number of Athletes cannot exceed 8.",
+    "questionRu": "Во всех форматах соревнований количество Спортсменов не может превышать 8.",
+    "answer": false,
+    "ruleArticle": "KR 3.3.1, 3.7.9",
+    "ruleArticleEn": "KR 3.3.1, 3.7.9",
+    "explanation": "Число участников может быть больше 8 (до 32 и более).",
+    "explanationEn": "False. Число участников может быть больше 8 (до 32 и более).",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 8,
+    "discipline": "kata",
+    "question": "Team matches consist of competition between teams of 3 or 4 Athletes of which 3 compete at the time.",
+    "questionEn": "Team matches consist of competition between teams of 3 or 4 Athletes of which 3 compete at the time.",
+    "questionRu": "Командные матчи состоят из соревнований между командами из 3 или 4 Спортсменов, из которых 3 соревнуются одновременно.",
+    "answer": true,
+    "ruleArticle": "KR 3.3.2, 3.5.1",
+    "ruleArticleEn": "KR 3.3.2, 3.5.1",
+    "explanation": "Команды 3 или 4 атлета, из них 3 выступают.",
+    "explanationEn": "True. Команды 3 или 4 атлета, из них 3 выступают.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 9,
+    "discipline": "kata",
+    "question": "Conformance is a consistency in the performance of the Kihon in the Kata.",
+    "questionEn": "Conformance is a consistency in the performance of the Kihon in the Kata.",
+    "questionRu": "Соответствие – это последовательность в исполнении Кихона в Ката.",
+    "answer": true,
+    "ruleArticle": "KR 5.6 (criterion 7)",
+    "ruleArticleEn": "KR 5.6 (criterion 7)",
+    "explanation": "Conformance — согласованность исполнения KIHON.",
+    "explanationEn": "True. Conformance — согласованность исполнения KIHON.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 10,
+    "discipline": "kata",
+    "question": "Should there be any discrepancy between the number and the name of the Kata registered for performance, the name, as per the official WKF Kata list will prevail.",
+    "questionEn": "Should there be any discrepancy between the number and the name of the Kata registered for performance, the name, as per the official WKF Kata list will prevail.",
+    "questionRu": "В случае какого-либо расхождения между номером и названием Ката, заявленного для исполнения, приоритет имеет название, указанное в официальном списке Ката WKF.",
+    "answer": false,
+    "ruleArticle": "KR 6.3, App. 1",
+    "ruleArticleEn": "KR 6.3, App. 1",
+    "explanation": "При расхождении номера и названия приоритет у номера.",
+    "explanationEn": "False. При расхождении номера и названия приоритет у номера.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 11,
+    "discipline": "kata",
+    "question": "Giving a command to start and finish the Kata by a team member is not considered to be an external cue.",
+    "questionEn": "Giving a command to start and finish the Kata by a team member is not considered to be an external cue.",
+    "questionRu": "Подача команды на начало и завершение Ката членом команды не считается внешним сигналом.",
+    "answer": false,
+    "ruleArticle": "KR 5.7(5)",
+    "ruleArticleEn": "KR 5.7(5)",
+    "explanation": "Звуковые команды, включая членов команды, считаются внешней подсказкой/фолом.",
+    "explanationEn": "False. Звуковые команды, включая членов команды, считаются внешней подсказкой/фолом.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 12,
+    "discipline": "kata",
+    "question": "The mats must form a uniform coloured surface for Kata competition.",
+    "questionEn": "The mats must form a uniform coloured surface for Kata competition.",
+    "questionRu": "Для соревнований по ката маты должны образовывать однородную цветную поверхность.",
+    "answer": true,
+    "ruleArticle": "KR 1.1, 1.5",
+    "ruleArticleEn": "KR 1.1, 1.5",
+    "explanation": "Площадка для Kata должна представлять собой единую однотонную поверхность покрытия.",
+    "explanationEn": "True. Площадка для Kata должна представлять собой единую однотонную поверхность покрытия.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 13,
+    "discipline": "kata",
+    "question": "Judges should look for correct Kihon of the Athlete's style (Ryu-ha) being demonstrated.",
+    "questionEn": "Judges should look for correct Kihon of the Athlete's style (Ryu-ha) being demonstrated.",
+    "questionRu": "Судьи должны следить за правильным Кихоном демонстрируемого стиля Спортсмена (Рю-ха).",
+    "answer": true,
+    "ruleArticle": "KR 5.6, 5.3.2",
+    "ruleArticleEn": "KR 5.6, 5.3.2",
+    "explanation": "Судьи оценивают правильность Kihon стиля атлета.",
+    "explanationEn": "True. Судьи оценивают правильность Kihon стиля атлета.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 14,
+    "discipline": "kata",
+    "question": "The panel of Judges can be changed for any single round.",
+    "questionEn": "The panel of Judges can be changed for any single round.",
+    "questionRu": "Судейская бригада может быть изменена для любого отдельного раунда.",
+    "answer": true,
+    "ruleArticle": "KR 4.1, 4.3, 4.4",
+    "ruleArticleEn": "KR 4.1, 4.3, 4.4",
+    "explanation": "Панель судей может меняться на каждый раунд случайным отбором.",
+    "explanationEn": "True. Панель судей может меняться на каждый раунд случайным отбором.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 15,
+    "discipline": "kata",
+    "question": "The total time allowed for the Kata & BUNKAI demonstration combined, is 5 minutes.",
+    "questionEn": "The total time allowed for the Kata & BUNKAI demonstration combined, is 5 minutes.",
+    "questionRu": "Общее время, отведённое на демонстрацию Ката и БУНКАЙ вместе, составляет 5 минут.",
+    "answer": true,
+    "ruleArticle": "KR 3.5.6",
+    "ruleArticleEn": "KR 3.5.6",
+    "explanation": "Kata + BUNKAI — 5 минут.",
+    "explanationEn": "True. Kata + BUNKAI — 5 минут.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 16,
+    "discipline": "kata",
+    "question": "In Kata competition the sleeves of the Karate Gi jacket cannot be rolled up.",
+    "questionEn": "In Kata competition the sleeves of the Karate Gi jacket cannot be rolled up.",
+    "questionRu": "На соревнованиях по ката рукава куртки каратэ-ги не могут быть закатаны.",
+    "answer": true,
+    "ruleArticle": "KR 2.2.1k",
+    "ruleArticleEn": "KR 2.2.1k",
+    "explanation": "Рукава не закатывать.",
+    "explanationEn": "True. Рукава не закатывать.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 17,
+    "discipline": "kata",
+    "question": "It is the responsibility of the Coach or Athlete to notify the name and the number of the Kata to the runner prior to each round.",
+    "questionEn": "It is the responsibility of the Coach or Athlete to notify the name and the number of the Kata to the runner prior to each round.",
+    "questionRu": "Тренер или Спортсмен несёт ответственность за сообщение названия и номера Ката раннеру перед каждым раундом.",
+    "answer": true,
+    "ruleArticle": "KR 6.1-6.3; PR 8.2.1-8.2.3",
+    "ruleArticleEn": "KR 6.1-6.3; PR 8.2.1-8.2.3",
+    "explanation": "Тренер/атлет сообщает ката runner’у.",
+    "explanationEn": "True. Тренер/атлет сообщает ката runner’у.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 18,
+    "discipline": "kata",
+    "question": "The number of Judges per panel can be reduced to five for any competition.",
+    "questionEn": "The number of Judges per panel can be reduced to five for any competition.",
+    "questionRu": "Число судей в каждой бригаде может быть сокращено до пяти на любом соревновании.",
+    "answer": false,
+    "ruleArticle": "KR 4.1, 4.9; PR 6.8",
+    "ruleArticleEn": "KR 4.1, 4.9; PR 6.8",
+    "explanation": "7 судей; 5 — только при ручном судействе, не «для любой».",
+    "explanationEn": "False. 7 судей; 5 — только при ручном судействе, не «для любой».",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 19,
+    "discipline": "kata",
+    "question": "A previously performed Kata can be repeated only if used as tiebreaker.",
+    "questionEn": "A previously performed Kata can be repeated only if used as tiebreaker.",
+    "questionRu": "Ранее выполненное Ката может быть повторено только в случае его использования в качестве разрешения НИЧЬИ.",
+    "answer": false,
+    "ruleArticle": "KR 5.2.1; PR 7.2.1",
+    "ruleArticleEn": "KR 5.2.1; PR 7.2.1",
+    "explanation": "Повтор возможен с ограничениями, не только в переигровке.",
+    "explanationEn": "False. Повтор возможен с ограничениями, не только в переигровке.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 20,
+    "discipline": "kata",
+    "question": "The Karate Gi trousers can be slightly shorter so as to only cover half of the shin.",
+    "questionEn": "The Karate Gi trousers can be slightly shorter so as to only cover half of the shin.",
+    "questionRu": "Брюки для каратэ-ги могут быть немного короче, чтобы закрывать только половину голени.",
+    "answer": false,
+    "ruleArticle": "KR 2.2.1l",
+    "ruleArticleEn": "KR 2.2.1l",
+    "explanation": "Брюки не короче 2/3 голени.",
+    "explanationEn": "False. Брюки не короче 2/3 голени.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 21,
+    "discipline": "kata",
+    "question": "Incorrect Kiai is a foul.",
+    "questionEn": "Incorrect Kiai is a foul.",
+    "questionRu": "Неправильный КИАЙ считается фолом.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(7)",
+    "ruleArticleEn": "KR 5.7(7)",
+    "explanation": "Неправильный Kiai — фол.",
+    "explanationEn": "True. Неправильный Kiai — фол.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 22,
+    "discipline": "kata",
+    "question": "In Para Karate if there are 3 or less Athletes a single Kata is performed to determine 1st through 3rd place.",
+    "questionEn": "In Para Karate if there are 3 or less Athletes a single Kata is performed to determine 1st through 3rd place.",
+    "questionRu": "В пара-каратэ, если участвует 3 или менее Спортсмена, выполняется одно Ката для определения мест с 1-го по 3-е.",
+    "answer": false,
+    "ruleArticle": "PR 5.6.1, 5.6.4",
+    "ruleArticleEn": "PR 5.6.1, 5.6.4",
+    "explanation": "При 2 — одно ката; при 3 — отдельная схема, 3-й автоматически 3-й.",
+    "explanationEn": "False. При 2 — одно ката; при 3 — отдельная схема, 3-й автоматически 3-й.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 23,
+    "discipline": "kata",
+    "question": "The Judges of a Kata bout cannot have the same nationality as either of the Athletes.",
+    "questionEn": "The Judges of a Kata bout cannot have the same nationality as either of the Athletes.",
+    "questionRu": "Судьи поединков по ката не могут иметь ту же национальность, что и любой из участников.",
+    "answer": true,
+    "ruleArticle": "KR 4.8; PR 6.7",
+    "ruleArticleEn": "KR 4.8; PR 6.7",
+    "explanation": "Судья не может быть той же национальности/NF.",
+    "explanationEn": "True. Судья не может быть той же национальности/NF.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 24,
+    "discipline": "kata",
+    "question": "Although ribbons and other decorations for the hair are not allowed in Kumite, they are permissible in Kata.",
+    "questionEn": "Although ribbons and other decorations for the hair are not allowed in Kumite, they are permissible in Kata.",
+    "questionRu": "Хотя в кумитэ ленты и другие украшения для волос не разрешены, в Ката они допустимы.",
+    "answer": false,
+    "ruleArticle": "KR 2.2.6",
+    "ruleArticleEn": "KR 2.2.6",
+    "explanation": "Ленты, бусы, украшения запрещены.",
+    "explanationEn": "False. Ленты, бусы, украшения запрещены.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 25,
+    "discipline": "kata",
+    "question": "In the bouts for medals in Team Kata competition, teams will perform a demonstration of the meaning of the Kata (BUNKAI).",
+    "questionEn": "In the bouts for medals in Team Kata competition, teams will perform a demonstration of the meaning of the Kata (BUNKAI).",
+    "questionRu": "В боях за медали в командных соревнованиях по Ката команды демонстрируют значение Ката (БУНКАЙ).",
+    "answer": true,
+    "ruleArticle": "KR 3.5.4",
+    "ruleArticleEn": "KR 3.5.4",
+    "explanation": "В медальных командных ката исполняется BUNKAI.",
+    "explanationEn": "True. В медальных командных ката исполняется BUNKAI.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 26,
+    "discipline": "kata",
+    "question": "It is not possible to repeat a Kata in the Round-robin elimination system.",
+    "questionEn": "It is not possible to repeat a Kata in the Round-robin elimination system.",
+    "questionRu": "Невозможно повторить Ката в круговой системе на выбывание раунд-робин.",
+    "answer": false,
+    "ruleArticle": "KR 5.2.1",
+    "ruleArticleEn": "KR 5.2.1",
+    "explanation": "Повтор ката не запрещён полностью, есть лимиты.",
+    "explanationEn": "False. Повтор ката не запрещён полностью, есть лимиты.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 27,
+    "discipline": "kata",
+    "question": "In all competitions formats, the number of Judges can be reduced to 3.",
+    "questionEn": "In all competitions formats, the number of Judges can be reduced to 3.",
+    "questionRu": "Во всех форматах соревнований количество судей может быть сокращено до 3.",
+    "answer": false,
+    "ruleArticle": "KR 4.1, 4.9",
+    "ruleArticleEn": "KR 4.1, 4.9",
+    "explanation": "7 или 5 судей, сокращение до 3 не предусмотрено.",
+    "explanationEn": "False. 7 или 5 судей, сокращение до 3 не предусмотрено.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 28,
+    "discipline": "kata",
+    "question": "Any Kata can be performed in the medal round, unless already performed twice.",
+    "questionEn": "Any Kata can be performed in the medal round, unless already performed twice.",
+    "questionRu": "В медальном раунде можно исполнять любое Ката, если оно ещё не исполнялось дважды.",
+    "answer": true,
+    "ruleArticle": "KR 5.2.1",
+    "ruleArticleEn": "KR 5.2.1",
+    "explanation": "Любое ката в медальном раунде, если не исполнялось дважды.",
+    "explanationEn": "True. Любое ката в медальном раунде, если не исполнялось дважды.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 29,
+    "discipline": "kata",
+    "question": "If an already qualified individual Athlete or Team is disqualified for misconduct (SHIKKAKU) at the conclusion of the Round-robin phase, their scheduled opponent in the first round of the elimination phase shall advance to the next round by bye (“walkover”).",
+    "questionEn": "If an already qualified individual Athlete or Team is disqualified for misconduct (SHIKKAKU) at the conclusion of the Round-robin phase, their scheduled opponent in the first round of the elimination phase shall advance to the next round by bye (“walkover”).",
+    "questionRu": "Если уже прошедший квалификацию индивидуальный Спортсмен или команда дисквалифицируется за неправомерное поведение (ШИККАКУ) по завершении этапа круговой системы, запланированный соперник в первом раунде этапа на выбывание проходит в следующий раунд по неявке соперника.",
+    "answer": true,
+    "ruleArticle": "KR 3.7.8",
+    "ruleArticleEn": "KR 3.7.8",
+    "explanation": "При SHIKKAKU после round-robin соперник проходит walkover.",
+    "explanationEn": "True. При SHIKKAKU после round-robin соперник проходит walkover.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 30,
+    "discipline": "kata",
+    "question": "Female Athletes must wear a plain white T-shirt beneath the Karate Gi jacket.",
+    "questionEn": "Female Athletes must wear a plain white T-shirt beneath the Karate Gi jacket.",
+    "questionRu": "Женщины-Спортсмены должны носить простую белую футболку под курткой для каратэ.",
+    "answer": false,
+    "ruleArticle": "KR 2.2.1h",
+    "ruleArticleEn": "KR 2.2.1h",
+    "explanation": "«может», а не «обязана» носить белую футболку.",
+    "explanationEn": "False. «может», а не «обязана» носить белую футболку.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 31,
+    "discipline": "kata",
+    "question": "Female Athletes can, if they want, wear a plain white T-shirt beneath the Karate Gi jacket.",
+    "questionEn": "Female Athletes can, if they want, wear a plain white T-shirt beneath the Karate Gi jacket.",
+    "questionRu": "Женщины-Спортсмены могут, если захотят, надеть простую белую футболку под куртку по каратэ.",
+    "answer": true,
+    "ruleArticle": "KR 2.2.1h",
+    "ruleArticleEn": "KR 2.2.1h",
+    "explanation": "Женская футболка под кимоно разрешена.",
+    "explanationEn": "True. Женская футболка под кимоно разрешена.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 32,
+    "discipline": "kata",
+    "question": "The wearing of unauthorised apparel, clothing or equipment is forbidden.",
+    "questionEn": "The wearing of unauthorised apparel, clothing or equipment is forbidden.",
+    "questionRu": "Ношение неразрешенной одежды или экипировки запрещено.",
+    "answer": true,
+    "ruleArticle": "KR 2.2.7",
+    "ruleArticleEn": "KR 2.2.7",
+    "explanation": "Запрещена неразрешённая экипировка/одежда.",
+    "explanationEn": "True. Запрещена неразрешённая экипировка/одежда.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 33,
+    "discipline": "kata",
+    "question": "A discreet rubber band or ponytail retainer is permitted in Kata competition.",
+    "questionEn": "A discreet rubber band or ponytail retainer is permitted in Kata competition.",
+    "questionRu": "На соревнованиях по ката разрешается использовать незаметную резинку или фиксатор «конский хвост».",
+    "answer": true,
+    "ruleArticle": "KR 2.2.6",
+    "ruleArticleEn": "KR 2.2.6",
+    "explanation": "Незаметная резинка/фиксатор хвоста разрешены.",
+    "explanationEn": "True. Незаметная резинка/фиксатор хвоста разрешены.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 34,
+    "discipline": "kata",
+    "question": "The matted Kumite areas are not suitable for Kata competition.",
+    "questionEn": "The matted Kumite areas are not suitable for Kata competition.",
+    "questionRu": "Покрытые матами площадки для кумитэ не подходят для соревнований по ката.",
+    "answer": false,
+    "ruleArticle": "KR 1.1",
+    "ruleArticleEn": "KR 1.1",
+    "explanation": "Такого запрета в правилах нет; Kumite и Kata используют оговорённую зону.",
+    "explanationEn": "False. Такого запрета в правилах нет; Kumite и Kata используют оговорённую зону.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 35,
+    "discipline": "kata",
+    "question": "The Karate Gi jacket can be removed during the performance of Kata.",
+    "questionEn": "The Karate Gi jacket can be removed during the performance of Kata.",
+    "questionRu": "Куртку Каратэ-ги можно снимать во время исполнения Ката.",
+    "answer": false,
+    "ruleArticle": "KR 2.2.1i",
+    "ruleArticleEn": "KR 2.2.1i",
+    "explanation": "Karategi обязательна; снимать куртку во время ката нельзя.",
+    "explanationEn": "False. Karategi обязательна; снимать куртку во время ката нельзя.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 36,
+    "discipline": "kata",
+    "question": "Any theatrics must be considered very serious fouls by the Judges – on the same level as one would penalize a major loss of balance.",
+    "questionEn": "Any theatrics must be considered very serious fouls by the Judges – on the same level as one would penalize a major loss of balance.",
+    "questionRu": "Любая театральность должна рассматриваться судьями как очень серьёзный ФОЛ – на том же уровне, как наказывалась бы значительная потеря равновесия.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(6)",
+    "ruleArticleEn": "KR 5.7(6)",
+    "explanation": "Театральность — очень серьёзный фол.",
+    "explanationEn": "True. Театральность — очень серьёзный фол.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 37,
+    "discipline": "kata",
+    "question": "Variations as taught by the Athlete’s style (Ryu-ha) of Karate will not be permitted.",
+    "questionEn": "Variations as taught by the Athlete’s style (Ryu-ha) of Karate will not be permitted.",
+    "questionRu": "Вариации, предусмотренные стилем карате (Рю-ха) участника, не допускаются.",
+    "answer": true,
+    "ruleArticle": "KR 5.3.2",
+    "ruleArticleEn": "KR 5.3.2",
+    "explanation": "Ответ принят по итоговому ключу экзамена. Положения о допустимых вариациях стиля (Ryu-ha) — KR 5.3.2.",
+    "explanationEn": "True. Ответ принят по итоговому ключу экзамена. Положения о допустимых вариациях стиля (Ryu-ha) — KR 5.3.2.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 38,
+    "discipline": "kata",
+    "question": "The runner must be notified of the choice of Kata prior to each round.",
+    "questionEn": "The runner must be notified of the choice of Kata prior to each round.",
+    "questionRu": "Раннер должен быть уведомлен о выборе Ката перед каждым раундом.",
+    "answer": true,
+    "ruleArticle": "KR 6.1, 4.7",
+    "ruleArticleEn": "KR 6.1, 4.7",
+    "explanation": "Runner должен быть уведомлён до раунда.",
+    "explanationEn": "True. Runner должен быть уведомлён до раунда.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 39,
+    "discipline": "kata",
+    "question": "A Team which does not perform the bow at the completion of the BUNKAI performance will be disqualified.",
+    "questionEn": "A Team which does not perform the bow at the completion of the BUNKAI performance will be disqualified.",
+    "questionRu": "Команда, которая не исполнит поклон по завершении выступления БУНКАЙ, будет дисквалифицирована.",
+    "answer": true,
+    "ruleArticle": "KR 5.8(2), 5.3.1",
+    "ruleArticleEn": "KR 5.8(2), 5.3.1",
+    "explanation": "Поклон после BUNKAI — часть исполнения; нет поклона — дисквалификация.",
+    "explanationEn": "True. Поклон после BUNKAI — часть исполнения; нет поклона — дисквалификация.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 40,
+    "discipline": "kata",
+    "question": "The number of Kata required is dependent on the number of individual Athletes or Teams entered.",
+    "questionEn": "The number of Kata required is dependent on the number of individual Athletes or Teams entered.",
+    "questionRu": "Количество требуемых ката зависит от количества заявленных индивидуальных Спортсменов или команд.",
+    "answer": true,
+    "ruleArticle": "KR 5.2.1, 3.7.9",
+    "ruleArticleEn": "KR 5.2.1, 3.7.9",
+    "explanation": "Число ката зависит от числа участников; K-Rules 5.2.1 — лимит до 5.",
+    "explanationEn": "True. Число ката зависит от числа участников; K-Rules 5.2.1 — лимит до 5.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 41,
+    "discipline": "kata",
+    "question": "An Athlete who received SHIKKAKU can still be awarded a medal.",
+    "questionEn": "An Athlete who received SHIKKAKU can still be awarded a medal.",
+    "questionRu": "Спортсмен, получивший ШИККАКУ, всё же может быть награждён медалью.",
+    "answer": false,
+    "ruleArticle": "KR 5.8(11)",
+    "ruleArticleEn": "KR 5.8(11)",
+    "explanation": "SHIKKAKU — дисквалификация, медаль невозможна.",
+    "explanationEn": "False. SHIKKAKU — дисквалификация, медаль невозможна.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 42,
+    "discipline": "kata",
+    "question": "In assessing the performance of an Athlete or team the Judges will evaluate the performance based on all criteria.",
+    "questionEn": "In assessing the performance of an Athlete or team the Judges will evaluate the performance based on all criteria.",
+    "questionRu": "При оценке выступления участника или команды судьи оценивают выступление на основе всех критериев.",
+    "answer": true,
+    "ruleArticle": "KR 5.6",
+    "ruleArticleEn": "KR 5.6",
+    "explanation": "Оценка идёт по всем критериям.",
+    "explanationEn": "True. Оценка идёт по всем критериям.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 43,
+    "discipline": "kata",
+    "question": "There are no specific deviations for those under 14 years of age from the standard rules, but a limitation to the Kata list to less advanced Kata can be used.",
+    "questionEn": "There are no specific deviations for those under 14 years of age from the standard rules, but a limitation to the Kata list to less advanced Kata can be used.",
+    "questionRu": "Особых отступлений для лиц младше 14 лет от стандартных правил нет, но может использоваться ограничение списка Ката менее продвинутыми Ката.",
+    "answer": true,
+    "ruleArticle": "KR 3.9",
+    "ruleArticleEn": "KR 3.9",
+    "explanation": "Для U14 особых отступлений нет, но список ката может быть ограничен.",
+    "explanationEn": "True. Для U14 особых отступлений нет, но список ката может быть ограничен.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 44,
+    "discipline": "kata",
+    "question": "Causing injury by lack of controlled technique during BUNKAI is considered a foul.",
+    "questionEn": "Causing injury by lack of controlled technique during BUNKAI is considered a foul.",
+    "questionRu": "Причинение травмы из-за отсутствия контролируемой техники во время БУНКАЙ считается ФОЛ.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(10)",
+    "ruleArticleEn": "KR 5.7(10)",
+    "explanation": "Травма из-за неконтролируемой техники в BUNKAI — фол.",
+    "explanationEn": "True. Травма из-за неконтролируемой техники в BUNKAI — фол.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 45,
+    "discipline": "kata",
+    "question": "For medal bouts, one of the Judges can have the same nationality as the Athletes.",
+    "questionEn": "For medal bouts, one of the Judges can have the same nationality as the Athletes.",
+    "questionRu": "В медальных боях один из судей может иметь ту же национальность, что и Спортсмены.",
+    "answer": false,
+    "ruleArticle": "KR 4.8",
+    "ruleArticleEn": "KR 4.8",
+    "explanation": "Конфликт национальности запрещён для всех боёв, включая медальные.",
+    "explanationEn": "False. Конфликт национальности запрещён для всех боёв, включая медальные.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 46,
+    "discipline": "kata",
+    "question": "Performances are given a score using a scale from 5.0 to 10.0 in increments of 0.1.",
+    "questionEn": "Performances are given a score using a scale from 5.0 to 10.0 in increments of 0.1.",
+    "questionRu": "Выступления оцениваются по шкале от 5,0 до 10,0 с шагом 0,1.",
+    "answer": true,
+    "ruleArticle": "KR 5.4.1",
+    "ruleArticleEn": "KR 5.4.1",
+    "explanation": "Шкала 5.0–10.0 с шагом 0.1.",
+    "explanationEn": "True. Шкала 5.0–10.0 с шагом 0.1.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 47,
+    "discipline": "kata",
+    "question": "A coin toss is the first choice to resolve ties.",
+    "questionEn": "A coin toss is the first choice to resolve ties.",
+    "questionRu": "Подбрасывание монеты – первый вариант разрешения ничьей.",
+    "answer": false,
+    "ruleArticle": "KR 5.11, 5.12, App. 4",
+    "ruleArticleEn": "KR 5.11, 5.12, App. 4",
+    "explanation": "Жребий не первый; предусмотрены доп. ката.",
+    "explanationEn": "False. Жребий не первый; предусмотрены доп. ката.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 48,
+    "discipline": "kata",
+    "question": "There are 6 criteria to resolve a tie in Round-robin elimination system with 4 Athletes.",
+    "questionEn": "There are 6 criteria to resolve a tie in Round-robin elimination system with 4 Athletes.",
+    "questionRu": "Существует 6 критериев для разрешения ничьей в круговой системе на выбывание (раунд-робин) с 4 Спортсменами.",
+    "answer": false,
+    "ruleArticle": "KR 5.11, App. 4",
+    "ruleArticleEn": "KR 5.11, App. 4",
+    "explanation": "5 критериев для individual round-robin, не 6.",
+    "explanationEn": "False. 5 критериев для individual round-robin, не 6.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 49,
+    "discipline": "kata",
+    "question": "Strength is one of the criteria of evaluation.",
+    "questionEn": "Strength is one of the criteria of evaluation.",
+    "questionRu": "Сила – один из критериев оценки.",
+    "answer": true,
+    "ruleArticle": "KR 5.6",
+    "ruleArticleEn": "KR 5.6",
+    "explanation": "Strength — критерий оценки.",
+    "explanationEn": "True. Strength — критерий оценки.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 50,
+    "discipline": "kata",
+    "question": "There are 6 criteria to resolve a tie when having elimination system with 8 Athletes.",
+    "questionEn": "There are 6 criteria to resolve a tie when having elimination system with 8 Athletes.",
+    "questionRu": "Существует 6 критериев для разрешения ничьей в системе на выбывание с 8 Спортсменами.",
+    "answer": false,
+    "ruleArticle": "KR 5.10, App. 4",
+    "ruleArticleEn": "KR 5.10, App. 4",
+    "explanation": "Нет 6 критериев для 8 атлетов.",
+    "explanationEn": "False. Нет 6 критериев для 8 атлетов.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 51,
+    "discipline": "kata",
+    "question": "There are 10 criteria for Kata evaluation.",
+    "questionEn": "There are 10 criteria for Kata evaluation.",
+    "questionRu": "Существует 10 критериев оценки Ката.",
+    "answer": true,
+    "ruleArticle": "KR 5.6",
+    "ruleArticleEn": "KR 5.6",
+    "explanation": "10 критериев Kata.",
+    "explanationEn": "True. 10 критериев Kata.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 52,
+    "discipline": "kata",
+    "question": "Transitional movement is one of the criteria for evaluation for Kata performance but not for BUNKAI.",
+    "questionEn": "Transitional movement is one of the criteria for evaluation for Kata performance but not for BUNKAI.",
+    "questionRu": "Промежуточные перемещения являются одним из критериев оценки исполнения Ката, но не БУНКАЙ.",
+    "answer": false,
+    "ruleArticle": "KR 5.6",
+    "ruleArticleEn": "KR 5.6",
+    "explanation": "В BUNKAI также есть Transitional movements.",
+    "explanationEn": "False. В BUNKAI также есть Transitional movements.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 53,
+    "discipline": "kata",
+    "question": "In BUNKAI performance, transitional movements and control are part of the evaluation.",
+    "questionEn": "In BUNKAI performance, transitional movements and control are part of the evaluation.",
+    "questionRu": "В исполнении БУНКАЙ частью оценки являются промежуточные перемещения и контроль.",
+    "answer": true,
+    "ruleArticle": "KR 5.6 (Bunkai column)",
+    "ruleArticleEn": "KR 5.6 (Bunkai column)",
+    "explanation": "В BUNKAI оцениваются переходы и контроль.",
+    "explanationEn": "True. В BUNKAI оцениваются переходы и контроль.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 54,
+    "discipline": "kata",
+    "question": "Strength, speed and balance are some of the criteria of evaluation for Kata and BUNKAI.",
+    "questionEn": "Strength, speed and balance are some of the criteria of evaluation for Kata and BUNKAI.",
+    "questionRu": "Сила, Скорость и Баланс являются одними из критериев оценки Ката и БУНКАЙ.",
+    "answer": true,
+    "ruleArticle": "KR 5.6",
+    "ruleArticleEn": "KR 5.6",
+    "explanation": "Сила, скорость, баланс есть и в Kata, и в BUNKAI.",
+    "explanationEn": "True. Сила, скорость, баланс есть и в Kata, и в BUNKAI.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 55,
+    "discipline": "kata",
+    "question": "Simulated unconsciousness for more than 2 seconds at the time as part of the BUNKAI is considered a foul.",
+    "questionEn": "Simulated unconsciousness for more than 2 seconds at the time as part of the BUNKAI is considered a foul.",
+    "questionRu": "Имитация потери сознания более чем на 2 секунды во время исполнения БУНКАЙ считается ФОЛ.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(11)",
+    "ruleArticleEn": "KR 5.7(11)",
+    "explanation": "Имитация бессознания более 2 сек в BUNKAI — фол.",
+    "explanationEn": "True. Имитация бессознания более 2 сек в BUNKAI — фол.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 56,
+    "discipline": "kata",
+    "question": "BUNKAI is to be given equal importance as the Kata itself.",
+    "questionEn": "BUNKAI is to be given equal importance as the Kata itself.",
+    "questionRu": "БУНКАЙ следует придавать такое же значение, как и самому Ката.",
+    "answer": true,
+    "ruleArticle": "KR 5.4.3",
+    "ruleArticleEn": "KR 5.4.3",
+    "explanation": "BUNKAI равноценно Kata.",
+    "explanationEn": "True. BUNKAI равноценно Kata.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 57,
+    "discipline": "kata",
+    "question": "Excessive bowing before starting the performance is considered a foul.",
+    "questionEn": "Excessive bowing before starting the performance is considered a foul.",
+    "questionRu": "Чрезмерный поклон перед началом выступления считается ФОЛ.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(9)",
+    "ruleArticleEn": "KR 5.7(9)",
+    "explanation": "Чрезмерные поклоны — потеря времени/фол.",
+    "explanationEn": "True. Чрезмерные поклоны — потеря времени/фол.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 58,
+    "discipline": "kata",
+    "question": "Causing injury by lack of controlled technique during BUNKAI is a disqualification.",
+    "questionEn": "Causing injury by lack of controlled technique during BUNKAI is a disqualification.",
+    "questionRu": "Причинение травмы из-за отсутствия контролируемой техники во время БУНКАЙ является дисквалификацией.",
+    "answer": false,
+    "ruleArticle": "KR 5.7(10)",
+    "ruleArticleEn": "KR 5.7(10)",
+    "explanation": "Это фол, а не дисквалификация.",
+    "explanationEn": "False. Это фол, а не дисквалификация.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 59,
+    "discipline": "kata",
+    "question": "Not announcing the Kata is not considered as disqualification.",
+    "questionEn": "Not announcing the Kata is not considered as disqualification.",
+    "questionRu": "Не объявление Ката не считается дисквалификацией.",
+    "answer": false,
+    "ruleArticle": "KR 5.8(1)",
+    "ruleArticleEn": "KR 5.8(1)",
+    "explanation": "Необъявление ката — дисквалификация.",
+    "explanationEn": "False. Необъявление ката — дисквалификация.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 60,
+    "discipline": "kata",
+    "question": "Performing the wrong Kata or announcing the wrong Kata leads to disqualification.",
+    "questionEn": "Performing the wrong Kata or announcing the wrong Kata leads to disqualification.",
+    "questionRu": "Выполнение неправильного Ката или объявление неправильного Ката приводит к дисквалификации.",
+    "answer": true,
+    "ruleArticle": "KR 5.8(1)",
+    "ruleArticleEn": "KR 5.8(1)",
+    "explanation": "Неверное ката/объявление — дисквалификация.",
+    "explanationEn": "True. Неверное ката/объявление — дисквалификация.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 61,
+    "discipline": "kata",
+    "question": "Stamping the feet, slapping the chest, arms, or Karate Gi, will be taken into account by the Judges when arriving at a decision.",
+    "questionEn": "Stamping the feet, slapping the chest, arms, or Karate Gi, will be taken into account by the Judges when arriving at a decision.",
+    "questionRu": "Топанье ногами, удары по груди, рукам или каратэ-ги будут учитываться судьями при вынесении решения.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(6)",
+    "ruleArticleEn": "KR 5.7(6)",
+    "explanation": "Топот, хлопки и т.п. учитываются как театральность.",
+    "explanationEn": "True. Топот, хлопки и т.п. учитываются как театральность.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 62,
+    "discipline": "kata",
+    "question": "An Athlete will not be disqualified for a distinct pause or stop in the performance for several seconds.",
+    "questionEn": "An Athlete will not be disqualified for a distinct pause or stop in the performance for several seconds.",
+    "questionRu": "Атлет не будет дисквалифицирован, если он сделает отчётливую паузу или остановку выступления на несколько секунд.",
+    "answer": false,
+    "ruleArticle": "KR 5.8(4)",
+    "ruleArticleEn": "KR 5.8(4)",
+    "explanation": "Явная пауза/остановка — дисквалификация.",
+    "explanationEn": "False. Явная пауза/остановка — дисквалификация.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 63,
+    "discipline": "kata",
+    "question": "BUNKAI is not to be given equal importance as the Kata itself.",
+    "questionEn": "BUNKAI is not to be given equal importance as the Kata itself.",
+    "questionRu": "БУНКАИ не следует придавать такое же значение, как самому Ката.",
+    "answer": false,
+    "ruleArticle": "KR 5.4.3",
+    "ruleArticleEn": "KR 5.4.3",
+    "explanation": "BUNKAI равноценно Kata.",
+    "explanationEn": "False. BUNKAI равноценно Kata.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 64,
+    "discipline": "kata",
+    "question": "Kata must start facing the Judges.",
+    "questionEn": "Kata must start facing the Judges.",
+    "questionRu": "Ката должно начинаться лицом к судьям.",
+    "answer": true,
+    "ruleArticle": "KR 5.8(3)",
+    "ruleArticleEn": "KR 5.8(3)",
+    "explanation": "Ката должно начинаться лицом к судьям.",
+    "explanationEn": "True. Ката должно начинаться лицом к судьям.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 65,
+    "discipline": "kata",
+    "question": "The use of audible cues from any other person, including other team members is considered a foul.",
+    "questionEn": "The use of audible cues from any other person, including other team members is considered a foul.",
+    "questionRu": "Использование звуковых сигналов от любого другого человека, включая других членов команды, считается нарушением.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(5)",
+    "ruleArticleEn": "KR 5.7(5)",
+    "explanation": "Звуковые подсказки, включая членов команды, — фол.",
+    "explanationEn": "True. Звуковые подсказки, включая членов команды, — фол.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 66,
+    "discipline": "kata",
+    "question": "If the Athlete’s belt falls off during the performance of Kata, the Athlete will be disqualified.",
+    "questionEn": "If the Athlete’s belt falls off during the performance of Kata, the Athlete will be disqualified.",
+    "questionRu": "Если пояс Спортсмена упадёт во время исполнения Ката, Спортсмен будет дисквалифицирован.",
+    "answer": true,
+    "ruleArticle": "KR 5.8(8)",
+    "ruleArticleEn": "KR 5.8(8)",
+    "explanation": "Пояс полностью упал — дисквалификация.",
+    "explanationEn": "True. Пояс полностью упал — дисквалификация.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 67,
+    "discipline": "kata",
+    "question": "Failure to follow the instructions of the Chief Judge or other misconduct is considered a foul.",
+    "questionEn": "Failure to follow the instructions of the Chief Judge or other misconduct is considered a foul.",
+    "questionRu": "Невыполнение указаний Судьи №1 или иное неправомерное поведение считается ФОЛ.",
+    "answer": false,
+    "ruleArticle": "KR 5.8(11)",
+    "ruleArticleEn": "KR 5.8(11)",
+    "explanation": "Это SHIKKAKU/дисквалификация, а не просто фол.",
+    "explanationEn": "False. Это SHIKKAKU/дисквалификация, а не просто фол.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 68,
+    "discipline": "kata",
+    "question": "Failure to follow the instructions of the Chief Judge or other misconduct leads to disqualification.",
+    "questionEn": "Failure to follow the instructions of the Chief Judge or other misconduct leads to disqualification.",
+    "questionRu": "Невыполнение указаний Судьи №1 или иное неправомерное поведение влечёт за собой дисквалификацию.",
+    "answer": true,
+    "ruleArticle": "KR 5.8(11)",
+    "ruleArticleEn": "KR 5.8(11)",
+    "explanation": "Неподчинение Chief Judge — дисквалификация.",
+    "explanationEn": "True. Неподчинение Chief Judge — дисквалификация.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 69,
+    "discipline": "kata",
+    "question": "Exceeding the total time limit of 5 minutes duration for Kata and BUNKAI is considered a foul.",
+    "questionEn": "Exceeding the total time limit of 5 minutes duration for Kata and BUNKAI is considered a foul.",
+    "questionRu": "Превышение общего лимита времени в 5 минут для Ката и БУНКАЙ считается ФОЛ.",
+    "answer": false,
+    "ruleArticle": "KR 5.8(9)",
+    "ruleArticleEn": "KR 5.8(9)",
+    "explanation": "Превышение 5 минут — дисквалификация.",
+    "explanationEn": "False. Превышение 5 минут — дисквалификация.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 70,
+    "discipline": "kata",
+    "question": "In Team Kata, all three team members must start and finish the Kata facing in the same direction and towards the Judges.",
+    "questionEn": "In Team Kata, all three team members must start and finish the Kata facing in the same direction and towards the Judges.",
+    "questionRu": "В командном ката все три члена команды должны начинать и заканчивать ката лицом в одном направлении и к Судьям",
+    "answer": false,
+    "ruleArticle": "KR 3.5.2",
+    "ruleArticleEn": "KR 3.5.2",
+    "explanation": "Одинаковое направление к судьям требуется только при старте; к финишу это требование не относится.",
+    "explanationEn": "False. Одинаковое направление к судьям требуется только при старте; к финишу это требование не относится.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 71,
+    "discipline": "kata",
+    "question": "Kata performance must be realistic in fighting terms and display concentration, power, and potential impact in its techniques.",
+    "questionEn": "Kata performance must be realistic in fighting terms and display concentration, power, and potential impact in its techniques.",
+    "questionRu": "Выполнение ката должно быть реалистичным в боевом отношении и демонстрировать концентрацию, силу и потенциальное воздействие в своих техниках.",
+    "answer": true,
+    "ruleArticle": "KR 3.1.1",
+    "ruleArticleEn": "KR 3.1.1",
+    "explanation": "Ката реалистично, с концентрацией, силой, потенциалом.",
+    "explanationEn": "True. Ката реалистично, с концентрацией, силой, потенциалом.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 72,
+    "discipline": "kata",
+    "question": "Causing injury by lack of controlled technique during BUNKAI is not considered a foul.",
+    "questionEn": "Causing injury by lack of controlled technique during BUNKAI is not considered a foul.",
+    "questionRu": "Причинение травмы из-за отсутствия контролируемой техники во время БУНКАЙ не считается ФОЛ.",
+    "answer": false,
+    "ruleArticle": "KR 5.7(10)",
+    "ruleArticleEn": "KR 5.7(10)",
+    "explanation": "Неконтролируемая техника в BUNKAI — фол.",
+    "explanationEn": "False. Неконтролируемая техника в BUNKAI — фол.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 73,
+    "discipline": "kata",
+    "question": "Minor loss of balance must not be considered in the evaluation of the Kata performance.",
+    "questionEn": "Minor loss of balance must not be considered in the evaluation of the Kata performance.",
+    "questionRu": "Небольшая потеря баланса не должна учитываться при оценке выступления в Ката.",
+    "answer": false,
+    "ruleArticle": "KR 5.7(2)",
+    "ruleArticleEn": "KR 5.7(2)",
+    "explanation": "Лёгкая потеря равновесия учитывается.",
+    "explanationEn": "False. Лёгкая потеря равновесия учитывается.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 74,
+    "discipline": "kata",
+    "question": "Exceeding the total time limit of 5 minutes duration for Kata and BUNKAI leads to disqualification.",
+    "questionEn": "Exceeding the total time limit of 5 minutes duration for Kata and BUNKAI leads to disqualification.",
+    "questionRu": "Превышение общего лимита времени в 5 минут для Ката и БУНКАЙ приводит к дисквалификации.",
+    "answer": true,
+    "ruleArticle": "KR 5.8(9)",
+    "ruleArticleEn": "KR 5.8(9)",
+    "explanation": "Превышение 5 минут — дисквалификация.",
+    "explanationEn": "True. Превышение 5 минут — дисквалификация.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 75,
+    "discipline": "kata",
+    "question": "Kata performance must demonstrate strength, balance, and speed.",
+    "questionEn": "Kata performance must demonstrate strength, balance, and speed.",
+    "questionRu": "Выполнение ката должно демонстрировать силу, баланс и скорость.",
+    "answer": true,
+    "ruleArticle": "KR 3.1.1",
+    "ruleArticleEn": "KR 3.1.1",
+    "explanation": "Ката демонстрирует силу, баланс, скорость.",
+    "explanationEn": "True. Ката демонстрирует силу, баланс, скорость.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 76,
+    "discipline": "kata",
+    "question": "Minor loss of balance must be considered in the evaluation of the Kata performance.",
+    "questionEn": "Minor loss of balance must be considered in the evaluation of the Kata performance.",
+    "questionRu": "Небольшая потеря равновесия должна учитываться при оценке выступления в Ката.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(2)",
+    "ruleArticleEn": "KR 5.7(2)",
+    "explanation": "Лёгкая потеря равновесия — фол/учитывается.",
+    "explanationEn": "True. Лёгкая потеря равновесия — фол/учитывается.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 77,
+    "discipline": "kata",
+    "question": "Asynchronous movement, such as delivering a technique before the body transition is completed is considered a foul.",
+    "questionEn": "Asynchronous movement, such as delivering a technique before the body transition is completed is considered a foul.",
+    "questionRu": "Асинхронное движение, например выполнение техники до завершения перехода тела, считается ФОЛ.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(4)",
+    "ruleArticleEn": "KR 5.7(4)",
+    "explanation": "Асинхронность — фол.",
+    "explanationEn": "True. Асинхронность — фол.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 78,
+    "discipline": "kata",
+    "question": "Inappropriate exhalation will be taken into account by the Judges when arriving at a decision.",
+    "questionEn": "Inappropriate exhalation will be taken into account by the Judges when arriving at a decision.",
+    "questionRu": "Несоответствующий выдох будет учитываться судьями при вынесении решения.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(6)",
+    "ruleArticleEn": "KR 5.7(6)",
+    "explanation": "Неуместный выдох — театральность, учитывается.",
+    "explanationEn": "True. Неуместный выдох — театральность, учитывается.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 79,
+    "discipline": "kata",
+    "question": "In Team Kata, failing to do synchronised movements is not considered a foul.",
+    "questionEn": "In Team Kata, failing to do synchronised movements is not considered a foul.",
+    "questionRu": "В командном ката невыполнение движения в унисон не считается ФОЛ.",
+    "answer": false,
+    "ruleArticle": "KR 5.7(4)",
+    "ruleArticleEn": "KR 5.7(4)",
+    "explanation": "Несинхронность в команде — фол.",
+    "explanationEn": "False. Несинхронность в команде — фол.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 80,
+    "discipline": "kata",
+    "question": "Performing a movement in an incorrect or incomplete manner is considered a foul.",
+    "questionEn": "Performing a movement in an incorrect or incomplete manner is considered a foul.",
+    "questionRu": "Выполнение передвижения неправильным или неполным образом считается ФОЛ.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(3)",
+    "ruleArticleEn": "KR 5.7(3)",
+    "explanation": "Неверное/неполное движение — фол.",
+    "explanationEn": "True. Неверное/неполное движение — фол.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 81,
+    "discipline": "kata",
+    "question": "Time wasting, including prolonged marching, excessive bowing or prolonged pause before starting the performance is considered a foul.",
+    "questionEn": "Time wasting, including prolonged marching, excessive bowing or prolonged pause before starting the performance is considered a foul.",
+    "questionRu": "Напрасная трата времени, в том числе длительный выход, чрезмерный поклон или длительная пауза перед началом выступления, считается ФОЛ.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(9)",
+    "ruleArticleEn": "KR 5.7(9)",
+    "explanation": "Потеря времени — фол.",
+    "explanationEn": "True. Потеря времени — фол.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 82,
+    "discipline": "kata",
+    "question": "Stamping the feet, slapping the chest, arms, or Karate Gi, are theatrics.",
+    "questionEn": "Stamping the feet, slapping the chest, arms, or Karate Gi, are theatrics.",
+    "questionRu": "Топанье ногами, похлопывание по груди, рукам или каратэ-ги являются театральностью.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(6)",
+    "ruleArticleEn": "KR 5.7(6)",
+    "explanation": "Это театральность.",
+    "explanationEn": "True. Это театральность.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 83,
+    "discipline": "kata",
+    "question": "The use of theatrics is not considered a foul.",
+    "questionEn": "The use of theatrics is not considered a foul.",
+    "questionRu": "Использование театральности не считается ФОЛ.",
+    "answer": false,
+    "ruleArticle": "KR 5.7(6)",
+    "ruleArticleEn": "KR 5.7(6)",
+    "explanation": "Театральность — очень серьёзный фол.",
+    "explanationEn": "False. Театральность — очень серьёзный фол.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 84,
+    "discipline": "kata",
+    "question": "Inappropriate exhalation is not considered theatrics.",
+    "questionEn": "Inappropriate exhalation is not considered theatrics.",
+    "questionRu": "Неподходящий выдох не считается театральностью.",
+    "answer": false,
+    "ruleArticle": "KR 5.7(6)",
+    "ruleArticleEn": "KR 5.7(6)",
+    "explanation": "Неуместный выдох включён в театральность.",
+    "explanationEn": "False. Неуместный выдох включён в театральность.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 85,
+    "discipline": "kata",
+    "question": "Failure to fully execute a block or punching off target is considered a foul.",
+    "questionEn": "Failure to fully execute a block or punching off target is considered a foul.",
+    "questionRu": "Невыполнение блока в полном объёме или удар мимо цели считается ФОЛ.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(3)",
+    "ruleArticleEn": "KR 5.7(3)",
+    "explanation": "Неполный блок/промах — фол.",
+    "explanationEn": "True. Неполный блок/промах — фол.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 86,
+    "discipline": "kata",
+    "question": "Causing injury by lack of controlled technique during BUNKAI is allowed.",
+    "questionEn": "Causing injury by lack of controlled technique during BUNKAI is allowed.",
+    "questionRu": "Нанесение травмы из-за отсутствия контролируемой техники во время БУНКАЙ разрешено.",
+    "answer": false,
+    "ruleArticle": "KR 5.7(10)",
+    "ruleArticleEn": "KR 5.7(10)",
+    "explanation": "Травма из-за неконтролируемой техники в BUNKAI запрещена/фол.",
+    "explanationEn": "False. Травма из-за неконтролируемой техники в BUNKAI запрещена/фол.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 87,
+    "discipline": "kata",
+    "question": "The members of the team must demonstrate competence in all aspects of the Kata performance, as well as synchronisation.",
+    "questionEn": "The members of the team must demonstrate competence in all aspects of the Kata performance, as well as synchronisation.",
+    "questionRu": "Члены команды должны продемонстрировать компетентность во всех аспектах исполнения Ката, а также синхронность.",
+    "answer": true,
+    "ruleArticle": "KR 3.5.3",
+    "ruleArticleEn": "KR 3.5.3",
+    "explanation": "Команда демонстрирует компетентность и синхронность.",
+    "explanationEn": "True. Команда демонстрирует компетентность и синхронность.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 88,
+    "discipline": "kata",
+    "question": "Commands to start and stop the performance will be taken into account by the Judges when arriving at a decision.",
+    "questionEn": "Commands to start and stop the performance will be taken into account by the Judges when arriving at a decision.",
+    "questionRu": "Команды на начало и остановку выступления будут учитываться судьями при вынесении решения.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(5)",
+    "ruleArticleEn": "KR 5.7(5)",
+    "explanation": "Звуковые команды учитываются как фол/внешняя подсказка.",
+    "explanationEn": "True. Звуковые команды учитываются как фол/внешняя подсказка.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 89,
+    "discipline": "kata",
+    "question": "It is the responsibility of the President of the National Federation to ensure that the Kata as notified to the runner is appropriate for that particular round.",
+    "questionEn": "It is the responsibility of the President of the National Federation to ensure that the Kata as notified to the runner is appropriate for that particular round.",
+    "questionRu": "Президент Национальной федерации несёт ответственность за то, чтобы Ката, сообщённое раннеру, соответствовало данному конкретному раунду.",
+    "answer": false,
+    "ruleArticle": "KR 6.2",
+    "ruleArticleEn": "KR 6.2",
+    "explanation": "Ответственность тренера/атлета, не президента NF.",
+    "explanationEn": "False. Ответственность тренера/атлета, не президента NF.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 90,
+    "discipline": "kata",
+    "question": "While performing BUNKAI, after being downed the Athlete should either raise to one knee or stand up within 2 seconds.",
+    "questionEn": "While performing BUNKAI, after being downed the Athlete should either raise to one knee or stand up within 2 seconds.",
+    "questionRu": "Во время выполнения БУНКАЙ после падения Спортсмен должен либо подняться на одно колено, либо встать в течение 2 секунд.",
+    "answer": true,
+    "ruleArticle": "KR 3.5.8",
+    "ruleArticleEn": "KR 3.5.8",
+    "explanation": "После падения в BUNKAI — встать на колено/встать в течение 2 сек.",
+    "explanationEn": "True. После падения в BUNKAI — встать на колено/встать в течение 2 сек.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 91,
+    "discipline": "kata",
+    "question": "Omitting or adding movements - or otherwise substantially change the performance from its original form is a disqualification.",
+    "questionEn": "Omitting or adding movements - or otherwise substantially change the performance from its original form is a disqualification.",
+    "questionRu": "Пропуск или добавление движений, а также иное существенное изменение исполнения по сравнению с его первоначальной формой является дисквалификацией.",
+    "answer": true,
+    "ruleArticle": "KR 5.8(5)",
+    "ruleArticleEn": "KR 5.8(5)",
+    "explanation": "Пропуск/добавление движений — дисквалификация.",
+    "explanationEn": "True. Пропуск/добавление движений — дисквалификация.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 92,
+    "discipline": "kata",
+    "question": "Excessive celebration and political or religious demonstrations is considered as disqualification for Kumite but not for Kata.",
+    "questionEn": "Excessive celebration and political or religious demonstrations is considered as disqualification for Kumite but not for Kata.",
+    "questionRu": "Чрезмерное празднование, политические или религиозные демонстрации считаются дисквалификацией для кумитэ, но не для ката.",
+    "answer": false,
+    "ruleArticle": "KR 5.9",
+    "ruleArticleEn": "KR 5.9",
+    "explanation": "Штраф за чрезмерное проявление радости и политические/религиозные демонстрации применяется и в Kata, а не только в Kumite.",
+    "explanationEn": "False. Штраф за чрезмерное проявление радости и политические/религиозные демонстрации применяется и в Kata, а не только в Kumite.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 93,
+    "discipline": "kata",
+    "question": "Only Kata from the WKF official Kata list can be performed.",
+    "questionEn": "Only Kata from the WKF official Kata list can be performed.",
+    "questionRu": "Могут исполняться только Ката из официального списка Ката WKF.",
+    "answer": true,
+    "ruleArticle": "KR 5.1.1",
+    "ruleArticleEn": "KR 5.1.1",
+    "explanation": "Только ката из официального списка WKF.",
+    "explanationEn": "True. Только ката из официального списка WKF.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 94,
+    "discipline": "kata",
+    "question": "A team which does not perform the bow at the beginning and completion of the performance will be disqualified.",
+    "questionEn": "A team which does not perform the bow at the beginning and completion of the performance will be disqualified.",
+    "questionRu": "Команда, не исполняющая поклон в начале и завершении выступления, дисквалифицируется.",
+    "answer": true,
+    "ruleArticle": "KR 5.8(2)",
+    "ruleArticleEn": "KR 5.8(2)",
+    "explanation": "Нет поклона в начале/конце — дисквалификация.",
+    "explanationEn": "True. Нет поклона в начале/конце — дисквалификация.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 95,
+    "discipline": "kata",
+    "question": "The use of traditional weapons, ancillary equipment or additional apparel is allowed.",
+    "questionEn": "The use of traditional weapons, ancillary equipment or additional apparel is allowed.",
+    "questionRu": "Разрешено использование традиционного оружия, вспомогательного оборудования или дополнительной одежды.",
+    "answer": false,
+    "ruleArticle": "KR 2.2.7",
+    "ruleArticleEn": "KR 2.2.7",
+    "explanation": "Традиционное оружие/доп. экипировка/одежда запрещены.",
+    "explanationEn": "False. Традиционное оружие/доп. экипировка/одежда запрещены.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 96,
+    "discipline": "kata",
+    "question": "The performance in individual Kata is evaluated from the bow starting the Kata until the bow ending the Kata.",
+    "questionEn": "The performance in individual Kata is evaluated from the bow starting the Kata until the bow ending the Kata.",
+    "questionRu": "Выступление в индивидуальном Ката оценивается от поклона, начинающего Ката, до поклона, завершающего Ката.",
+    "answer": true,
+    "ruleArticle": "KR 5.3.1",
+    "ruleArticleEn": "KR 5.3.1",
+    "explanation": "Оценка от поклона до поклона.",
+    "explanationEn": "True. Оценка от поклона до поклона.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 97,
+    "discipline": "kata",
+    "question": "Belt coming loose to the extent that it is coming off the hips during the performance is a foul.",
+    "questionEn": "Belt coming loose to the extent that it is coming off the hips during the performance is a foul.",
+    "questionRu": "Ослабление ремня до такой степени, что он слетает с бёдер во время выступления, является ФОЛ.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(8)",
+    "ruleArticleEn": "KR 5.7(8)",
+    "explanation": "Пояс сходит с бёдер — фол.",
+    "explanationEn": "True. Пояс сходит с бёдер — фол.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 98,
+    "discipline": "kata",
+    "question": "Belt coming loose to the extent that it is coming off the hips during the performance is a disqualification.",
+    "questionEn": "Belt coming loose to the extent that it is coming off the hips during the performance is a disqualification.",
+    "questionRu": "Ослабление ремня до такой степени, что он слетает с бёдер во время выступления, является дисквалификацией.",
+    "answer": false,
+    "ruleArticle": "KR 5.7(8), 5.8(8)",
+    "ruleArticleEn": "KR 5.7(8), 5.8(8)",
+    "explanation": "Это фол; дисквалификация — если пояс полностью упал.",
+    "explanationEn": "False. Это фол; дисквалификация — если пояс полностью упал.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 99,
+    "discipline": "kata",
+    "question": "After the bow the Athlete must clearly announce the name of the Kata that is to be performed and then start the performance.",
+    "questionEn": "After the bow the Athlete must clearly announce the name of the Kata that is to be performed and then start the performance.",
+    "questionRu": "После поклона Спортсмен должен чётко объявить название Ката, которое предстоит исполнить, а затем начать выступление.",
+    "answer": true,
+    "ruleArticle": "KR 6.7",
+    "ruleArticleEn": "KR 6.7",
+    "explanation": "После поклона объявить ката и начать.",
+    "explanationEn": "True. После поклона объявить ката и начать.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 100,
+    "discipline": "kata",
+    "question": "There are 9 criteria in Kata evaluation.",
+    "questionEn": "There are 9 criteria in Kata evaluation.",
+    "questionRu": "В каждой оценке Ката используется 9 критериев.",
+    "answer": false,
+    "ruleArticle": "KR 5.6",
+    "ruleArticleEn": "KR 5.6",
+    "explanation": "10 критериев Kata, не 9.",
+    "explanationEn": "False. 10 критериев Kata, не 9.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 101,
+    "discipline": "kata",
+    "question": "Although performing a scissor takedown technique (KANI BASAMI) to the neck area during BUNKAI is prohibited, a scissor takedown to the body is permitted.",
+    "questionEn": "Although performing a scissor takedown technique (KANI BASAMI) to the neck area during BUNKAI is prohibited, a scissor takedown to the body is permitted.",
+    "questionRu": "Хотя выполнение техники броска ножницами (КАНИ БАСАМИ) в область шеи при выполнении БУНКАЙ запрещено, бросок ножницами по корпусу разрешён.",
+    "answer": true,
+    "ruleArticle": "KR 3.5.9",
+    "ruleArticleEn": "KR 3.5.9",
+    "explanation": "Kani Basami в шею запрещён, в корпус разрешён.",
+    "explanationEn": "True. Kani Basami в шею запрещён, в корпус разрешён.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 102,
+    "discipline": "kata",
+    "question": "Performing a scissor takedown technique (KANI BASAMI) to the neck area during BUNKAI is not prohibited.",
+    "questionEn": "Performing a scissor takedown technique (KANI BASAMI) to the neck area during BUNKAI is not prohibited.",
+    "questionRu": "Выполнение техники броска ножницами (КАНИ БАСАМИ) в область шеи в БУНКАЙ не запрещено.",
+    "answer": false,
+    "ruleArticle": "KR 3.5.9, 5.8(10)",
+    "ruleArticleEn": "KR 3.5.9, 5.8(10)",
+    "explanation": "Kani Basami в шею запрещён.",
+    "explanationEn": "False. Kani Basami в шею запрещён.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 103,
+    "discipline": "kata",
+    "question": "Theatrics must be considered very serious fouls by the Judges in their evaluation of the performance of the Kata.",
+    "questionEn": "Theatrics must be considered very serious fouls by the Judges in their evaluation of the performance of the Kata.",
+    "questionRu": "Театральность должна рассматриваться судьями как очень серьёзный ФОЛ при оценке исполнения Ката.",
+    "answer": true,
+    "ruleArticle": "KR 5.7(6)",
+    "ruleArticleEn": "KR 5.7(6)",
+    "explanation": "Театральность — очень серьёзный фол.",
+    "explanationEn": "True. Театральность — очень серьёзный фол.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 104,
+    "discipline": "kata",
+    "question": "The protest can be submitted to a representative of the Appeals Jury by the Coach.",
+    "questionEn": "The protest can be submitted to a representative of the Appeals Jury by the Coach.",
+    "questionRu": "Протест может быть подан тренером представителю Апелляционного жюри.",
+    "answer": false,
+    "ruleArticle": "KR 7.1.10; PR 9.1.10",
+    "ruleArticleEn": "KR 7.1.10; PR 9.1.10",
+    "explanation": "Протест подаёт не тренер: форму протеста представителю Appeals Jury передаёт Tatami Manager.",
+    "explanationEn": "False. Протест подаёт не тренер: форму протеста представителю Appeals Jury передаёт Tatami Manager.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 105,
+    "discipline": "kata",
+    "question": "It is the responsibility of the Tatami Manager receiving the protest to gather the Appeals Jury and deposit the protest sum with WKF for any declined protest.",
+    "questionEn": "It is the responsibility of the Tatami Manager receiving the protest to gather the Appeals Jury and deposit the protest sum with WKF for any declined protest.",
+    "questionRu": "Это обязанность татами менеджера получившего протест, передать его апелляционному жюри вместе с внесением депозита протеста в соответствии с решением исполкома WKF за отклонённый протест",
+    "answer": true,
+    "ruleArticle": "KR 7.3.1; PR 9.3.1",
+    "ruleArticleEn": "KR 7.3.1; PR 9.3.1",
+    "explanation": "Tatami Manager собирает Appeals Jury и депонирует сумму при отклонении.",
+    "explanationEn": "True. Tatami Manager собирает Appeals Jury и депонирует сумму при отклонении.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 106,
+    "discipline": "kata",
+    "question": "Each of the three members of the Appeals Jury is obliged to give their verdict as to the validity of the protest. Abstentions are not acceptable.",
+    "questionEn": "Each of the three members of the Appeals Jury is obliged to give their verdict as to the validity of the protest. Abstentions are not acceptable.",
+    "questionRu": "Каждый из трёх членов апелляционного жюри обязан вынести своё решение относительно обоснованности протеста. Воздержавшиеся недопустимы.",
+    "answer": true,
+    "ruleArticle": "KR 7.3.3; PR 9.3.3",
+    "ruleArticleEn": "KR 7.3.3; PR 9.3.3",
+    "explanation": "Воздержание не допускается.",
+    "explanationEn": "True. Воздержание не допускается.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 107,
+    "discipline": "kata",
+    "question": "In Para Karate, advertising on the backrest of the wheelchairs is allowed.",
+    "questionEn": "In Para Karate, advertising on the backrest of the wheelchairs is allowed.",
+    "questionRu": "В пара-каратэ реклама в инвалидных колясках может быть размещена на спинке сиденья.",
+    "answer": false,
+    "ruleArticle": "PR 4.6.11",
+    "ruleArticleEn": "PR 4.6.11",
+    "explanation": "Размещение логотипов на спинке кресла запрещено.",
+    "explanationEn": "False. Размещение логотипов на спинке кресла запрещено.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 108,
+    "discipline": "kata",
+    "question": "If the protest is accepted, the Appeals Jury will appoint one of its members who will verbally notify the protester that the protest has been accepted.",
+    "questionEn": "If the protest is accepted, the Appeals Jury will appoint one of its members who will verbally notify the protester that the protest has been accepted.",
+    "questionRu": "Если протест принят, Апелляционное жюри назначит одного из своих членов, который устно уведомит протестующего о том, что протест принят.",
+    "answer": true,
+    "ruleArticle": "PR 9.4.2",
+    "ruleArticleEn": "PR 9.4.2",
+    "explanation": "При принятии протеста уведомляет член Appeals Jury.",
+    "explanationEn": "True. При принятии протеста уведомляет член Appeals Jury.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 109,
+    "discipline": "kata",
+    "question": "There are three general Categories in Para Karate competitions: Visually Impaired, Intellectually Impaired and Physically Impaired.",
+    "questionEn": "There are three general Categories in Para Karate competitions: Visually Impaired, Intellectually Impaired and Physically Impaired.",
+    "questionRu": "На соревнованиях по пара-каратэ существуют три основные категории: Спортсмены с нарушениями зрения, с интеллектуальными нарушениями и с физическими нарушениями.",
+    "answer": true,
+    "ruleArticle": "PR 2.1.1",
+    "ruleArticleEn": "PR 2.1.1",
+    "explanation": "Три общие категории — Visual, Intellectual, Physical.",
+    "explanationEn": "True. Три общие категории — Visual, Intellectual, Physical.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 110,
+    "discipline": "kata",
+    "question": "In Para Karate competitions, prostheses, canes, crutches, and other equipment used for physical support are allowed.",
+    "questionEn": "In Para Karate competitions, prostheses, canes, crutches, and other equipment used for physical support are allowed.",
+    "questionRu": "В пара-каратэ на соревнованиях по пара-каратэ разрешается использовать протезы, трости, костыли и другое оборудование, используемое для физической поддержки.",
+    "answer": false,
+    "ruleArticle": "PR 4.4.4, 4.4.5",
+    "ruleArticleEn": "PR 4.4.4, 4.4.5",
+    "explanation": "Протезы (кроме глаз), трости, костыли и т.п. не разрешены.",
+    "explanationEn": "False. Протезы (кроме глаз), трости, костыли и т.п. не разрешены.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 111,
+    "discipline": "kata",
+    "question": "In Para Karate, Athletes with more than one Eligible Impairment can compete in only one Sport Class per championship.",
+    "questionEn": "In Para Karate, Athletes with more than one Eligible Impairment can compete in only one Sport Class per championship.",
+    "questionRu": "В пара-каратэ Спортсмены с более чем одним допустимым нарушением могут соревноваться только в одном спортивном классе в рамках одного чемпионата.",
+    "answer": true,
+    "ruleArticle": "PR 2.1.3",
+    "ruleArticleEn": "PR 2.1.3",
+    "explanation": "При нескольких нарушениях — только один Sport Class за чемпионат.",
+    "explanationEn": "True. При нескольких нарушениях — только один Sport Class за чемпионат.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 112,
+    "discipline": "kata",
+    "question": "In Para Karate, the seven Judges will give their scores based on the assessment of the Kata performance and the level of the Athlete's impairment.",
+    "questionEn": "In Para Karate, the seven Judges will give their scores based on the assessment of the Kata performance and the level of the Athlete's impairment.",
+    "questionRu": "В пара-каратэ семь судей выставляют свои оценки на основании оценки выполнения ката и уровня нарушений спортсмена.",
+    "answer": false,
+    "ruleArticle": "PR 7.4.2",
+    "ruleArticleEn": "PR 7.4.2",
+    "explanation": "Compensation Score назначает Classification Panel, а не судьи по уровню нарушения.",
+    "explanationEn": "False. Compensation Score назначает Classification Panel, а не судьи по уровню нарушения.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 113,
+    "discipline": "kata",
+    "question": "Para Karate competitions consist of both Kata and Kumite.",
+    "questionEn": "Para Karate competitions consist of both Kata and Kumite.",
+    "questionRu": "Соревнования по пара-каратэ состоят как из ката, так и из кумитэ.",
+    "answer": false,
+    "ruleArticle": "PR 2.1.1",
+    "ruleArticleEn": "PR 2.1.1",
+    "explanation": "Para Karate — только Individual Kata.",
+    "explanationEn": "False. Para Karate — только Individual Kata.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 114,
+    "discipline": "kata",
+    "question": "In Para Karate competitions wheelchairs with approved anti-tip castors are allowed.",
+    "questionEn": "In Para Karate competitions wheelchairs with approved anti-tip castors are allowed.",
+    "questionRu": "На соревнованиях по пара-каратэ допускаются инвалидные коляски с одобренными противоопрокидывающимися роликами.",
+    "answer": true,
+    "ruleArticle": "PR 4.6.7.3(b)",
+    "ruleArticleEn": "PR 4.6.7.3(b)",
+    "explanation": "Анти-опрокидывающие ролики разрешены.",
+    "explanationEn": "True. Анти-опрокидывающие ролики разрешены.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 115,
+    "discipline": "kata",
+    "question": "In Para Karate a Compensation Score is allocated to Athletes in all Sport Classes in accordance with the WKF Para Karate Classification Rules.",
+    "questionEn": "In Para Karate a Compensation Score is allocated to Athletes in all Sport Classes in accordance with the WKF Para Karate Classification Rules.",
+    "questionRu": "В пара-каратэ Спортсменам всех спортивных классов назначается компенсационный балл в соответствии с Правилами классификации WKF по пара-каратэ.",
+    "answer": false,
+    "ruleArticle": "PR 2.1.4, 2.2",
+    "ruleArticleEn": "PR 2.1.4, 2.2",
+    "explanation": "Compensation Score только для K10 и K30, не для всех классов.",
+    "explanationEn": "False. Compensation Score только для K10 и K30, не для всех классов.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 116,
+    "discipline": "kata",
+    "question": "In Para Karate, potential reasons for disqualification must be treated with particular care, as certain eligible impairments or underlying health conditions can influence movement patterns or behaviour during performance.",
+    "questionEn": "In Para Karate, potential reasons for disqualification must be treated with particular care, as certain eligible impairments or underlying health conditions can influence movement patterns or behaviour during performance.",
+    "questionRu": "В пара-каратэ потенциальные основания для дисквалификации следует рассматривать с особой тщательностью, поскольку некоторые допустимые нарушения или сопутствующие заболевания могут влиять на характер движений или поведение во время выступления.",
+    "answer": true,
+    "ruleArticle": "PR 7.9 (last paragraph)",
+    "ruleArticleEn": "PR 7.9 (last paragraph)",
+    "explanation": "Причины дисквалификации в Para Karate требуют особой осторожности.",
+    "explanationEn": "True. Причины дисквалификации в Para Karate требуют особой осторожности.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 117,
+    "discipline": "kata",
+    "question": "All Para Karate Athletes are allowed to wear white sport shoes.",
+    "questionEn": "All Para Karate Athletes are allowed to wear white sport shoes.",
+    "questionRu": "Всем участникам пара-каратэ разрешается носить белую спортивную обувь.",
+    "answer": false,
+    "ruleArticle": "PR 4.2.7",
+    "ruleArticleEn": "PR 4.2.7",
+    "explanation": "В правилах нет разрешения всем атлетам носить белую спортивную обувь.",
+    "explanationEn": "False. В правилах нет разрешения всем атлетам носить белую спортивную обувь.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 118,
+    "discipline": "kata",
+    "question": "In Para Karate, in case of additional Classification testing, Doping Control, fire or other need for emergency evacuation, the national Coaches are directly responsible for safe removal of their Athletes.",
+    "questionEn": "In Para Karate, in case of additional Classification testing, Doping Control, fire or other need for emergency evacuation, the national Coaches are directly responsible for safe removal of their Athletes.",
+    "questionRu": "В пара-каратэ в случае дополнительных классификационных испытаний, допинг-контроля, пожара или иной необходимости экстренной эвакуации национальные тренеры несут прямую ответственность за безопасную эвакуацию спортсменов.",
+    "answer": true,
+    "ruleArticle": "PR 4.8.5",
+    "ruleArticleEn": "PR 4.8.5",
+    "explanation": "Тренеры NF отвечают за безопасный вывод атлетов.",
+    "explanationEn": "True. Тренеры NF отвечают за безопасный вывод атлетов.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 119,
+    "discipline": "kata",
+    "question": "In Para Karate, Athletes from the Intellectually Impaired category can perform the same Kata in each round.",
+    "questionEn": "In Para Karate, Athletes from the Intellectually Impaired category can perform the same Kata in each round.",
+    "questionRu": "В пара-каратэ участники из категории с умственными нарушениями могут выполнять одно и то же Ката в каждом раунде.",
+    "answer": true,
+    "ruleArticle": "PR 7.2.2",
+    "ruleArticleEn": "PR 7.2.2",
+    "explanation": "K21/K22 могут повторять одно и то же ката в раундах.",
+    "explanationEn": "True. K21/K22 могут повторять одно и то же ката в раундах.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 120,
+    "discipline": "kata",
+    "question": "In Para Karate, service animals trained and certified to detect life-threatening conditions are not allowed at the external perimeter of the competition area.",
+    "questionEn": "In Para Karate, service animals trained and certified to detect life-threatening conditions are not allowed at the external perimeter of the competition area.",
+    "questionRu": "Служебные животные, обученные и сертифицированные для выявления опасных для жизни состояний, не допускаются к внешнему периметру зоны соревнований по пара-каратэ.",
+    "answer": false,
+    "ruleArticle": "PR 4.7.4",
+    "ruleArticleEn": "PR 4.7.4",
+    "explanation": "Такие животные разрешены у внешнего периметра.",
+    "explanationEn": "False. Такие животные разрешены у внешнего периметра.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 121,
+    "discipline": "kata",
+    "question": "The Appeals Jury must elaborate a simple protest incident report, describing their findings and state their reason(s) for accepting or rejecting the protest.",
+    "questionEn": "The Appeals Jury must elaborate a simple protest incident report, describing their findings and state their reason(s) for accepting or rejecting the protest.",
+    "questionRu": "Апелляционное жюри должно составить простой отчёт о случае протеста, описывая свои выводы и указывая причину(ы) принятия или отклонения протеста.",
+    "answer": true,
+    "ruleArticle": "PR 9.5.1",
+    "ruleArticleEn": "PR 9.5.1",
+    "explanation": "Appeals Jury составляет отчёт об инциденте.",
+    "explanationEn": "True. Appeals Jury составляет отчёт об инциденте.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 122,
+    "discipline": "kata",
+    "question": "There are 100 Kata on the official WKF Kata list.",
+    "questionEn": "There are 100 Kata on the official WKF Kata list.",
+    "questionRu": "В официальном списке Ката 100 Ката.",
+    "answer": false,
+    "ruleArticle": "App. 1",
+    "ruleArticleEn": "App. 1",
+    "explanation": "В списке WKF 102 ката, не 100.",
+    "explanationEn": "False. В списке WKF 102 ката, не 100.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 123,
+    "discipline": "kata",
+    "question": "In Para Karate resolution for ties will follow the WKF Kata Competition Rules.",
+    "questionEn": "In Para Karate resolution for ties will follow the WKF Kata Competition Rules.",
+    "questionRu": "Разрешение ничьих в пара-каратэ будет соответствовать Правилам соревнований WKF по ката.",
+    "answer": false,
+    "ruleArticle": "PR 7.7",
+    "ruleArticleEn": "PR 7.7",
+    "explanation": "В Para Karate собственные правила разрешения ничьих.",
+    "explanationEn": "False. В Para Karate собственные правила разрешения ничьих.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 124,
+    "discipline": "kata",
+    "question": "In Para Karate, therapy animals or emotional-support animals are allowed in the competition area or its perimeter.",
+    "questionEn": "In Para Karate, therapy animals or emotional-support animals are allowed in the competition area or its perimeter.",
+    "questionRu": "В пара-каратэ животные используемые для терапии или животные, оказывающие эмоциональную поддержку, допускаются в зону соревнований или по её периметру.",
+    "answer": false,
+    "ruleArticle": "PR 4.7.5",
+    "ruleArticleEn": "PR 4.7.5",
+    "explanation": "Терапия/эмоциональная поддержка запрещены в зоне и периметре.",
+    "explanationEn": "False. Терапия/эмоциональная поддержка запрещены в зоне и периметре.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 125,
+    "discipline": "kata",
+    "question": "In Para Karate, it is allowed for Athletes of Visually Impaired Classes to wear blindfolds with logos or markings from sponsors or manufacturers.",
+    "questionEn": "In Para Karate, it is allowed for Athletes of Visually Impaired Classes to wear blindfolds with logos or markings from sponsors or manufacturers.",
+    "questionRu": "В пара-каратэ спортсменам классов с нарушением зрения разрешается носить повязки на глаза с логотипами или маркировкой спонсоров или производителей.",
+    "answer": false,
+    "ruleArticle": "PR 4.5.4",
+    "ruleArticleEn": "PR 4.5.4",
+    "explanation": "Повязки на глаза не должны иметь логотипов/маркировок.",
+    "explanationEn": "False. Повязки на глаза не должны иметь логотипов/маркировок.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 126,
+    "discipline": "kata",
+    "question": "In Para Karate, the straps to fix the legs of wheelchair Athletes can be elastic.",
+    "questionEn": "In Para Karate, the straps to fix the legs of wheelchair Athletes can be elastic.",
+    "questionRu": "В пара-каратэ ремни для фиксации ног Спортсменов-колясочников могут быть эластичными.",
+    "answer": false,
+    "ruleArticle": "PR 4.6.6.2",
+    "ruleArticleEn": "PR 4.6.6.2",
+    "explanation": "Ремни для ног должны быть неэластичными.",
+    "explanationEn": "False. Ремни для ног должны быть неэластичными.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 127,
+    "discipline": "kata",
+    "question": "In Para Karate, score compensation system by means of Extra Points, must be given by the Judges according to the influence of the Athlete's particular impairment.",
+    "questionEn": "In Para Karate, score compensation system by means of Extra Points, must be given by the Judges according to the influence of the Athlete's particular impairment.",
+    "questionRu": "В пара-каратэ система компенсации очков посредством дополнительных очков должна учитываться судейской коллегией с учётом влияния его или её конкретного нарушения.",
+    "answer": false,
+    "ruleArticle": "PR 7.4.2, 2.1.4",
+    "ruleArticleEn": "PR 7.4.2, 2.1.4",
+    "explanation": "Extra Points назначает Classification Panel, а не судьи.",
+    "explanationEn": "False. Extra Points назначает Classification Panel, а не судьи.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 128,
+    "discipline": "kata",
+    "question": "In Para Karate there are three Sport Classes.",
+    "questionEn": "In Para Karate there are three Sport Classes.",
+    "questionRu": "В индивидуальных соревнованиях по пара-каратэ ката предусмотрены три спортивных класса",
+    "answer": false,
+    "ruleArticle": "PR 2.1.1",
+    "ruleArticleEn": "PR 2.1.1",
+    "explanation": "Классы K10, K21, K22, K30 — фактически четыре, не три.",
+    "explanationEn": "False. Классы K10, K21, K22, K30 — фактически четыре, не три.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 129,
+    "discipline": "kata",
+    "question": "In Para Karate visually impaired Athletes are divided in three categories.",
+    "questionEn": "In Para Karate visually impaired Athletes are divided in three categories.",
+    "questionRu": "В пара-каратэ Спортсмены с нарушениями зрения делятся на три категории.",
+    "answer": false,
+    "ruleArticle": "PR 2.1.1(a)",
+    "ruleArticleEn": "PR 2.1.1(a)",
+    "explanation": "Для слабовидящих один Sport Class — K10.",
+    "explanationEn": "False. Для слабовидящих один Sport Class — K10.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  },
+  {
+    "id": 130,
+    "discipline": "kata",
+    "question": "In Para Karate, blindfolds are required for all visually impaired Athletes during the performance.",
+    "questionEn": "In Para Karate, blindfolds are required for all visually impaired Athletes during the performance.",
+    "questionRu": "На соревнованиях по пара-каратэ всем спортсменам с нарушениями зрения во время выступления требуется носить повязку на глазах.",
+    "answer": true,
+    "ruleArticle": "PR 2.2, 4.5.3",
+    "ruleArticleEn": "PR 2.2, 4.5.3",
+    "explanation": "Blindfolds обязательны для K10 во время ката.",
+    "explanationEn": "True. Blindfolds обязательны для K10 во время ката.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 131,
+    "discipline": "kata",
+    "question": "In Para Karate, intellectual impaired Athletes will perform the Kata standing up.",
+    "questionEn": "In Para Karate, intellectual impaired Athletes will perform the Kata standing up.",
+    "questionRu": "Спортсмены с ограниченными интеллектуальными возможностями в пара-каратэ исполняют Ката стоя.",
+    "answer": true,
+    "ruleArticle": "PR 2.2",
+    "ruleArticleEn": "PR 2.2",
+    "explanation": "K21/K22 выступают стоя.",
+    "explanationEn": "True. K21/K22 выступают стоя.",
+    "votes": {
+      "trueCount": 5,
+      "falseCount": 0
+    }
+  },
+  {
+    "id": 132,
+    "discipline": "kata",
+    "question": "In Para Karate, intellectual impaired Athletes cannot repeat the Kata.",
+    "questionEn": "In Para Karate, intellectual impaired Athletes cannot repeat the Kata.",
+    "questionRu": "Спортсмены с ограниченными интеллектуальными способностями, занимающиеся пара-каратэ, не могут повторять ката.",
+    "answer": false,
+    "ruleArticle": "PR 7.2.2",
+    "ruleArticleEn": "PR 7.2.2",
+    "explanation": "K21/K22 могут повторять ката.",
+    "explanationEn": "False. K21/K22 могут повторять ката.",
+    "votes": {
+      "trueCount": 0,
+      "falseCount": 5
+    }
+  }
+]

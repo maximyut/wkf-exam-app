@@ -13,27 +13,37 @@ import {
   HelpCircle,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import type { TestResult, QuestionAnswerRecord } from '../types';
+import type { TestResult, QuestionAnswerRecord, Discipline, Language } from '../types';
 import { playCompleteSound, playWrongSound } from '../utils/sound';
 import { ExplanationModal } from './ExplanationModal';
+import { t } from '../i18n/translations';
 
 interface TestResultsProps {
   result: TestResult;
+  discipline?: Discipline;
+  language?: Language;
   soundEnabled: boolean;
   onRetakeTest: () => void;
   onRetakeMistakes: (failedQuestionIds: number[]) => void;
   onNavigateToHistory: () => void;
+  onOpenRules?: (ruleArticle?: string) => void;
 }
 
 export const TestResults: React.FC<TestResultsProps> = ({
   result,
+  discipline,
+  language,
   soundEnabled,
   onRetakeTest,
   onRetakeMistakes,
   onNavigateToHistory,
+  onOpenRules,
 }) => {
   const [filter, setFilter] = useState<'all' | 'mistakes' | 'correct'>('all');
   const [selectedRecordForModal, setSelectedRecordForModal] = useState<QuestionAnswerRecord | null>(null);
+
+  const currentLang: Language = language || result.language || result.config?.language || 'ru';
+  const testDiscipline = discipline || result.discipline || result.config?.discipline || 'kumite';
 
   const {
     correctAnswersCount,
@@ -79,8 +89,8 @@ export const TestResults: React.FC<TestResultsProps> = ({
   const formatTime = (secs: number) => {
     const mins = Math.floor(secs / 60);
     const remainder = secs % 60;
-    if (mins === 0) return `${remainder} сек`;
-    return `${mins} мин ${remainder} сек`;
+    if (mins === 0) return `${remainder} ${t('sec', currentLang)}`;
+    return `${mins} ${currentLang === 'ru' ? 'мин' : 'min'} ${remainder} ${t('sec', currentLang)}`;
   };
 
   return (
@@ -105,7 +115,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
             >
               <span className="text-2xl sm:text-4xl leading-none">{scorePercentage}%</span>
               <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mt-1 opacity-80">
-                Результат
+                {t('score', currentLang)}
               </span>
             </div>
 
@@ -118,7 +128,10 @@ export const TestResults: React.FC<TestResultsProps> = ({
                       : 'bg-rose-500/20 text-rose-300 border border-rose-500/40'
                   }`}
                 >
-                  {passed ? 'ЭКЗАМЕН СДАН' : 'НЕ СДАНО (≥90%)'}
+                  {passed ? (currentLang === 'ru' ? 'ЭКЗАМЕН СДАН' : 'EXAM PASSED') : (currentLang === 'ru' ? 'НЕ СДАНО (≥90%)' : 'FAILED (<90%)')}
+                </span>
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-800 text-slate-300 border border-slate-700">
+                  {testDiscipline === 'kata' ? t('kata', currentLang) : t('kumite', currentLang)}
                 </span>
                 <span className="text-xs text-slate-400 font-medium truncate">
                   {result.userName}
@@ -126,12 +139,12 @@ export const TestResults: React.FC<TestResultsProps> = ({
               </div>
 
               <h1 className="text-xl sm:text-3xl font-extrabold text-white">
-                {passed ? 'Отличный результат!' : 'Тест завершен'}
+                {passed ? t('passedTitle', currentLang) : t('failedTitle', currentLang)}
               </h1>
               <p className="text-xs sm:text-sm text-slate-400 mt-0.5 sm:mt-1">
                 {passed
-                  ? 'Вы успешно преодолели официальный судейский барьер WKF (90%).'
-                  : 'Для сдачи официального экзамена WKF необходимо набрать минимум 90%.'}
+                  ? t('passedDesc', currentLang)
+                  : t('failedDesc', currentLang)}
               </p>
             </div>
           </div>
@@ -143,7 +156,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
                 <CheckCircle2 className="w-4 h-4" />
               </div>
               <div className="text-lg font-black text-white">{correctAnswersCount}</div>
-              <div className="text-[10px] text-slate-400 font-semibold uppercase">Верно</div>
+              <div className="text-[10px] text-slate-400 font-semibold uppercase">{t('correctStat', currentLang)}</div>
             </div>
 
             <div className="p-3 rounded-2xl bg-slate-800/80 border border-slate-700/60 text-center">
@@ -153,7 +166,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
               <div className="text-lg font-black text-white">
                 {incorrectAnswersCount + timeoutAnswersCount}
               </div>
-              <div className="text-[10px] text-slate-400 font-semibold uppercase">Ошибок</div>
+              <div className="text-[10px] text-slate-400 font-semibold uppercase">{t('mistakesStat', currentLang)}</div>
             </div>
 
             <div className="p-3 rounded-2xl bg-slate-800/80 border border-slate-700/60 text-center">
@@ -161,7 +174,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
                 <Clock className="w-4 h-4" />
               </div>
               <div className="text-lg font-black text-white">{formatTime(totalDurationSeconds)}</div>
-              <div className="text-[10px] text-slate-400 font-semibold uppercase">Время</div>
+              <div className="text-[10px] text-slate-400 font-semibold uppercase">{t('durationStat', currentLang)}</div>
             </div>
           </div>
         </div>
@@ -174,7 +187,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
             className="w-full sm:flex-1 py-2.5 sm:py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 border border-slate-700 transition-all active:scale-[0.98]"
           >
             <RotateCcw className="w-4 h-4" />
-            <span>Пройти тест снова</span>
+            <span>{t('retakeAll', currentLang)}</span>
           </button>
 
           {hasMistakes && (
@@ -184,7 +197,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
               className="w-full sm:flex-1 py-2.5 sm:py-3 px-4 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-rose-950/40 transition-all active:scale-[0.98]"
             >
               <Flame className="w-4 h-4" />
-              <span>Работа над ошибками ({failedRecords.length})</span>
+              <span>{t('retakeMistakes', currentLang)} ({failedRecords.length})</span>
             </button>
           )}
 
@@ -194,7 +207,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
             className="w-full sm:w-auto py-2.5 sm:py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 border border-slate-700 transition-all active:scale-[0.98]"
           >
             <History className="w-4 h-4" />
-            <span>История тестов</span>
+            <span>{t('viewHistory', currentLang)}</span>
           </button>
         </div>
       </div>
@@ -204,13 +217,13 @@ export const TestResults: React.FC<TestResultsProps> = ({
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <h2 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
-              <span>Сверка ответов и разбор</span>
+              <span>{currentLang === 'ru' ? 'Сверка ответов и разбор' : 'Answers & Breakdown'}</span>
               <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
-                {records.length} вопр.
+                {records.length} {currentLang === 'ru' ? 'вопр.' : 'q.'}
               </span>
             </h2>
             <p className="text-xs text-slate-400 mt-0.5">
-              Сравнение ваших ответов с правильными ответами по базе WKF
+              {currentLang === 'ru' ? 'Сравнение ваших ответов с правильными ответами по базе WKF' : 'Comparison of your answers with official WKF standard'}
             </p>
           </div>
 
@@ -225,7 +238,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
                   : 'text-slate-400 hover:text-slate-200'
               }`}
             >
-              Все ({records.length})
+              {t('filterAll', currentLang)} ({records.length})
             </button>
             <button
               type="button"
@@ -236,7 +249,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
                   : 'text-slate-400 hover:text-rose-300'
               }`}
             >
-              Ошибки ({failedRecords.length})
+              {t('filterMistakes', currentLang)} ({failedRecords.length})
             </button>
             <button
               type="button"
@@ -247,7 +260,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
                   : 'text-slate-400 hover:text-emerald-300'
               }`}
             >
-              Верно ({correctAnswersCount})
+              {t('filterCorrect', currentLang)} ({correctAnswersCount})
             </button>
           </div>
         </div>
@@ -256,7 +269,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
         <div className="flex items-center gap-2.5 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-slate-850/80 border border-slate-700/60 text-xs text-slate-300">
           <HelpCircle className="w-4 h-4 text-rose-400 shrink-0" />
           <span>
-            Нажмите на любой вопрос или кнопку разбора, чтобы открыть <strong>официальную статью правил WKF 2026</strong>, судейское пояснение и голоса 5 нейросетей.
+            {t('resultsBannerHint', currentLang)}
           </span>
         </div>
 
@@ -264,17 +277,25 @@ export const TestResults: React.FC<TestResultsProps> = ({
         <div className="space-y-3">
           {filteredRecords.length === 0 ? (
             <div className="p-8 rounded-2xl bg-slate-900 border border-slate-800 text-center">
-              <p className="text-sm text-slate-400">Нет вопросов в этой категории</p>
+              <p className="text-sm text-slate-400">
+                {currentLang === 'ru' ? 'Нет вопросов в этой категории' : 'No questions in this category'}
+              </p>
             </div>
           ) : (
             filteredRecords.map((record) => {
               const isTimeout = record.userAnswer === 'timeout';
               const userAnsText = isTimeout
-                ? 'Время вышло'
+                ? t('timeoutAnswer', currentLang)
                 : record.userAnswer === 'true'
-                ? 'TRUE (Верно)'
-                : 'FALSE (Ложно)';
-              const correctAnsText = record.correctAnswer ? 'TRUE (Верно)' : 'FALSE (Ложно)';
+                ? `${t('trueBtn', currentLang)} (${t('trueSub', currentLang)})`
+                : `${t('falseBtn', currentLang)} (${t('falseSub', currentLang)})`;
+              const correctAnsText = record.correctAnswer
+                ? `${t('trueBtn', currentLang)} (${t('trueSub', currentLang)})`
+                : `${t('falseBtn', currentLang)} (${t('falseSub', currentLang)})`;
+
+              const qText = currentLang === 'ru' && record.questionTextRu
+                ? record.questionTextRu
+                : (record.questionTextEn || record.questionText);
 
               return (
                 <div
@@ -306,27 +327,27 @@ export const TestResults: React.FC<TestResultsProps> = ({
                       <div className="flex items-center justify-between gap-2">
                         <div className="flex items-center gap-2">
                           <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
-                            ID #{record.questionId}
+                            WKF #{record.questionId}
                           </span>
                           <span
                             className={`text-xs font-bold ${
                               record.isCorrect ? 'text-emerald-400' : 'text-rose-400'
                             }`}
                           >
-                            {record.isCorrect ? 'Правильный ответ' : isTimeout ? 'Таймаут (Неверно)' : 'Ошибка'}
+                            {record.isCorrect ? t('filterCorrect', currentLang) : isTimeout ? t('timeoutAnswer', currentLang) : t('filterMistakes', currentLang)}
                           </span>
                         </div>
 
                         {/* Open explanation badge on right */}
                         <span className="text-[11px] text-slate-400 group-hover:text-white flex items-center gap-1 font-medium transition-colors">
-                          <span className="hidden sm:inline">Правило WKF</span>
+                          <span className="hidden sm:inline">{currentLang === 'ru' ? 'Правило WKF' : 'WKF Rule'}</span>
                           <ChevronRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-300 transition-transform group-hover:translate-x-0.5" />
                         </span>
                       </div>
 
-                      {/* English question text */}
+                      {/* Question text */}
                       <p className="text-sm sm:text-base font-semibold text-slate-100 leading-snug">
-                        {record.questionText}
+                        {qText}
                       </p>
 
                       {/* Answer badges & action button */}
@@ -339,7 +360,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
                           }`}
                         >
                           <span className="text-[10px] text-slate-400 font-normal uppercase">
-                            Ваш ответ:
+                            {t('yourAnswer', currentLang)}
                           </span>
                           <span>{userAnsText}</span>
                         </div>
@@ -347,7 +368,7 @@ export const TestResults: React.FC<TestResultsProps> = ({
                         {!record.isCorrect && (
                           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-950/40 border border-emerald-500/50 text-emerald-300">
                             <span className="text-[10px] text-slate-400 font-normal uppercase">
-                              Правильный ответ:
+                              {t('correctAnswer', currentLang)}
                             </span>
                             <span>{correctAnsText}</span>
                           </div>
@@ -367,11 +388,11 @@ export const TestResults: React.FC<TestResultsProps> = ({
                           }`}
                         >
                           <BookOpen className="w-3.5 h-3.5 text-rose-400" />
-                          <span>{record.isCorrect ? 'Правило и разбор' : 'Разбор ошибки и статья правил'}</span>
+                          <span>{record.isCorrect ? (currentLang === 'ru' ? 'Правило и разбор' : 'Rule & Review') : (currentLang === 'ru' ? 'Разбор ошибки и статья' : 'Error review & article')}</span>
                         </button>
 
                         <span className="text-[11px] text-slate-500 ml-auto">
-                          Время: {record.timeSpentSeconds}с
+                          {currentLang === 'ru' ? 'Время' : 'Time'}: {record.timeSpentSeconds}{t('timeRemaining', currentLang)}
                         </span>
                       </div>
                     </div>
@@ -388,6 +409,8 @@ export const TestResults: React.FC<TestResultsProps> = ({
         record={selectedRecordForModal}
         isOpen={!!selectedRecordForModal}
         onClose={() => setSelectedRecordForModal(null)}
+        language={currentLang}
+        onOpenRules={onOpenRules}
       />
     </div>
   );
