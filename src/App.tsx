@@ -8,6 +8,7 @@ import type {
   Discipline,
   Language,
   ViewMode,
+  ActiveTestSession,
 } from './types';
 import {
   INITIAL_KUMITE_QUESTIONS,
@@ -21,6 +22,9 @@ import {
   getSettings,
   saveSettings,
   getUserMistakeQuestionIds,
+  getActiveTestSession,
+  saveActiveTestSession,
+  clearActiveTestSession,
 } from './utils/storage';
 import { Header } from './components/Header';
 import { UserModal } from './components/UserModal';
@@ -39,6 +43,11 @@ export const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>(settings.language || 'ru');
   const [currentView, setCurrentView] = useState<ViewMode>('setup');
   const [isUserModalOpen, setIsUserModalOpen] = useState<boolean>(false);
+
+  // Active incomplete test session (for persistent resume across refresh/tabs/minimize)
+  const [activeSession, setActiveSession] = useState<ActiveTestSession | null>(() =>
+    getActiveTestSession(getActiveUser().id)
+  );
 
   // Dynamic questions list loaded per discipline with bundled fallback
   const initialData = activeDiscipline === 'kata' ? INITIAL_KATA_QUESTIONS : INITIAL_KUMITE_QUESTIONS;
@@ -91,6 +100,7 @@ export const App: React.FC = () => {
 
   const handleUserChanged = (newUser: UserProfile) => {
     setActiveUser(newUser);
+    setActiveSession(getActiveTestSession(newUser.id));
   };
 
   const handleOpenRules = (ruleRef?: string) => {
@@ -132,9 +142,77 @@ export const App: React.FC = () => {
     // Take requested count
     const selected = pool.slice(0, Math.min(config.questionCount, pool.length));
 
+    const newSession: ActiveTestSession = {
+      id: 'session_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
+      userId: activeUser.id,
+      userName: activeUser.name,
+      discipline: config.discipline,
+      language: config.language,
+      config,
+      questions: selected,
+      currentIndex: 0,
+      records: [],
+      elapsedSeconds: 0,
+      isPaused: false,
+      lastSavedAt: Date.now(),
+    };
+
+    saveActiveTestSession(newSession);
+    setActiveSession(newSession);
     setActiveConfig(config);
     setTestQuestions(selected);
     setCurrentView('test');
+  };
+
+  // Resume unfinished test from saved session
+  const handleResumeTest = () => {
+    if (!activeSession) return;
+    setActiveConfig(activeSession.config);
+    setTestQuestions(activeSession.questions);
+    if (activeSession.discipline !== activeDiscipline) {
+      setActiveDiscipline(activeSession.discipline);
+    }
+    if (activeSession.language !== language) {
+      setLanguage(activeSession.language);
+    }
+    setCurrentView('test');
+  };
+
+  // Discard incomplete session
+  const handleDiscardSession = () => {
+    clearActiveTestSession(activeUser.id);
+    setActiveSession(null);
+  };
+
+  // Save active progress on every answered question or background event
+  const handleProgressSave = (
+    currentIndex: number,
+    records: QuestionAnswerRecord[],
+    elapsedSeconds: number,
+    isPaused: boolean
+  ) => {
+    if (!activeSession) return;
+    const updatedSession: ActiveTestSession = {
+      ...activeSession,
+      currentIndex,
+      records,
+      elapsedSeconds,
+      isPaused,
+      lastSavedAt: Date.now(),
+    };
+    saveActiveTestSession(updatedSession);
+    setActiveSession(updatedSession);
+  };
+
+  // Cancel/Exit test: either save for later or discard
+  const handleCancelTest = (discard: boolean) => {
+    if (discard) {
+      clearActiveTestSession(activeUser.id);
+      setActiveSession(null);
+    } else {
+      setActiveSession(getActiveTestSession(activeUser.id));
+    }
+    setCurrentView('setup');
   };
 
   // Test finished
@@ -167,6 +245,8 @@ export const App: React.FC = () => {
     };
 
     saveTestResult(result);
+    clearActiveTestSession(activeUser.id);
+    setActiveSession(null);
     setLatestResult(result);
     setCurrentView('results');
   };
@@ -192,6 +272,23 @@ export const App: React.FC = () => {
       soundEnabled,
     };
 
+    const newSession: ActiveTestSession = {
+      id: 'session_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
+      userId: activeUser.id,
+      userName: activeUser.name,
+      discipline: config.discipline,
+      language: config.language,
+      config,
+      questions: pool,
+      currentIndex: 0,
+      records: [],
+      elapsedSeconds: 0,
+      isPaused: false,
+      lastSavedAt: Date.now(),
+    };
+
+    saveActiveTestSession(newSession);
+    setActiveSession(newSession);
     setActiveConfig(config);
     setTestQuestions(pool);
     setCurrentView('test');
@@ -245,19 +342,27 @@ export const App: React.FC = () => {
             discipline={activeDiscipline}
             language={language}
             totalAvailableQuestions={allQuestions.length}
+            activeSession={activeSession}
+            onResumeTest={handleResumeTest}
+            onDiscardSession={handleDiscardSession}
             onStartTest={handleStartTest}
             onOpenUserModal={() => setIsUserModalOpen(true)}
             onCustomDataLoaded={handleCustomJsonLoaded}
           />
         )}
 
-        {currentView === 'test' && (
+        {currentView === 'test' && activeConfig && (
           <ActiveTest
             questions={testQuestions}
-            config={activeConfig!}
+            config={activeConfig}
             soundEnabled={soundEnabled}
+            initialIndex={activeSession ? activeSession.currentIndex : 0}
+            initialRecords={activeSession ? activeSession.records : []}
+            initialElapsedSeconds={activeSession ? activeSession.elapsedSeconds : 0}
+            initialIsPaused={activeSession ? activeSession.isPaused : false}
+            onProgressSave={handleProgressSave}
             onFinishTest={handleFinishTest}
-            onCancelTest={() => setCurrentView('setup')}
+            onCancelTest={handleCancelTest}
           />
         )}
 

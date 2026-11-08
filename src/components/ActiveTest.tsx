@@ -8,6 +8,7 @@ import {
   LogOut,
   AlertCircle,
   HelpCircle,
+  Bookmark,
 } from 'lucide-react';
 import type { Question, TestConfig, QuestionAnswerRecord, AnswerChoice } from '../types';
 import { playTickSound, playClickSound, playTimeoutSound } from '../utils/sound';
@@ -18,20 +19,35 @@ interface ActiveTestProps {
   questions: Question[];
   config: TestConfig;
   soundEnabled: boolean;
+  initialIndex?: number;
+  initialRecords?: QuestionAnswerRecord[];
+  initialElapsedSeconds?: number;
+  initialIsPaused?: boolean;
+  onProgressSave?: (
+    currentIndex: number,
+    records: QuestionAnswerRecord[],
+    elapsedSeconds: number,
+    isPaused: boolean
+  ) => void;
   onFinishTest: (records: QuestionAnswerRecord[], durationSeconds: number) => void;
-  onCancelTest: () => void;
+  onCancelTest: (discard: boolean) => void;
 }
 
 export const ActiveTest: React.FC<ActiveTestProps> = ({
   questions,
   config,
   soundEnabled,
+  initialIndex = 0,
+  initialRecords = [],
+  initialElapsedSeconds = 0,
+  initialIsPaused = false,
+  onProgressSave,
   onFinishTest,
   onCancelTest,
 }) => {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [records, setRecords] = useState<QuestionAnswerRecord[]>([]);
-  const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [currentIndex, setCurrentIndex] = useState<number>(initialIndex);
+  const [records, setRecords] = useState<QuestionAnswerRecord[]>(initialRecords);
+  const [isPaused, setIsPaused] = useState<boolean>(initialIsPaused);
   const [showExitConfirm, setShowExitConfirm] = useState<boolean>(false);
 
   // Time remaining on current question (in seconds)
@@ -39,14 +55,11 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
   const hasTimeLimit = timeLimit > 0;
   const [timeLeft, setTimeLeft] = useState<number>(hasTimeLimit ? timeLimit : 0);
 
-  // Overall test start timestamp
-  const testStartTimeRef = useRef<number | null>(null);
+  // Overall test active elapsed seconds
+  const accumulatedSecondsRef = useRef<number>(initialElapsedSeconds);
   const questionStartTimeRef = useRef<number | null>(null);
 
   useEffect(() => {
-    if (testStartTimeRef.current === null) {
-      testStartTimeRef.current = Date.now();
-    }
     if (questionStartTimeRef.current === null) {
       questionStartTimeRef.current = Date.now();
     }
@@ -94,43 +107,73 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
       setRecords(updatedRecords);
 
       if (currentIndex + 1 < totalQuestions) {
-        setCurrentIndex(currentIndex + 1);
+        const nextIndex = currentIndex + 1;
+        setCurrentIndex(nextIndex);
         setTimeLeft(hasTimeLimit ? timeLimit : 0);
         questionStartTimeRef.current = Date.now();
+        onProgressSave?.(nextIndex, updatedRecords, accumulatedSecondsRef.current, false);
       } else {
         // Test complete!
-        const tStart = testStartTimeRef.current ?? Date.now();
-        const totalDuration = Math.round((Date.now() - tStart) / 1000);
-        onFinishTest(updatedRecords, totalDuration);
+        onFinishTest(updatedRecords, accumulatedSecondsRef.current);
       }
     },
-    [currentIndex, currentQuestion, hasTimeLimit, onFinishTest, records, soundEnabled, timeLimit, totalQuestions, config]
+    [currentIndex, currentQuestion, hasTimeLimit, onFinishTest, onProgressSave, records, soundEnabled, timeLimit, totalQuestions, config]
   );
 
-  // Timer countdown effect
+  // Timer countdown & active elapsed duration counter
   useEffect(() => {
-    if (!hasTimeLimit || isPaused || showExitConfirm) return;
+    if (isPaused || showExitConfirm) return;
 
     const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev <= 1) {
-          // Time expired!
-          clearInterval(timer);
-          handleAnswer('timeout');
-          return 0;
-        }
+      accumulatedSecondsRef.current += 1;
 
-        // Ticking sound during last 5 seconds
-        if (prev <= 6 && soundEnabled) {
-          playTickSound(prev <= 3 ? 950 : 750);
-        }
+      if (hasTimeLimit) {
+        setTimeLeft((prev) => {
+          if (prev <= 1) {
+            // Time expired!
+            clearInterval(timer);
+            handleAnswer('timeout');
+            return 0;
+          }
 
-        return prev - 1;
-      });
+          // Ticking sound during last 5 seconds
+          if (prev <= 6 && soundEnabled) {
+            playTickSound(prev <= 3 ? 950 : 750);
+          }
+
+          return prev - 1;
+        });
+      }
     }, 1000);
 
     return () => clearInterval(timer);
   }, [hasTimeLimit, isPaused, showExitConfirm, handleAnswer, soundEnabled]);
+
+  // Lifecycle listeners: auto-pause on background & save session to localStorage
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        if (hasTimeLimit) {
+          setIsPaused(true);
+        }
+        onProgressSave?.(currentIndex, records, accumulatedSecondsRef.current, hasTimeLimit ? true : isPaused);
+      }
+    };
+
+    const handlePageHide = () => {
+      onProgressSave?.(currentIndex, records, accumulatedSecondsRef.current, isPaused);
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('beforeunload', handlePageHide);
+    window.addEventListener('pagehide', handlePageHide);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('beforeunload', handlePageHide);
+      window.removeEventListener('pagehide', handlePageHide);
+    };
+  }, [currentIndex, records, hasTimeLimit, isPaused, onProgressSave]);
 
   // Keyboard shortcuts (T/1 for True, F/2 for False, Space for Pause)
   useEffect(() => {
@@ -398,24 +441,40 @@ export const ActiveTest: React.FC<ActiveTestProps> = ({
                 {t('exitConfirmDesc', config.language)}
               </p>
             </div>
-            <div className="flex gap-2 pt-2">
-              <button
-                type="button"
-                onClick={() => setShowExitConfirm(false)}
-                className="flex-1 py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-colors"
-              >
-                {t('cancelExit', config.language)}
-              </button>
+            <div className="space-y-2 pt-1">
+              {/* Save & Exit button */}
               <button
                 type="button"
                 onClick={() => {
                   setShowExitConfirm(false);
-                  onCancelTest();
+                  onProgressSave?.(currentIndex, records, accumulatedSecondsRef.current, true);
+                  onCancelTest(false);
                 }}
-                className="flex-1 py-2 px-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold transition-colors"
+                className="w-full py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-emerald-950/40"
               >
-                {t('confirmExit', config.language)}
+                <Bookmark className="w-4 h-4" />
+                <span>{t('saveAndExit', config.language)}</span>
               </button>
+
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={() => setShowExitConfirm(false)}
+                  className="flex-1 py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-colors"
+                >
+                  {t('cancelExit', config.language)}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowExitConfirm(false);
+                    onCancelTest(true);
+                  }}
+                  className="flex-1 py-2 px-3 rounded-xl bg-rose-600/20 hover:bg-rose-600 text-rose-300 hover:text-white border border-rose-500/30 text-xs font-semibold transition-colors"
+                >
+                  {t('confirmExit', config.language)}
+                </button>
+              </div>
             </div>
           </div>
         </div>

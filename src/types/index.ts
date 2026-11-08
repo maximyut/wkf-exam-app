@@ -124,3 +124,19 @@ export interface RuleBook {
   articles: RuleArticle[];
 }
 
+export interface ActiveTestSession {
+  id: string;
+  userId: string;
+  userName: string;
+  discipline: Discipline;
+  language: Language;
+  config: TestConfig;
+  questions: Question[];
+  currentIndex: number;
+  records: QuestionAnswerRecord[];
+  elapsedSeconds: number;
+  isPaused: boolean;
+  lastSavedAt: number;
+}
+
+

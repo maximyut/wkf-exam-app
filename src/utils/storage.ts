@@ -1,9 +1,10 @@
-import type { UserProfile, TestResult, Discipline, Language } from '../types';
+import type { UserProfile, TestResult, Discipline, Language, ActiveTestSession } from '../types';
 
 const STORAGE_KEY_USERS = 'wkf_exam_users_v1';
 const STORAGE_KEY_ACTIVE_USER = 'wkf_exam_active_user_v1';
 const STORAGE_KEY_HISTORY = 'wkf_exam_history_v1';
 const STORAGE_KEY_SETTINGS = 'wkf_exam_settings_v1';
+const STORAGE_KEY_ACTIVE_SESSION = 'wkf_exam_active_test_session_v1';
 
 export interface AppSettings {
   soundEnabled: boolean;
@@ -263,4 +264,45 @@ export function saveSettings(settings: Partial<AppSettings>): AppSettings {
   }
   return updated;
 }
+
+// --- Active Test Session (Persistence for PWA / Tab close / Background) ---
+
+export function getActiveTestSession(userId?: string): ActiveTestSession | null {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY_ACTIVE_SESSION);
+    if (!raw) return null;
+    const session: ActiveTestSession = JSON.parse(raw);
+    const targetUserId = userId || getActiveUserId();
+
+    // Check if session belongs to user and is valid
+    if (session && session.userId === targetUserId && Array.isArray(session.questions) && session.questions.length > 0) {
+      return session;
+    }
+    return null;
+  } catch (e) {
+    console.error('Error reading active test session from storage:', e);
+    return null;
+  }
+}
+
+export function saveActiveTestSession(session: ActiveTestSession): void {
+  try {
+    localStorage.setItem(STORAGE_KEY_ACTIVE_SESSION, JSON.stringify(session));
+  } catch (e) {
+    console.error('Error saving active test session to storage:', e);
+  }
+}
+
+export function clearActiveTestSession(userId?: string): void {
+  try {
+    const current = getActiveTestSession(userId);
+    // If it belongs to this user or no specific user provided, remove it
+    if (current) {
+      localStorage.removeItem(STORAGE_KEY_ACTIVE_SESSION);
+    }
+  } catch (e) {
+    console.error('Error clearing active test session:', e);
+  }
+}
+
 

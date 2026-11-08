@@ -31,6 +31,14 @@ export const translations = {
     allQuestionsPreset: 'Все',
     customCountPlaceholder: 'Своё число',
     customTimePlaceholder: 'Секунды',
+    unfinishedTestTitle: 'Незавершённый тест',
+    unfinishedTestDesc: 'У вас остался незаконченный тест. Вы можете продолжить его в любой момент.',
+    resumeTestBtn: 'Продолжить тестирование',
+    resumeTestShort: 'Продолжить',
+    discardTestBtn: 'Сбросить',
+    discardConfirmTitle: 'Сбросить незавершённый тест?',
+    discardConfirmDesc: 'Прогресс текущего тестирования будет удалён без возможности восстановления.',
+    answeredQuestions: 'Отвечено',
 
     // Active Test
     questionProgress: 'Вопрос',
@@ -44,10 +52,11 @@ export const translations = {
     pauseTitle: 'Тест приостановлен',
     pauseDesc: 'Таймер заморожен. Нажмите кнопку продолжения или пробел, чтобы возобновить тест.',
     resumeTest: 'Продолжить',
-    exitConfirmTitle: 'Прервать тестирование?',
-    exitConfirmDesc: 'Текущий прогресс будет потерян.',
-    cancelExit: 'Отмена',
-    confirmExit: 'Выйти',
+    exitConfirmTitle: 'Выйти из теста?',
+    exitConfirmDesc: 'Вы можете сохранить текущий прогресс и вернуться позже, либо сбросить тест.',
+    cancelExit: 'Продолжить тест',
+    confirmExit: 'Сбросить и выйти',
+    saveAndExit: 'Сохранить и выйти',
 
     // Results
     passedTitle: 'Экзамен сдан!',
@@ -162,6 +171,14 @@ export const translations = {
     allQuestionsPreset: 'All',
     customCountPlaceholder: 'Custom count',
     customTimePlaceholder: 'Seconds',
+    unfinishedTestTitle: 'Unfinished Test',
+    unfinishedTestDesc: 'You have a saved test in progress. You can resume it anytime.',
+    resumeTestBtn: 'Resume Test',
+    resumeTestShort: 'Resume',
+    discardTestBtn: 'Discard',
+    discardConfirmTitle: 'Discard unfinished test?',
+    discardConfirmDesc: 'Current test progress will be permanently deleted.',
+    answeredQuestions: 'Answered',
 
     // Active Test
     questionProgress: 'Question',
@@ -176,9 +193,10 @@ export const translations = {
     pauseDesc: 'Timer is frozen. Press resume or Space bar to continue the test.',
     resumeTest: 'Resume',
     exitConfirmTitle: 'Exit Test?',
-    exitConfirmDesc: 'Your current progress will be lost.',
-    cancelExit: 'Cancel',
-    confirmExit: 'Exit',
+    exitConfirmDesc: 'You can save your progress and return later, or discard the test.',
+    cancelExit: 'Continue Test',
+    confirmExit: 'Discard & Exit',
+    saveAndExit: 'Save & Exit',
 
     // Results
     passedTitle: 'Exam Passed!',

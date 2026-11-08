@@ -18,3 +18,9 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+// Request persistent storage so browser does not evict cache/localStorage under disk pressure
+if (typeof navigator !== 'undefined' && 'storage' in navigator && navigator.storage.persist) {
+  navigator.storage.persist().catch(() => {});
+}
+
+

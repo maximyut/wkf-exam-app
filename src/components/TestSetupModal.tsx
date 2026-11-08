@@ -8,8 +8,12 @@ import {
   Sparkles,
   FileCode,
   Upload,
+  RotateCcw,
+  Trash2,
+  AlertCircle,
+  Bookmark,
 } from 'lucide-react';
-import type { TestConfig, UserProfile, Discipline, Language } from '../types';
+import type { TestConfig, UserProfile, Discipline, Language, ActiveTestSession } from '../types';
 import { getUserMistakeQuestionIds } from '../utils/storage';
 import { t } from '../i18n/translations';
 
@@ -18,6 +22,9 @@ interface TestSetupProps {
   discipline: Discipline;
   language: Language;
   totalAvailableQuestions: number;
+  activeSession?: ActiveTestSession | null;
+  onResumeTest?: () => void;
+  onDiscardSession?: () => void;
   onStartTest: (config: TestConfig) => void;
   onOpenUserModal: () => void;
   onCustomDataLoaded?: (data: unknown[]) => void;
@@ -28,10 +35,14 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
   discipline,
   language,
   totalAvailableQuestions,
+  activeSession,
+  onResumeTest,
+  onDiscardSession,
   onStartTest,
   onOpenUserModal,
   onCustomDataLoaded,
 }) => {
+  const [showDiscardConfirm, setShowDiscardConfirm] = useState<boolean>(false);
   const userMistakes = getUserMistakeQuestionIds(activeUser.id, discipline);
   const hasMistakes = userMistakes.length > 0;
 
@@ -155,6 +166,77 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
             </div>
           </div>
         </div>
+
+        {/* Unfinished Test Banner */}
+        {activeSession && (
+          <div className="relative overflow-hidden bg-gradient-to-br from-emerald-950/40 via-slate-900 to-slate-900 border-2 border-emerald-500/50 rounded-2xl p-4 sm:p-5 shadow-xl shadow-emerald-950/30 space-y-3.5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center shrink-0">
+                  <Bookmark className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-sm sm:text-base font-bold text-white">
+                      {t('unfinishedTestTitle', language)}
+                    </h3>
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                      {activeSession.discipline === 'kata' ? t('kata', language) : t('kumite', language)}
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    {t('questionProgress', language)} <span className="font-bold text-white">{activeSession.currentIndex + 1}</span> {t('of', language)} {activeSession.questions.length} • {t('answeredQuestions', language)}: <span className="font-semibold text-emerald-400">{activeSession.records.length}</span> ({Math.round((activeSession.records.length / activeSession.questions.length) * 100)}%)
+                  </p>
+                </div>
+              </div>
+
+              {/* Mode tags */}
+              <div className="flex items-center gap-1.5 self-start sm:self-auto">
+                <span className="px-2 py-0.5 rounded-lg bg-slate-800 text-[11px] text-slate-300 border border-slate-700/60 font-medium">
+                  {activeSession.config.timeLimitPerQuestion > 0
+                    ? `${activeSession.config.timeLimitPerQuestion} ${t('sec', language)}`
+                    : t('noTimer', language)}
+                </span>
+                {activeSession.config.onlyMistakesMode && (
+                  <span className="px-2 py-0.5 rounded-lg bg-rose-500/10 text-rose-300 border border-rose-500/20 text-[11px] font-medium">
+                    {t('onlyMistakesMode', language)}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Mini progress bar */}
+            <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 transition-all duration-300"
+                style={{
+                  width: `${Math.round((activeSession.currentIndex / activeSession.questions.length) * 100)}%`,
+                }}
+              />
+            </div>
+
+            {/* Actions */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-1">
+              <button
+                type="button"
+                onClick={onResumeTest}
+                className="flex-1 py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-emerald-950/40 flex items-center justify-center gap-2 transition-all active:scale-[0.99]"
+              >
+                <RotateCcw className="w-4 h-4" />
+                <span>{t('resumeTestBtn', language)}</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setShowDiscardConfirm(true)}
+                className="py-2.5 px-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-800 hover:text-rose-400 text-slate-400 border border-slate-700/60 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+              >
+                <Trash2 className="w-3.5 h-3.5" />
+                <span>{t('discardTestBtn', language)}</span>
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Section 1: Number of Questions */}
         <div className="space-y-3 relative">
@@ -409,7 +491,44 @@ export const TestSetupModal: React.FC<TestSetupProps> = ({
           </button>
         </div>
       </div>
+
+      {/* Discard Confirmation Dialog */}
+      {showDiscardConfirm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150 safe-modal-overlay">
+          <div className="bg-slate-900 border border-slate-800 w-full max-w-sm rounded-2xl p-6 shadow-2xl space-y-4">
+            <div className="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center">
+              <AlertCircle className="w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-white">{t('discardConfirmTitle', language)}</h3>
+              <p className="text-xs text-slate-400 mt-1">
+                {t('discardConfirmDesc', language)}
+              </p>
+            </div>
+            <div className="flex gap-2 pt-2">
+              <button
+                type="button"
+                onClick={() => setShowDiscardConfirm(false)}
+                className="flex-1 py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-colors"
+              >
+                {t('cancelExit', language)}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowDiscardConfirm(false);
+                  onDiscardSession?.();
+                }}
+                className="flex-1 py-2 px-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold transition-colors"
+              >
+                {t('discardTestBtn', language)}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
+
 
