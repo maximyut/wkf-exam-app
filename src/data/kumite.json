@@ -643,20 +643,20 @@
     "question": "HANSOKU CHUI is given if the Athlete's potential for winning has been reduced by the opponent's foul.",
     "questionEn": "HANSOKU CHUI is given if the Athlete's potential for winning has been reduced by the opponent's foul.",
     "questionRu": "ХАНСОКУ-ЧУИ выносится, если нарушение соперника снизило шансы спортсмена на победу.",
-    "answer": true,
+    "answer": false,
     "ruleArticle": "Статья 10.3.1 — Основания для вынесения HANSOKU CHUI",
     "ruleArticleEn": "Article 10.3.1 ",
     "ruleQuote": "HANSOKU CHUI: Is given for more serious infractions that reduces the other Athlete’s chances of winning or to an Athlete for any further infraction if three CHUI has already been given.",
-    "explanation": "Верно. Хансоку Чуй выносится за серьёзное нарушение, уменьшающее шансы соперника на победу, либо за четвёртое нарушение после трёх Чуй.",
-    "explanationEn": "True. Хансоку Чуй выносится за серьёзное нарушение, уменьшающее шансы соперника на победу, либо за четвёртое нарушение после трёх Чуй.",
+    "explanation": "Ложно. Во-первых, HANSOKU CHUI выносится за более серьезные нарушения, которые СЕРЬЁЗНО снижают шансы соперника на победу (ст. 10.3.1); если же шансы снижены незначительно, выносится CHUI (ст. 10.2.1), а если они сведены практически к нулю — выносится прямое HANSOKU (дисквалификация из боя). Во-вторых, HANSOKU CHUI также выносится спортсмену автоматически за четвёртое нарушение после трёх CHUI, даже если шансы соперника не уменьшились. Кроме того, само наказание выносится не пострадавшему атлету, а нарушителю.",
+    "explanationEn": "False. Firstly, HANSOKU CHUI is given for serious infractions that seriously reduce the opponent's chances of winning (Article 10.3.1); if chances are not diminished, CHUI is given (Article 10.2.1), and if the potential for winning is reduced virtually to zero, HANSOKU is imposed directly. Secondly, HANSOKU CHUI is also automatically awarded to an athlete for a fourth infraction after three CHUIs have been given, regardless of whether the opponent's chances were reduced. Furthermore, the penalty is imposed on the offending opponent, not on the athlete who suffered the foul.",
     "votes": {
-      "chatgpt": "Верно",
-      "claude": "Верно",
-      "deepseek": "Верно",
-      "gemini": "Верно",
-      "instagram": "Верно",
-      "trueCount": 5,
-      "falseCount": 0
+      "chatgpt": "Ложно",
+      "claude": "Ложно",
+      "deepseek": "Ложно",
+      "gemini": "Ложно",
+      "instagram": "Ложно",
+      "trueCount": 0,
+      "falseCount": 5
     }
   },
   {
@@ -1105,20 +1105,20 @@
     "question": "In Cadet and Junior competition JODAN techniques are allowed to make \"skin touch\" provided there is no injury.",
     "questionEn": "In Cadet and Junior competition JODAN techniques are allowed to make \"skin touch\" provided there is no injury.",
     "questionRu": "В соревнованиях кадетов и юниоров техники ДЗЁДАН могут выполняться с касанием кожи при условии отсутствия травмы.",
-    "answer": true,
+    "answer": false,
     "ruleArticle": "Статья 8.8, 8.9 — Касание skin touch у кадетов и юниоров",
     "ruleArticleEn": "Article 8.8, 8.9 ",
     "ruleQuote": "“Skin touch” is allowed in all age categories. “Skin touch” is defined as touching the target without transferring energy into the protected helmet or head of the Athlete.",
-    "explanation": "Верно. Легкое касание (skin touch) в область дзёдан разрешено во всех возрастных категориях WKF при отсутствии травмирующего воздействия.",
-    "explanationEn": "True. Легкое касание (skin touch) в область дзёдан разрешено во всех возрастных категориях WKF при отсутствии травмирующего воздействия.",
+    "explanation": "Ложно. Область шеи и горла входит в зачётную зону JODAN (ст. 8.4), однако статья 8.8 прямо устанавливает абсолютное исключение: любой физический контакт с областью горла строго запрещен («with the exception of the throat area, where no physical contact is allowed»). Таким образом, далеко не все техники дзёдан разрешают касание skin touch даже при отсутствии травмы. Кроме того, в традиционных тестах WKF skin touch для кадетов допускается исключительно для ударов ногами (kicks), а удары руками в голову наказуемы при любом касании.",
+    "explanationEn": "False. The throat and neck area is part of the JODAN scoring zone (Article 8.4); however, Article 8.8 strictly establishes that no physical contact is allowed to the throat under any circumstances (\"with the exception of the throat area, where no physical contact is allowed\"). Therefore, skin touch is not permitted for all JODAN techniques, even in the absence of injury. Additionally, under traditional WKF examination principles, skin touch for cadets was permitted strictly for kicks, with hand contact to the head remaining strictly prohibited.",
     "votes": {
-      "chatgpt": "Верно",
-      "claude": "Верно",
-      "deepseek": "Верно",
-      "gemini": "Верно",
-      "instagram": "Верно",
-      "trueCount": 5,
-      "falseCount": 0
+      "chatgpt": "Ложно",
+      "claude": "Ложно",
+      "deepseek": "Ложно",
+      "gemini": "Ложно",
+      "instagram": "Ложно",
+      "trueCount": 0,
+      "falseCount": 5
     }
   },
   {
@@ -3965,20 +3965,20 @@
     "question": "In team matches, if after the extra bout there are no scores, or it is equal scores with no SENSHU, the bout will be decided by HANTEI.",
     "questionEn": "In team matches, if after the extra bout there are no scores, or it is equal scores with no SENSHU, the bout will be decided by HANTEI.",
     "questionRu": "В командных матчах, если после дополнительного боя нет баллов, или есть равные баллы без СЕНШУ, результат боя будет определен с помощью ХАНТЕЙ.",
-    "answer": true,
+    "answer": false,
     "ruleArticle": "Статья 12.5.3 — Определение победителя дополнительного боя в команде",
     "ruleArticleEn": "Article 12.5.3 ",
     "ruleQuote": "If the extra bout does not produce a winner based on superiority on points, nor any of the Athletes receive SENSHU, the extra bout will be decided based on HANTEI according to the same procedure as for individual bouts.",
-    "explanation": "Верно (по действующим правилам WKF 2026, ст. 12.5.3). Если дополнительный поединок не выявил победителя по баллам и ни один спортсмен не получил SENSHU, исход боя определяется по HANTEI. Примечание: В некоторых предварительных бланках ключей тестов (включая бланк Kumite 2027) для этого вопроса указан ответ False (возможно, из-за трактовки ничьих в Round-robin по ст. 12.4.1 или опечатки составителей), однако прямой текст ст. 12.5.3 подтверждает данный пункт.",
-    "explanationEn": "True (under current WKF 2026 Rules, Article 12.5.3). If the extra bout produces no winner on points and neither athlete receives SENSHU, it is decided by HANTEI. Note: In some exam keys (including Kumite 2027 sheet), this is marked False (possibly due to Round-robin tie-breaking nuances in Art. 12.4.1 or an erratum), but the explicit text of Article 12.5.3 states True.",
+    "explanation": "Ложно. Согласно ст. 12.5.3, исход дополнительного поединка решается по той же процедуре, что и индивидуальный бой (ст. 12.2.3, 12.2.4). При равном счёте без преимущества SENSHU победитель определяется не сразу по HANTEI: сначала проверяется большее количество оценок IPPON (ст. 12.2.3 a), затем большее количество WAZA-ARI (ст. 12.2.3 b), и только при равенстве этих показателей назначается HANTEI. Если у одного из спортсменов больше IPPON или WAZA-ARI, HANTEI не проводится. В экзаменационных тестах WKF (включая ключ 2027) утверждение отмечено как False.",
+    "explanationEn": "False. According to Article 12.5.3, an extra bout is decided under the same procedure as an individual bout (Articles 12.2.3, 12.2.4). In the event of equal scores with no SENSHU, the bout is NOT automatically decided by HANTEI: the decision is first made by the higher number of IPPON scored (Article 12.2.3 a), then the higher number of WAZA-ARI (Article 12.2.3 b), and only if both IPPON and WAZA-ARI are equal will HANTEI be called. The omission of the IPPON and WAZA-ARI tie-breaking criteria makes the statement False in WKF exams (including the 2027 key).",
     "votes": {
       "chatgpt": "Ложно",
-      "claude": "Верно",
-      "deepseek": "Верно",
-      "gemini": "Верно",
+      "claude": "Ложно",
+      "deepseek": "Ложно",
+      "gemini": "Ложно",
       "instagram": "Ложно",
-      "trueCount": 3,
-      "falseCount": 2
+      "trueCount": 0,
+      "falseCount": 5
     }
   },
   {
@@ -5219,20 +5219,20 @@
     "question": "The last six seconds before the bout was stopped for the request will always be evaluated for video review.",
     "questionEn": "The last six seconds before the bout was stopped for the request will always be evaluated for video review.",
     "questionRu": "Последние 6 секунд до того, как бой был остановлен для запроса, всегда будут оцениваться для видеоповтора.",
-    "answer": true,
+    "answer": false,
     "ruleArticle": "Статья 14.8 — Хронометраж эпизода для видеопросмотра",
     "ruleArticleEn": "Article 14.8 ",
     "ruleQuote": "The last 6 seconds before the bout was stopped for the request will always be evaluated...",
-    "explanation": "Верно. При запросе видеоповтора всегда оцениваются как минимум последние 6 секунд до момента остановки поединка.",
-    "explanationEn": "True. При запросе видеоповтора всегда оцениваются как минимум последние 6 секунд до момента остановки поединка.",
+    "explanation": "Ложно. Слово «всегда» делает утверждение ошибочным: если поединок после начала или команды «Цудзукэтэ» был остановлен по запросу на 1–3 секунде, шести секунд чистого времени боя до остановки физически не существует, и оценивается только фактически прошедшее время. Кроме того, согласно ст. 14.8, время просмотра может быть увеличено сверх 6 секунд («additional time can be added»), а при невозможности просмотра по ракурсу (MIENAI, ст. 14.13) или сбое техники видеоповтор не оценивается вовсе.",
+    "explanationEn": "False. The absolute word \"always\" makes the statement False: if the bout was stopped upon a video request within the first 1 to 3 seconds after start or resumption (TSUZUKETE), six seconds of bout time prior to the stoppage do not physically exist, and only the actual elapsed time can be evaluated. Furthermore, under Article 14.8, additional time can be added beyond 6 seconds when necessary, and under Article 14.13, if the action cannot be viewed due to camera angles (MIENAI) or equipment malfunction, the video is not evaluated at all.",
     "votes": {
-      "chatgpt": "Верно",
-      "claude": "Верно",
-      "deepseek": "Верно",
-      "gemini": "Верно",
-      "instagram": "Верно",
-      "trueCount": 5,
-      "falseCount": 0
+      "chatgpt": "Ложно",
+      "claude": "Ложно",
+      "deepseek": "Ложно",
+      "gemini": "Ложно",
+      "instagram": "Ложно",
+      "trueCount": 0,
+      "falseCount": 5
     }
   },
   {
